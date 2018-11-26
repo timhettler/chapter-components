@@ -1,0 +1,128 @@
+.beginButton {
+  /* reset styles */
+  -webkit-touch-callout: none;
+  user-select: none;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  -webkit-font-smoothing: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  display: block;
+  text-align: inherit;
+  cursor: pointer;
+
+  /* component-specific styles */
+  font-family: 'SamsungOne', serif;
+  width: 180px;
+  height: 50px;
+  z-index: 12;
+  position: relative;
+  transition: opacity 1s 500ms, transform 800ms 500ms;
+}
+
+.beginButton[disabled] {
+  cursor: default;
+  opacity: 0;
+  transform: translateY(40%);
+}
+
+.text {
+  position: absolute;
+  letter-spacing: 0.2em;
+  font-family: 'SamsungOne', serif;
+  font-size: 13px;
+  top: 50%;
+  margin-top: -7px;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1) 0ms, transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1) 0ms;
+}
+
+.text-a {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.is-light .text-a {
+  color: rgb(255, 255, 255);
+}
+
+.is-dark .text-a {
+  color: rgb(0, 0, 0);
+}
+
+.beginButton:hover .text-a {
+  transform: translate3d(0, -5px, 0);
+  opacity: 0;
+}
+
+.text-b {
+  transform: translate3d(0, 5px, 0);
+  opacity: 0;
+}
+
+.is-light .text-b {
+  color: rgb(0, 0, 0);
+}
+
+.is-dark .text-b {
+  color: rgb(255, 255, 255);
+}
+
+.beginButton:hover .text-b {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  opacity: 0.8;
+  border-radius: 25px;
+  transition: opacity 600ms cubic-bezier(0.215, 0.61, 0.355, 1) 0ms, transform 600ms cubic-bezier(0.215, 0.61, 0.355, 1) 0ms;
+}
+
+.outline-a {
+  border: 2px solid;
+  height: 46px;
+  background-size: 180px 46px;
+  transform: scaleX(1) scaleY(1);
+}
+
+.is-dark .outline-a {
+  border-color: rgb(0, 0, 0);
+}
+
+.is-light .outline-a {
+  border-color: rgb(255, 255, 255);
+}
+
+.beginButton:hover .outline-a {
+  transform: scaleX(0.9375) scaleY(0.8);
+}
+
+.outline-b {
+  height: 50px;
+  background-size: 180px 50px;
+  opacity: 0;
+  transform: scaleX(0.9375) scaleY(0.8);
+}
+
+.is-dark .outline-b {
+  background-color: rgb(0, 0, 0);
+}
+
+.is-light .outline-b {
+  background-color: rgb(255, 255, 255);
+}
+
+.beginButton:hover .outline-b {
+  opacity: 1;
+  transform: scaleX(1) scaleY(1);
+}

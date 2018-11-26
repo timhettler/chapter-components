@@ -1,0 +1,64 @@
+.header {
+  z-index: 19 !important;
+  position: fixed;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  transition: opacity 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.header * {
+  position: relative;
+}
+
+.header.is-light {
+  color: white;
+}
+
+.header.is-dark {
+  color: black;
+}
+
+.title,
+.subtitle {
+  margin: 0;
+}
+
+.title {
+  font-family: 'SamsungSharpSansMedium', serif;
+  font-size: 18px;
+  margin-bottom: 70px;
+  position: relative;
+  top: 0;
+  transition: top 800ms, opacity 800ms;
+}
+
+.header:not(.is-loaded) .title {
+  opacity: 0;
+  top: 70px;
+}
+
+.subtitle {
+  font-family: 'SamsungSharpSansBold', serif;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+}
+
+.line {
+  position: relative;
+  font-size: 120px;
+  line-height: 1;
+  top: 0;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.letter {
+  display: inline-block;
+}
+
+.header:not(.is-loaded) .letter {
+  opacity: 0;
+  transform: translate3d(0, 0, 900px) rotateX(0deg) rotateY(0deg);
+}
