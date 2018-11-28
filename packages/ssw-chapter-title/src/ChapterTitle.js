@@ -1,29 +1,28 @@
-import { html, render as litRender } from 'lit-html';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import styles from './ChapterTitle.scss';
 
 const cx = classNames.bind(styles);
 
-const defaultProps = {
-  container: document.body,
-  theme: 'dark',
-  title: 'Chapter 5',
-  subtitle: 'More Than<br>a Stylus',
-};
+class ChapterTitle extends PureComponent {
+  constructor(props) {
+    super(props);
 
-export default class BeginButton {
-  constructor({ container, theme, title, subtitle } = defaultProps) {
-    this.container = container;
-    this.theme = theme;
-    this.title = title;
-    this.subtitle = subtitle;
+    this.$header = React.createRef();
+    this.$title = React.createRef();
+    this.$subtitle = React.createRef();
 
-    // TODO move to container element
-    this.container.addEventListener(
-      'mousemove',
-      this.handleMouseMove.bind(this)
-    );
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+  }
+
+  componentDidMount() {
+    document.body.addEventListener('mousemove', this.handleMouseMove);
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('mousemove', this.handleMouseMove);
   }
 
   getBoundedNumber(numA, numB) {
@@ -44,6 +43,7 @@ export default class BeginButton {
     return `translate3d(0, 0, ${$tD}px) rotateX(0deg) rotateY(${$rY}deg)`;
   }
 
+  // TODO
   toggleLetterTransform(bool) {
     const $letters = document.querySelectorAll(`.${cx('letter')}`);
     $letters.forEach(letter => {
@@ -74,6 +74,7 @@ export default class BeginButton {
     return true;
   }
 
+  // TODO
   zoomAndFade() {
     const $header = document.querySelector(`.${cx('header')}`);
     const $letters = document.querySelectorAll(`.${cx('letter')}`);
@@ -90,10 +91,8 @@ export default class BeginButton {
   }
 
   handleMouseMove(e) {
-    const $title = document.querySelector(`.${cx('title')}`);
-    const $subtitle = document.querySelector(`.${cx('subtitle')}`);
-    this.panElement(e, $title, 0.006);
-    this.panElement(e, $subtitle);
+    this.panElement(e, this.$title.current, 0.006);
+    this.panElement(e, this.$title.current);
   }
 
   getInitialTransition(i) {
@@ -103,46 +102,51 @@ export default class BeginButton {
     return `opacity ${increment}ms cubic-bezier(0.165, 0.84, 0.44, 1) ${delay}ms, transform ${increment}ms cubic-bezier(0.165, 0.84, 0.44, 1) ${delay}ms`;
   }
 
-  divideSubtitle() {
-    const lines = this.subtitle.split('<br>');
+  renderSubtitle(show) {
+    const lines = this.props.subtitle.split('<br>');
+
     return lines.map(line => {
-      const letters = line
-        .split('')
-        .map(
-          letter =>
-            `<span class="${cx('letter')}">${letter.replace(
-              ' ',
-              '&nbsp;'
-            )}</span>`
-        );
-      const $div = document.createElement('div');
-      $div.classList.add(cx('line'));
-      $div.innerHTML = letters.join('');
-      return $div;
+      const letters = line.split('').map((letter, i) => (
+        <span
+          className={cx('letter')}
+          style={show ? getInitialTransition(i) : null}
+        >
+          ${letter.replace(' ', '&nbsp;')}
+        </span>
+      ));
+
+      return <div className={cx('line')}>{letters}</div>;
     });
   }
 
-  getTemplate({ expand }) {
-    return html`
-      <header class="${cx('header', `is-${this.theme}`)}">
-        <h1 class="${cx('title')}">${this.title}</h1>
-        <h2 class="${cx('subtitle')}">${this.divideSubtitle(expand)}</h2>
+  render() {
+    const { show, title, theme } = this.props;
+
+    return (
+      <header
+        ref={this.$header}
+        className={cx('header', `is-${theme}`, { 'is-loaded': !!show })}
+      >
+        <h1 ref={this.$title} className={cx('title')}>
+          ${title}
+        </h1>
+        <h2 ref={this.$subtitle} className={cx('subtitle')}>
+          ${this.renderSubtitle(show)}
+        </h2>
       </header>
-    `;
-  }
-
-  render(data = {}) {
-    litRender(this.getTemplate(data), this.container);
-
-    setTimeout(() => {
-      const $header = document.querySelector(`.${cx('header')}`);
-      const $letters = document.querySelectorAll(`.${cx('letter')}`);
-
-      $letters.forEach((letter, i) => {
-        letter.style.transition = this.getInitialTransition(i);
-      });
-
-      $header.classList.add(cx('is-loaded'));
-    }, 1000);
+    );
   }
 }
+
+ChapterTitle.defaultProps = {
+  theme: 'dark',
+};
+
+ChapterTitle.proptTypes = {
+  show: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string.isRequired,
+  theme: PropTypes.oneOf(['light', 'dark']),
+};
+
+export default ChapterTitle;

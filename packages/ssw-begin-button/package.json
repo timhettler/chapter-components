@@ -1,0 +1,24 @@
+{
+  "name": "ssw-begin-button",
+  "version": "0.0.0",
+  "description": "The button used to start a Samsung Within experience",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "../../node_modules/.bin/webpack ./src/index.js --o ./dist/index.js --config ../../config/webpack.config.js",
+    "clean": "rm -rf dist node_modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Hettler",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "peerDependencies": {
+    "react": "16.6.x",
+    "react-dom": "16.6.x"
+  }
+}

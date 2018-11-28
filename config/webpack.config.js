@@ -1,21 +1,7 @@
-const paths = require('./paths');
-const webpack = require('webpack');
-
-// Webpack uses `publicPath` to determine where the app is being served from.
-// In development, we always serve from the root. This makes config easier.
-const publicPath = '/';
-
 module.exports = {
   mode: 'production',
   bail: true,
   devtool: 'source-map',
-  entry: ['@babel/polyfill', paths.appIndexJs],
-  output: {
-    pathinfo: true,
-    path: paths.appBuild,
-    filename: 'index.js',
-    publicPath,
-  },
   module: {
     strictExportPresence: true,
     rules: [
@@ -32,7 +18,6 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        include: paths.appSrc,
       },
       {
         oneOf: [
@@ -54,7 +39,6 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.js$/,
-            include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
               compact: true,
