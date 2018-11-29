@@ -33,21 +33,21 @@ This monorepo uses Yarn Workspaces and Lerna, which automatically symlinks local
 
 ### Initial Repo Setup:
 
-1 Clone this repo:
+1. Clone this repo:
 
 ```
 git clone git@gitlab.ny.rga.com:samsung-within/chapter-components.git
 ```
 
-2 Ensure your node environment is up to date. Download the latest, or use nvm to manage environments.
+2. Ensure your node environment is up to date. Download the latest, or use nvm to manage environments.
 
-3 Install dependencies via Yarn. Because we use Yarn Workspaces, this command will also hoist dependencies to the root `node_modules` folder, and symlink accordingly. You **should not use npm** to install dependencies.
+3. Install dependencies via Yarn. Because we use Yarn Workspaces, this command will also hoist dependencies to the root `node_modules` folder, and symlink accordingly. You **should not use npm** to install dependencies.
 
 ```
 yarn
 ```
 
-4 Run the lerna build command to build each package's dist folder:
+4. Run the lerna build command to build each package's dist folder:
 
 ```
 yarn lerna-build
@@ -55,7 +55,7 @@ yarn lerna-build
 
 ### Working With Existing Packages
 
-1 Run the storybook tool command:
+1. Run the storybook tool command:
 
 ```
 yarn run storybook
@@ -65,4 +65,4 @@ This creates a UI development environment. The tool enables us to create compone
 
 Learn more by reading the [Storybook documentation](https://storybook.js.org/basics/guide-react/).
 
-2 Create a branch according to the [Gitflow Workflow guidelines](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+2. Create a branch according to the [Gitflow Workflow guidelines](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
