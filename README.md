@@ -14,7 +14,7 @@ Chapter-components are React components designed for Samsung Within projects. Th
 
 ### Core
 
-- **Environment:** Node 10.11.x
+- **Environment:** Node 10.x
 - **Package Management:** Yarn > 1.7.x, Yarn Workspaces, Lerna
 - **Framework:** React 16.6.x
 
@@ -41,7 +41,7 @@ This monorepo uses Yarn Workspaces and Lerna, which automatically symlinks local
 git clone git@gitlab.ny.rga.com:samsung-within/chapter-components.git
 ```
 
-- Ensure your node environment is up to date. Download the latest, or use nvm to manage environments.
+- Ensure your node environment is up to date. [Download the latest](https://nodejs.org/en/), or use nvm to manage environments.
 - If you don't have yarn, install it. (If you're a Windows user, [download the installer](https://yarnpkg.com/en/docs/install#windows-stable).)
 
 ```shell
