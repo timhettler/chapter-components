@@ -4,6 +4,8 @@
 
 A monorepo of UI components common to all Samsung Within projects.
 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
+
 ## Overview:
 
 Chapter-components are React components designed for Samsung Within projects. The components are managed via a Yarn Workspaces/Lerna monorepo, and are published to our private npm server as individual packages. They can be imported into Samsung Within projects as needed.
