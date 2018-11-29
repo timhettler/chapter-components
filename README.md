@@ -42,10 +42,16 @@ git clone git@gitlab.ny.rga.com:samsung-within/chapter-components.git
 ```
 
 - Ensure your node environment is up to date. Download the latest, or use nvm to manage environments.
-- Install dependencies via Yarn. Because we use Yarn Workspaces, this command will also hoist dependencies to the root `node_modules` folder, and symlink accordingly. You **should not use npm** to install dependencies.
+- If you don't have yarn, install it. (If you're a Windows user, [download the installer](https://yarnpkg.com/en/docs/install#windows-stable).)
 
 ```shell
-npm i yarn
+brew install yarn
+```
+
+- Install dependencies via Yarn. Because we use Yarn Workspaces, this command will also hoist dependencies to the root `node_modules` folder, and symlink accordingly. **You should not use npm to install dependencies.**
+
+```shell
+yarn
 ```
 
 - Run the lerna build command to build each package's dist folder:
