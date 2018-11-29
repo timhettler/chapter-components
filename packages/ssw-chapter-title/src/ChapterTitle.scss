@@ -26,7 +26,7 @@
 }
 
 .title {
-  font-family: 'SamsungSharpSansMedium', serif;
+  font-family: 'SamsungSharpSansMedium', Arial, sans-serif;
   font-size: 18px;
   margin-bottom: 70px;
   position: relative;
@@ -40,7 +40,8 @@
 }
 
 .subtitle {
-  font-family: 'SamsungSharpSansBold', serif;
+  font-family: 'SamsungSharpSansBold', Arial, sans-serif;
+  font-weight: bold;
   transform-style: preserve-3d;
   perspective: 2000px;
 }
@@ -52,6 +53,7 @@
   top: 0;
   width: 100%;
   transform-style: preserve-3d;
+  white-space: nowrap;
 }
 
 .letter {

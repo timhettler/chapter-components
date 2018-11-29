@@ -25,6 +25,12 @@ class ChapterTitle extends PureComponent {
     document.body.removeEventListener('mousemove', this.handleMouseMove);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.isExpanded !== prevProps.isExpanded) {
+      this.toggleLetterTransform(this.props.isExpanded);
+    }
+  }
+
   getBoundedNumber(numA, numB) {
     const randomNumber = Math.round(Math.random() * numA) + numB;
     return randomNumber;
@@ -43,11 +49,12 @@ class ChapterTitle extends PureComponent {
     return `translate3d(0, 0, ${$tD}px) rotateX(0deg) rotateY(${$rY}deg)`;
   }
 
-  // TODO
   toggleLetterTransform(bool) {
-    const $letters = document.querySelectorAll(`.${cx('letter')}`);
+    const $letters = this.$subtitle.current.querySelectorAll(
+      `.${cx('letter')}`
+    );
     $letters.forEach(letter => {
-      letter.style.transform = bool ? this.getExpandTransform() : '';
+      letter.style.transform = bool ? this.getExpandTransform() : null;
     });
   }
 
@@ -92,14 +99,16 @@ class ChapterTitle extends PureComponent {
 
   handleMouseMove(e) {
     this.panElement(e, this.$title.current, 0.006);
-    this.panElement(e, this.$title.current);
+    this.panElement(e, this.$subtitle.current);
   }
 
   getInitialTransition(i) {
     const increment = 100 * i;
     const delay = 40 * i;
 
-    return `opacity ${increment}ms cubic-bezier(0.165, 0.84, 0.44, 1) ${delay}ms, transform ${increment}ms cubic-bezier(0.165, 0.84, 0.44, 1) ${delay}ms`;
+    return {
+      transition: `opacity ${increment}ms cubic-bezier(0.165, 0.84, 0.44, 1) ${delay}ms, transform ${increment}ms cubic-bezier(0.165, 0.84, 0.44, 1) ${delay}ms`,
+    };
   }
 
   renderSubtitle(show) {
@@ -109,9 +118,9 @@ class ChapterTitle extends PureComponent {
       const letters = line.split('').map((letter, i) => (
         <span
           className={cx('letter')}
-          style={show ? getInitialTransition(i) : null}
+          style={show ? this.getInitialTransition(i) : null}
         >
-          ${letter.replace(' ', '&nbsp;')}
+          {letter.replace(' ', '\u00A0')}
         </span>
       ));
 
@@ -128,10 +137,10 @@ class ChapterTitle extends PureComponent {
         className={cx('header', `is-${theme}`, { 'is-loaded': !!show })}
       >
         <h1 ref={this.$title} className={cx('title')}>
-          ${title}
+          {title}
         </h1>
         <h2 ref={this.$subtitle} className={cx('subtitle')}>
-          ${this.renderSubtitle(show)}
+          {this.renderSubtitle(show)}
         </h2>
       </header>
     );
@@ -140,10 +149,12 @@ class ChapterTitle extends PureComponent {
 
 ChapterTitle.defaultProps = {
   theme: 'dark',
+  show: true,
 };
 
 ChapterTitle.proptTypes = {
   show: PropTypes.bool,
+  isExpanded: PropTypes.bool,
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
