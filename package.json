@@ -10,7 +10,7 @@
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
     "lerna-build": "lerna run build",
     "lerna-updated": "lerna updated",
-    "lerna-publish": "lerna publish",
+    "lerna-publish": "lerna version",
     "postlerna-publish": "npm version patch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
