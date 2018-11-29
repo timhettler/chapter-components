@@ -2,7 +2,7 @@
 
 > Repo: [https://gitlab.ny.rga.com/samsung-within/chapter-components](https://gitlab.ny.rga.com/samsung-within/chapter-components)
 
-Monorepo of UI components common to all Samsung Within projects.
+A monorepo of UI components common to all Samsung Within projects.
 
 ## Overview:
 
@@ -22,7 +22,7 @@ Chapter-components are React components designed for Samsung Within projects. Th
 - **Transpilation:** Babel 7
 - **Dev:** Storybook
 - **Build:** Webpack 4 & Babel 7
-- **Linting:** ESLint with Prettier and Stylelint
+- **Linting:** [ESLint](https://eslint.org/docs/user-guide/integrations), [Prettier](https://prettier.io/docs/en/editors.html), Stylelint and [EditorConfig](https://editorconfig.org/#download). It is strongly recommended to integrate these tools into your editor or IDE.
 - **Testing:** TBD
 
 ## Development:
