@@ -4,22 +4,19 @@
   font-family: 'SamsungOne', Arial, sans-serif;
   text-align: center;
   line-height: 1.5;
-  transition: opacity 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), bottom 1s;
+  top: 0;
+  transition: opacity 1s, top 1s;
 }
 
-.disclaimer:not(.is-loaded) {
+.disclaimer.is-disabled {
   opacity: 0;
   top: 70px;
 }
 
 .disclaimer.is-light {
-  color: black;
-}
-
-.disclaimer.is-dark {
   color: white;
 }
 
-.disclaimer * {
-  position: static;
+.disclaimer.is-dark {
+  color: black;
 }

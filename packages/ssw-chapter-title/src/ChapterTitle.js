@@ -26,8 +26,11 @@ class ChapterTitle extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.isExpanded !== prevProps.isExpanded) {
-      this.toggleLetterTransform(this.props.isExpanded);
+    if (this.props.expanded !== prevProps.expanded) {
+      this.toggleLetterTransform(this.props.expanded);
+    }
+    if (this.props.faded !== prevProps.faded) {
+      this.zoomAndFade(this.props.faded);
     }
   }
 
@@ -81,19 +84,23 @@ class ChapterTitle extends PureComponent {
     return true;
   }
 
-  // TODO
-  zoomAndFade() {
-    const $header = document.querySelector(`.${cx('header')}`);
-    const $letters = document.querySelectorAll(`.${cx('letter')}`);
+  zoomAndFade(bool) {
+    const $header = this.$header.current;
+    const $letters = this.$subtitle.current.querySelectorAll(
+      `.${cx('letter')}`
+    );
 
-    $header.style.opacity = 0;
+    $header.style.opacity = bool ? 0 : 1;
 
     $letters.forEach(letter => {
       const $randomZ = this.getBoundedNumber(300, 150);
-      const $randomY = this.getBoundedNumber(10, 7);
-      const $tDD = $randomZ;
-      const $rYY = Math.random() < 0.5 ? -$randomY : $randomY;
-      letter.style.transform = `translate3d(0, 0, ${$tDD}px) rotateX(0deg) rotateY(${$rYY}deg)`;
+      const $randomY =
+        this.getBoundedNumber(10, 7) * (Math.random() < 0.5 ? -1 : 1);
+      if (bool) {
+        letter.style.transform = `translate3d(0, 0, ${$randomZ}px) rotateX(0deg) rotateY(${$randomY}deg)`;
+      } else {
+        letter.style.transform = null;
+      }
     });
   }
 
@@ -102,45 +109,50 @@ class ChapterTitle extends PureComponent {
     this.panElement(e, this.$subtitle.current);
   }
 
-  getInitialTransition(i) {
+  getLetterTransition(i) {
     const increment = 100 * i;
     const delay = 40 * i;
 
-    return {
-      transition: `opacity ${increment}ms cubic-bezier(0.165, 0.84, 0.44, 1) ${delay}ms, transform ${increment}ms cubic-bezier(0.165, 0.84, 0.44, 1) ${delay}ms`,
-    };
+    return `opacity ${increment}ms ${delay}ms, transform ${increment}ms ${delay}ms`;
   }
 
-  renderSubtitle(show) {
+  renderSubtitle() {
     const lines = this.props.subtitle.split('<br>');
 
-    return lines.map(line => {
+    return lines.map((line, i) => {
       const letters = line.split('').map((letter, i) => (
         <span
+          key={`${letter}+${i}`}
           className={cx('letter')}
-          style={show ? this.getInitialTransition(i) : null}
+          style={{
+            transition: this.getLetterTransition(i),
+          }}
         >
           {letter.replace(' ', '\u00A0')}
         </span>
       ));
 
-      return <div className={cx('line')}>{letters}</div>;
+      return (
+        <div key={`${line}+${i}`} className={cx('line')}>
+          {letters}
+        </div>
+      );
     });
   }
 
   render() {
-    const { show, title, theme } = this.props;
+    const { disabled, title, theme, expanded } = this.props;
 
     return (
       <header
         ref={this.$header}
-        className={cx('header', `is-${theme}`, { 'is-loaded': !!show })}
+        className={cx('header', `is-${theme}`, { 'is-disabled': disabled })}
       >
         <h1 ref={this.$title} className={cx('title')}>
           {title}
         </h1>
         <h2 ref={this.$subtitle} className={cx('subtitle')}>
-          {this.renderSubtitle(show)}
+          {this.renderSubtitle()}
         </h2>
       </header>
     );
@@ -149,15 +161,15 @@ class ChapterTitle extends PureComponent {
 
 ChapterTitle.defaultProps = {
   theme: 'dark',
-  show: true,
 };
 
 ChapterTitle.proptTypes = {
-  show: PropTypes.bool,
-  isExpanded: PropTypes.bool,
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
+  disabled: PropTypes.bool,
+  expanded: PropTypes.bool,
+  faded: PropTypes.bool,
 };
 
 export default ChapterTitle;

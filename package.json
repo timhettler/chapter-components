@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "UI components common to all Samsung Within projects",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "module": "dist/index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
@@ -18,7 +20,10 @@
       "prettier --config .prettierrc --write",
       "git add"
     ],
-    "packages/**/*.{scss}": ["stylelint --config=.stylelintrc --fix", "git add"]
+    "packages/**/*.{scss}": [
+      "stylelint --config=.stylelintrc --fix",
+      "git add"
+    ]
   },
   "husky": {
     "hooks": {
@@ -34,6 +39,7 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-knobs": "^4.0.9",
     "@storybook/react": "^4.0.9",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",

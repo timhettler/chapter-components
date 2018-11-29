@@ -1283,6 +1283,24 @@
   version "0.7.0"
   resolved "http://npm.sg.rgadev.com:4873/@sindresorhus%2fis/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@storybook/addon-knobs@^4.0.9":
+  version "4.0.9"
+  resolved "http://npm.sg.rgadev.com:4873/@storybook%2faddon-knobs/-/addon-knobs-4.0.9.tgz#9ac559405d76a827f949bfe50b64fd7dd61d60e9"
+  dependencies:
+    "@emotion/styled" "^0.10.6"
+    "@storybook/addons" "4.0.9"
+    "@storybook/components" "4.0.9"
+    "@storybook/core-events" "4.0.8"
+    copy-to-clipboard "^3.0.8"
+    escape-html "^1.0.3"
+    fast-deep-equal "^2.0.1"
+    global "^4.3.2"
+    prop-types "^15.6.2"
+    qs "^6.5.2"
+    react-color "^2.14.1"
+    react-lifecycles-compat "^3.0.4"
+    util-deprecate "^1.0.2"
+
 "@storybook/addons@4.0.9":
   version "4.0.9"
   resolved "http://npm.sg.rgadev.com:4873/@storybook%2faddons/-/addons-4.0.9.tgz#cfa18fe10ddda454dbbc3aae17562e46d04d3955"
@@ -3150,6 +3168,12 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "http://npm.sg.rgadev.com:4873/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
 
+copy-to-clipboard@^3.0.8:
+  version "3.0.8"
+  resolved "http://npm.sg.rgadev.com:4873/copy-to-clipboard/-/copy-to-clipboard-3.0.8.tgz#f4e82f4a8830dce4666b7eb8ded0c9bcc313aba9"
+  dependencies:
+    toggle-selection "^1.0.3"
+
 core-js@^1.0.0:
   version "1.2.7"
   resolved "http://npm.sg.rgadev.com:4873/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
@@ -4000,7 +4024,7 @@ es6-shim@^0.35.3:
   version "0.35.4"
   resolved "http://npm.sg.rgadev.com:4873/es6-shim/-/es6-shim-0.35.4.tgz#8d5a4109756383d3f0323421089c423acf8378f1"
 
-escape-html@~1.0.3:
+escape-html@^1.0.3, escape-html@~1.0.3:
   version "1.0.3"
   resolved "http://npm.sg.rgadev.com:4873/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
 
@@ -6625,7 +6649,7 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
-lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@~4.17.10:
+lodash@^4.0.0, lodash@^4.0.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@~4.17.10:
   version "4.17.11"
   resolved "http://npm.sg.rgadev.com:4873/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
@@ -6764,6 +6788,10 @@ matcher@^1.0.0:
   resolved "http://npm.sg.rgadev.com:4873/matcher/-/matcher-1.1.1.tgz#51d8301e138f840982b338b116bb0c09af62c1c2"
   dependencies:
     escape-string-regexp "^1.0.4"
+
+material-colors@^1.2.1:
+  version "1.2.6"
+  resolved "http://npm.sg.rgadev.com:4873/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
 
 math-random@^1.0.1:
   version "1.0.1"
@@ -8396,6 +8424,16 @@ rc@^1.1.2, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-color@^2.14.1:
+  version "2.14.1"
+  resolved "http://npm.sg.rgadev.com:4873/react-color/-/react-color-2.14.1.tgz#db8ad4f45d81e74896fc2e1c99508927c6d084e0"
+  dependencies:
+    lodash "^4.0.1"
+    material-colors "^1.2.1"
+    prop-types "^15.5.10"
+    reactcss "^1.2.0"
+    tinycolor2 "^1.4.1"
+
 react-dev-utils@^6.1.0:
   version "6.1.1"
   resolved "http://npm.sg.rgadev.com:4873/react-dev-utils/-/react-dev-utils-6.1.1.tgz#a07e3e8923c4609d9f27e5af5207e3ca20724895"
@@ -8529,6 +8567,12 @@ react@^16.6.3:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.11.2"
+
+reactcss@^1.2.0:
+  version "1.2.3"
+  resolved "http://npm.sg.rgadev.com:4873/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
+  dependencies:
+    lodash "^4.0.1"
 
 read-all-stream@^3.0.0:
   version "3.1.0"
@@ -10005,6 +10049,10 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
+tinycolor2@^1.4.1:
+  version "1.4.1"
+  resolved "http://npm.sg.rgadev.com:4873/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "http://npm.sg.rgadev.com:4873/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -10050,6 +10098,10 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
+
+toggle-selection@^1.0.3:
+  version "1.0.6"
+  resolved "http://npm.sg.rgadev.com:4873/toggle-selection/-/toggle-selection-1.0.6.tgz#6e45b1263f2017fa0acc7d89d78b15b8bf77da32"
 
 tough-cookie@~2.4.3:
   version "2.4.3"

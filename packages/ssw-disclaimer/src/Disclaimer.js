@@ -8,10 +8,15 @@ const cx = classNames.bind(styles);
 
 class Disclaimer extends PureComponent {
   render() {
-    const { show, copy, theme } = this.props;
+    const { disabled, copy, theme } = this.props;
 
     return (
-      <div className={cx('disclaimer', `is-${theme}`, { 'is-loaded': !!show })}>
+      <div
+        className={cx('disclaimer', `is-${theme}`, {
+          'is-disabled': disabled,
+        })}
+        aria-hidden={disabled}
+      >
         <p>{copy}</p>
       </div>
     );
@@ -23,7 +28,7 @@ Disclaimer.defaultProps = {
 };
 
 Disclaimer.propTypes = {
-  show: PropTypes.bool,
+  disabled: PropTypes.bool,
   copy: PropTypes.string,
   theme: PropTypes.oneOf(['light', 'dark']),
 };

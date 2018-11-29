@@ -34,7 +34,7 @@
   transition: top 800ms, opacity 800ms;
 }
 
-.header:not(.is-loaded) .title {
+.header.is-disabled .title {
   opacity: 0;
   top: 70px;
 }
@@ -52,15 +52,16 @@
   line-height: 1;
   top: 0;
   width: 100%;
-  transform-style: preserve-3d;
   white-space: nowrap;
 }
 
 .letter {
   display: inline-block;
+  transform-style: preserve-3d;
+  transition: transform 1500ms;
 }
 
-.header:not(.is-loaded) .letter {
+.header.is-disabled .letter {
   opacity: 0;
   transform: translate3d(0, 0, 900px) rotateX(0deg) rotateY(0deg);
 }
