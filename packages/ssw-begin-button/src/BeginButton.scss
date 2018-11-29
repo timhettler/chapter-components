@@ -21,12 +21,12 @@
   z-index: 12;
   position: relative;
   transition: opacity 1s 500ms, transform 800ms 500ms;
-}
 
-.beginButton[disabled] {
-  cursor: default;
-  opacity: 0;
-  transform: translateY(40%);
+  &[disabled] {
+    cursor: default;
+    opacity: 0;
+    transform: translateY(40%);
+  }
 }
 
 .text {
@@ -44,37 +44,37 @@
 .text-a {
   transform: translate3d(0, 0, 0);
   opacity: 1;
-}
 
-.is-light .text-a {
-  color: white;
-}
+  .is-light & {
+    color: white;
+  }
 
-.is-dark .text-a {
-  color: black;
-}
+  .is-dark & {
+    color: black;
+  }
 
-.beginButton:hover .text-a {
-  transform: translate3d(0, -5px, 0);
-  opacity: 0;
+  .beginButton:hover & {
+    transform: translate3d(0, -5px, 0);
+    opacity: 0;
+  }
 }
 
 .text-b {
   transform: translate3d(0, 5px, 0);
   opacity: 0;
-}
 
-.is-light .text-b {
-  color: black;
-}
+  .is-light & {
+    color: black;
+  }
 
-.is-dark .text-b {
-  color: white;
-}
+  .is-dark & {
+    color: white;
+  }
 
-.beginButton:hover .text-b {
-  transform: translate3d(0, 0, 0);
-  opacity: 1;
+  .beginButton:hover & {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
 }
 
 .outline {
@@ -92,18 +92,18 @@
   height: 46px;
   background-size: 180px 46px;
   transform: scaleX(1) scaleY(1);
-}
 
-.is-dark .outline-a {
-  border-color: black;
-}
+  .is-dark & {
+    border-color: black;
+  }
 
-.is-light .outline-a {
-  border-color: white;
-}
+  .is-light & {
+    border-color: white;
+  }
 
-.beginButton:hover .outline-a {
-  transform: scaleX(0.9375) scaleY(0.8);
+  .beginButton:hover & {
+    transform: scaleX(0.9375) scaleY(0.8);
+  }
 }
 
 .outline-b {
@@ -111,17 +111,17 @@
   background-size: 180px 50px;
   opacity: 0;
   transform: scaleX(0.9375) scaleY(0.8);
-}
 
-.is-dark .outline-b {
-  background-color: black;
-}
+  .is-dark & {
+    background-color: black;
+  }
 
-.is-light .outline-b {
-  background-color: white;
-}
+  .is-light & {
+    background-color: white;
+  }
 
-.beginButton:hover .outline-b {
-  opacity: 1;
-  transform: scaleX(1) scaleY(1);
+  .beginButton:hover & {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
 }

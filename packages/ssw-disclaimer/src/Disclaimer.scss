@@ -6,17 +6,17 @@
   line-height: 1.5;
   top: 0;
   transition: opacity 1s, top 1s;
-}
 
-.disclaimer.is-disabled {
-  opacity: 0;
-  top: 70px;
-}
+  &.is-disabled {
+    opacity: 0;
+    top: 70px;
+  }
 
-.disclaimer.is-light {
-  color: white;
-}
+  &.is-light {
+    color: white;
+  }
 
-.disclaimer.is-dark {
-  color: black;
+  &.is-dark {
+    color: black;
+  }
 }
