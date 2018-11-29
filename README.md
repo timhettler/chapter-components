@@ -27,7 +27,7 @@ Chapter-components are React components designed for Samsung Within projects. Th
 - **Linting:** [ESLint](https://eslint.org/docs/user-guide/integrations), [Prettier](https://prettier.io/docs/en/editors.html), Stylelint and [EditorConfig](https://editorconfig.org/#download).\*
 - **Testing:** TBD
 
-It is strongly recommended that you integrate these tools into your editor or IDE.
+\*It is strongly recommended that you integrate these tools into your editor or IDE.
 
 ## Development:
 
