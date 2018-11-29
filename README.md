@@ -45,7 +45,7 @@ git clone git@gitlab.ny.rga.com:samsung-within/chapter-components.git
 - Install dependencies via Yarn. Because we use Yarn Workspaces, this command will also hoist dependencies to the root `node_modules` folder, and symlink accordingly. You **should not use npm** to install dependencies.
 
 ```shell
-yarn
+npm i yarn
 ```
 
 - Run the lerna build command to build each package's dist folder:
