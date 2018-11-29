@@ -80,19 +80,20 @@ git pull --rebase origin master
 
 > Why perform a rebase, and not a merge? Read this ["Merging vs. Rebasing"](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) article for more information.
 
-- Handle any issue surfaced during your rebase, then finish your feature branch
+- Handle any issue surfaced during your rebase, then merge your feature branch into master.
 
 ```shell
-git flow feature finish BRANCH_NAME
+git checkout master
+git pull
+git pull origin your-feature
+git push
 ```
 
-- After merging you should be on the master branch. While on master, do a pull to ensure you have the absolute latest code and tags.
+- Do a pull to ensure you have the absolute latest code and tags. Lerna needs to know what the latest published versions are in order to determine what has changed and what the new versions should be.
 
 ```shell
 git pull origin master --tags
 ```
-
-Lerna needs to know what the latest published versions are in order to determine what has changed and what the new versions should be.
 
 - Run the Lerna update command. This tells you which packages have changed since your merge. Ensure that any updated packages are working properly.
 
