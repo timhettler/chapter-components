@@ -8,21 +8,24 @@ const cx = classNames.bind(styles);
 
 class Disclaimer extends PureComponent {
   render() {
-    const { show, copy } = this.props;
+    const { show, copy, theme } = this.props;
 
     return (
-      <div className={cx('disclaimer', { 'is-loaded': !!show })}>
-        {copy.map(line => (
-          <p>{line}</p>
-        ))}
+      <div className={cx('disclaimer', `is-${theme}`, { 'is-loaded': !!show })}>
+        <p>{copy}</p>
       </div>
     );
   }
 }
 
+Disclaimer.defaultProps = {
+  theme: 'dark',
+};
+
 Disclaimer.propTypes = {
   show: PropTypes.bool,
-  copy: PropTypes.arrayOf(PropTypes.string),
+  copy: PropTypes.string,
+  theme: PropTypes.oneOf(['light', 'dark']),
 };
 
 export default Disclaimer;
