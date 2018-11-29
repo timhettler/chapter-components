@@ -18,10 +18,10 @@ Chapter-components are React components designed for Samsung Within projects. Th
 
 ### Tools
 
-- **CSS:**: Sass and CSS Modules
-- **Transpilation:**: Babel 7
-- **Dev:**: Storybook
-- **Build:**: Webpack 4 & Babel 7
+- **CSS:** Sass and CSS Modules
+- **Transpilation:** Babel 7
+- **Dev:** Storybook
+- **Build:** Webpack 4 & Babel 7
 - **Linting:** ESLint with Prettier and Stylelint
 - **Testing:** TBD
 
@@ -37,8 +37,13 @@ This monorepo uses Yarn Workspaces and Lerna, which automatically symlinks local
 git clone git@gitlab.ny.rga.com:samsung-within/chapter-components.git
 ```
 
-- Ensure your node environment is up to date.
+- Ensure your node environment is up to date. Download the latest, or use nvm to manage environments.
 - Install dependencies via Yarn. Because we use Yarn Workspaces, this command will also hoist dependencies to the root `node_modules` folder, and symlink accordingly. You **should not use npm** to install dependencies.
+
+```
+yarn
+```
+
 - Run the lerna build command to build each package's dist folder:
 
 ```
