@@ -1,7 +1,7 @@
 {
-  "name": "ssw-begin-button",
+  "name": "ssgw-chapter-title",
   "version": "0.0.0",
-  "description": "The button used to start a Samsung Within experience",
+  "description": "Animated text used in chapter bookends",
   "main": "dist/index.js",
   "scripts": {
     "build": "../../node_modules/.bin/webpack ./src/index.js --o ./dist/index.js --config ../../config/webpack.config.js",

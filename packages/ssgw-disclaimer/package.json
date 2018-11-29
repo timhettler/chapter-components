@@ -1,5 +1,5 @@
 {
-  "name": "ssw-disclaimer",
+  "name": "ssgw-disclaimer",
   "version": "0.0.0",
   "description": "Text that warns user about performance requirements",
   "main": "dist/index.js",

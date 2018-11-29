@@ -11,6 +11,7 @@
     "lerna-build": "lerna run build",
     "lerna-updated": "lerna updated",
     "lerna-publish": "lerna publish",
+    "postlerna-publish": "npm version patch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
