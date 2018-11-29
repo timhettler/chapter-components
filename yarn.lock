@@ -1120,9 +1120,9 @@
     inquirer "^6.2.0"
     npmlog "^4.1.2"
 
-"@lerna/publish@^3.5.0":
-  version "3.5.0"
-  resolved "http://npm.sg.rgadev.com:4873/@lerna%2fpublish/-/publish-3.5.0.tgz#e6543375457846557f3cb803f7795a577333a941"
+"@lerna/publish@^3.5.1":
+  version "3.5.1"
+  resolved "http://npm.sg.rgadev.com:4873/@lerna%2fpublish/-/publish-3.5.1.tgz#20ea36e05a76755760b67c78719d424fc129f777"
   dependencies:
     "@lerna/batch-packages" "^3.1.2"
     "@lerna/check-working-tree" "^3.5.0"
@@ -1762,9 +1762,9 @@ ajv-keywords@^3.1.0:
   version "3.2.0"
   resolved "http://npm.sg.rgadev.com:4873/ajv-keywords/-/ajv-keywords-3.2.0.tgz#e86b819c602cf8821ad637413698f1dec021847a"
 
-ajv@^6.1.0, ajv@^6.5.3, ajv@^6.5.5:
-  version "6.5.5"
-  resolved "http://npm.sg.rgadev.com:4873/ajv/-/ajv-6.5.5.tgz#cf97cdade71c6399a92c6d6c4177381291b781a1"
+ajv@^6.1.0, ajv@^6.5.3, ajv@^6.5.5, ajv@^6.6.1:
+  version "6.6.1"
+  resolved "http://npm.sg.rgadev.com:4873/ajv/-/ajv-6.6.1.tgz#6360f5ed0d80f232cc2b294c362d5dc2e538dd61"
   dependencies:
     fast-deep-equal "^2.0.1"
     fast-json-stable-stringify "^2.0.0"
@@ -2003,6 +2003,10 @@ assign-symbols@^1.0.0:
 ast-types@0.11.6:
   version "0.11.6"
   resolved "http://npm.sg.rgadev.com:4873/ast-types/-/ast-types-0.11.6.tgz#4e2266c2658829aef3b40cc33ad599c4e9eb89ef"
+
+astral-regex@^1.0.0:
+  version "1.0.0"
+  resolved "http://npm.sg.rgadev.com:4873/astral-regex/-/astral-regex-1.0.0.tgz#6c8c3fb827dd43ee3918f27b82782ab7658a6fd9"
 
 async-each-series@^1.1.0:
   version "1.1.0"
@@ -6406,8 +6410,8 @@ lcid@^2.0.0:
     invert-kv "^2.0.0"
 
 lerna@^3.4.3:
-  version "3.5.0"
-  resolved "http://npm.sg.rgadev.com:4873/lerna/-/lerna-3.5.0.tgz#fd989b8992701e90e10aa5b3970d6f7a3512ba64"
+  version "3.5.1"
+  resolved "http://npm.sg.rgadev.com:4873/lerna/-/lerna-3.5.1.tgz#350b24b58fc2d7bc2c1e1f4ef3058afe827cfa68"
   dependencies:
     "@lerna/add" "^3.5.0"
     "@lerna/bootstrap" "^3.5.0"
@@ -6421,7 +6425,7 @@ lerna@^3.4.3:
     "@lerna/init" "^3.5.0"
     "@lerna/link" "^3.5.0"
     "@lerna/list" "^3.5.0"
-    "@lerna/publish" "^3.5.0"
+    "@lerna/publish" "^3.5.1"
     "@lerna/run" "^3.5.0"
     "@lerna/version" "^3.5.0"
     import-local "^1.0.0"
@@ -6775,11 +6779,11 @@ lpad-align@^1.0.1:
     meow "^3.3.0"
 
 lru-cache@^4.0.1, lru-cache@^4.1.2, lru-cache@^4.1.3:
-  version "4.1.4"
-  resolved "http://npm.sg.rgadev.com:4873/lru-cache/-/lru-cache-4.1.4.tgz#51cc46e8e6d9530771c857e24ccc720ecdbcc031"
+  version "4.1.5"
+  resolved "http://npm.sg.rgadev.com:4873/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
   dependencies:
     pseudomap "^1.0.2"
-    yallist "^3.0.2"
+    yallist "^2.1.2"
 
 make-dir@^1.0.0, make-dir@^1.2.0:
   version "1.3.0"
@@ -7858,8 +7862,8 @@ pacote@^9.1.0:
     which "^1.3.1"
 
 pako@~1.0.5:
-  version "1.0.6"
-  resolved "http://npm.sg.rgadev.com:4873/pako/-/pako-1.0.6.tgz#0101211baa70c4bca4a0f63f2206e97b7dfaf258"
+  version "1.0.7"
+  resolved "http://npm.sg.rgadev.com:4873/pako/-/pako-1.0.7.tgz#2473439021b57f1516c82f58be7275ad8ef1bb27"
 
 parallel-transform@^1.1.0:
   version "1.1.0"
@@ -8324,7 +8328,7 @@ promzard@^0.3.0:
   dependencies:
     read "1"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "http://npm.sg.rgadev.com:4873/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -8574,11 +8578,12 @@ react-fuzzy@^0.5.2:
     prop-types "^15.5.9"
 
 react-inspector@^2.3.0:
-  version "2.3.0"
-  resolved "http://npm.sg.rgadev.com:4873/react-inspector/-/react-inspector-2.3.0.tgz#fc9c1d38ab687fc0d190dcaf133ae40158968fc8"
+  version "2.3.1"
+  resolved "http://npm.sg.rgadev.com:4873/react-inspector/-/react-inspector-2.3.1.tgz#f0eb7f520669b545b441af9d38ec6d706e5f649c"
   dependencies:
     babel-runtime "^6.26.0"
     is-dom "^1.0.9"
+    prop-types "^15.6.1"
 
 react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
@@ -9391,10 +9396,12 @@ slice-ansi@0.0.4:
   version "0.0.4"
   resolved "http://npm.sg.rgadev.com:4873/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
 
-slice-ansi@1.0.0:
-  version "1.0.0"
-  resolved "http://npm.sg.rgadev.com:4873/slice-ansi/-/slice-ansi-1.0.0.tgz#044f1a49d8842ff307aad6b505ed178bd950134d"
+slice-ansi@2.0.0:
+  version "2.0.0"
+  resolved "http://npm.sg.rgadev.com:4873/slice-ansi/-/slice-ansi-2.0.0.tgz#5373bdb8559b45676e8541c66916cdd6251612e7"
   dependencies:
+    ansi-styles "^3.2.0"
+    astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
 slide@^1.1.6:
@@ -9974,12 +9981,12 @@ symbol.prototype.description@^1.0.0:
     has-symbols "^1.0.0"
 
 table@^5.0.0, table@^5.0.2:
-  version "5.1.0"
-  resolved "http://npm.sg.rgadev.com:4873/table/-/table-5.1.0.tgz#69a54644f6f01ad1628f8178715b408dc6bf11f7"
+  version "5.1.1"
+  resolved "http://npm.sg.rgadev.com:4873/table/-/table-5.1.1.tgz#92030192f1b7b51b6eeab23ed416862e47b70837"
   dependencies:
-    ajv "^6.5.3"
-    lodash "^4.17.10"
-    slice-ansi "1.0.0"
+    ajv "^6.6.1"
+    lodash "^4.17.11"
+    slice-ansi "2.0.0"
     string-width "^2.1.1"
 
 tapable@^1.0.0, tapable@^1.1.0:
@@ -10889,6 +10896,10 @@ y18n@^3.2.1:
 "y18n@^3.2.1 || ^4.0.0", y18n@^4.0.0:
   version "4.0.0"
   resolved "http://npm.sg.rgadev.com:4873/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
+
+yallist@^2.1.2:
+  version "2.1.2"
+  resolved "http://npm.sg.rgadev.com:4873/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
 
 yallist@^3.0.0, yallist@^3.0.2:
   version "3.0.3"

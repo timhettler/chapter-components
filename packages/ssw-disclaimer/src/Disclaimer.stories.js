@@ -3,11 +3,11 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
 import Disclaimer from './';
 
-const stories = storiesOf('Disclaimer', module);
+const stories = storiesOf('Bookend', module);
 
 stories.addDecorator(withKnobs);
 
-stories.add('default', () => (
+stories.add('Disclaimer', () => (
   <Disclaimer
     copy={text(
       'Copy',

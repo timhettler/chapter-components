@@ -3,12 +3,12 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
 import ChapterTitle from './';
 
-const stories = storiesOf('ChapterTitle', module);
+const stories = storiesOf('Bookend', module);
 
 stories.addDecorator(withKnobs);
 
 stories.add(
-  'default',
+  'ChapterTitle',
   () => (
     <ChapterTitle
       title={text('Title', 'Chapter X')}
