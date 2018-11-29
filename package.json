@@ -8,8 +8,9 @@
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
-    "lerna-bootstrap": "lerna bootstrap",
     "lerna-build": "lerna run build",
+    "lerna-updated": "lerna updated",
+    "lerna-publish": "lerna publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {

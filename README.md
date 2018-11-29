@@ -37,20 +37,20 @@ This monorepo uses Yarn Workspaces and Lerna, which automatically symlinks local
 
 - Clone this repo:
 
-```
+```shell
 git clone git@gitlab.ny.rga.com:samsung-within/chapter-components.git
 ```
 
 - Ensure your node environment is up to date. Download the latest, or use nvm to manage environments.
 - Install dependencies via Yarn. Because we use Yarn Workspaces, this command will also hoist dependencies to the root `node_modules` folder, and symlink accordingly. You **should not use npm** to install dependencies.
 
-```
+```shell
 yarn
 ```
 
 - Run the lerna build command to build each package's dist folder:
 
-```
+```shell
 yarn lerna-build
 ```
 
@@ -58,7 +58,7 @@ yarn lerna-build
 
 - Run the storybook tool command:
 
-```
+```shell
 yarn run storybook
 ```
 
@@ -67,3 +67,47 @@ This creates a UI development environment. The tool enables us to create compone
 Learn more by reading the [Storybook documentation](https://storybook.js.org/basics/guide-react/).
 
 - Create a branch according to the [Gitflow Workflow guidelines](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+
+### Merging Properly:
+
+After your merge request has been reviewed and approved, use the following steps to publish new versions of the packages.
+
+- After approval, `git pull` on the master branch, checkout your branch, and rebase on master.
+
+```shel
+git pull --rebase origin master
+```
+
+> Why perform a rebase, and not a merge? Read this ["Merging vs. Rebasing"](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) article for more information.
+
+- Handle any issue surfaced during your rebase, then finish your feature branch
+
+```shell
+git flow feature finish BRANCH_NAME
+```
+
+- After merging you should be on the master branch. While on master, do a pull to ensure you have the absolute latest code and tags.
+
+```shell
+git pull origin master --tags
+```
+
+Lerna needs to know what the latest published versions are in order to determine what has changed and what the new versions should be.
+
+- Run the Lerna update command. This tells you which packages have changed since your merge. Ensure that any updated packages are working properly.
+
+```shell
+yarn lerna-updated
+```
+
+- Run the Lerna publish command. This prompts you to version bump any packages that have changed.
+
+```shell
+yarn lerna-publish
+```
+
+- Push tags to the repo. This triggers the CI to publish the updated packages to our private npm server. **Your changes will not be available to other projects unless you do this final step.**
+
+```shell
+git push origin master --tags
+```
