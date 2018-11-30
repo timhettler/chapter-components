@@ -3,9 +3,7 @@
   "version": "0.0.2",
   "description": "UI components common to all Samsung Within projects",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "module": "dist/index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
