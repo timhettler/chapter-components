@@ -7,7 +7,7 @@ publish:
     - triggers
   script:
     - echo "Starting NPM Deploy"
-    - export NODE_ENV=production && echo $NODE_ENV
+    - export NODE_ENV=dev && echo $NODE_ENV
     - echo "set variables"
     - export BUILD_NUMBER=${CI_PIPELINE_ID} && echo $BUILD_NUMBER
     - printf "BUILD_NUMBER=$BUILD_NUMBER\n" > /tmp/.env
