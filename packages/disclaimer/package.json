@@ -1,7 +1,7 @@
 {
-  "name": "ssgw-begin-button",
+  "name": "@ssgw/disclaimer",
   "version": "0.1.0",
-  "description": "The button used to start a Samsung Within experience",
+  "description": "Text that warns user about performance requirements",
   "main": "dist/index.js",
   "scripts": {
     "build": "../../node_modules/.bin/webpack ./src/index.js --o ./dist/index.js --config ../../config/webpack.config.js",

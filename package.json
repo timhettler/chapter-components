@@ -10,12 +10,12 @@
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
     "lerna-build": "lerna run build",
     "lerna-updated": "lerna updated",
-    "lerna-publish": "lerna version",
-    "postlerna-publish": "npm version patch",
+    "lerna-version": "lerna version",
+    "postlerna-version": "npm version patch",
     "postversion": "git push --follow-tags",
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish:all": "lerna run build --npm-client=npm && for D in packages/*; do (cd $D && npm run publish || true); done",
-    "npm-publish": "npm install && lerna bootstrap --npm-client=npm && npm run publish:all"
+    "npm-publish": "lerna bootstrap --npm-client=npm && npm run publish:all"
   },
   "lint-staged": {
     "packages/*/src/*.{js,json}": [

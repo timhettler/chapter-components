@@ -2,6 +2,7 @@ image: node:latest
 
 before_script:
   - npm install
+  - lerna bootstrap
 
 publish:
   stage: deploy

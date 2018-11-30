@@ -1,7 +1,7 @@
 {
-  "name": "ssgw-disclaimer",
+  "name": "@ssgw/chapter-title",
   "version": "0.1.0",
-  "description": "Text that warns user about performance requirements",
+  "description": "Animated text used in chapter bookends",
   "main": "dist/index.js",
   "scripts": {
     "build": "../../node_modules/.bin/webpack ./src/index.js --o ./dist/index.js --config ../../config/webpack.config.js",
