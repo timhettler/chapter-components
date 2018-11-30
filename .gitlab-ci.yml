@@ -1,8 +1,5 @@
 image: node:latest
 
-before_script:
-  - npm install
-
 publish:
   stage: deploy
   only:
