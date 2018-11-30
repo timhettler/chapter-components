@@ -6,6 +6,7 @@
   "scripts": {
     "build": "../../node_modules/.bin/webpack ./src/index.js --o ./dist/index.js --config ../../config/webpack.config.js",
     "clean": "rm -rf dist node_modules",
+    "publish": "npm publish 2>$1 || echo 'could not publish, skipping'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tim Hettler",
