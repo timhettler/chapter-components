@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/begin-button",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The button used to start a Samsung Within experience",
   "main": "dist/index.js",
   "scripts": {
