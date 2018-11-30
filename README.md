@@ -107,14 +107,10 @@ git pull origin master --tags
 yarn lerna-updated
 ```
 
-- Run the Lerna publish command. This prompts you to version bump any packages that have changed.
+- Run the Lerna version command. This prompts you to update the version any packages that have changed. For most changes, a PATCH update is what you want. (Check out the [Semantic Versioning docs](https://semver.org/) to learn when to use each version type.)
 
 ```shell
-yarn lerna-publish
+yarn lerna-version
 ```
 
-- Push tags to the repo. This triggers the CI to publish the updated packages to our private npm server. **Your changes will not be available to other projects unless you do this final step.**
-
-```shell
-git push origin master --tags
-```
+- If this command runs successfully, it will also perform a PATCH update on the mono repo itself, then push the updated code and tags to origin. This triggers the CI to publish the updated packages to our private npm server.
