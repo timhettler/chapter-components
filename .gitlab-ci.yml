@@ -8,6 +8,5 @@ publish:
   script:
     - echo "Starting NPM Deploy"
     - export NODE_ENV=dev && echo $NODE_ENV
-    - npm install -g npm-cli-login
-    - NPM_USER=$NPM_USER NPM_PASS=$NPM_PASS NPM_EMAIL=$NPM_EMAIL NPM_REGISTRY=$NPM_REGISTRY NPM_SCOPE=@ssgw NPM_RC_PATH=./ npm-cli-login
+    - NPM_USER=$NPM_USER NPM_PASS=$NPM_PASS NPM_EMAIL=$NPM_EMAIL NPM_REGISTRY=$NPM_REGISTRY NPM_SCOPE=@ssgw npx npm-cli-adduser
     - npm run npm-publish
