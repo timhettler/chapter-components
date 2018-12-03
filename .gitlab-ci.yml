@@ -8,15 +8,6 @@ publish:
   script:
     - echo "Starting NPM Deploy"
     - export NODE_ENV=dev && echo $NODE_ENV
-    - echo "set variables"
-    - export BUILD_NUMBER=${CI_PIPELINE_ID} && echo $BUILD_NUMBER
-    - printf "BUILD_NUMBER=$BUILD_NUMBER\n" > /tmp/.env
-    - printf "NPM_USER=$NPM_USER\n" > /tmp/.env
-    - printf "NPM_PASS=$NPM_PASS\n" > /tmp/.env
-    - printf "NPM_EMAIL=$NPM_EMAIL\n" > /tmp/.env
-    - printf "NPM_REGISTRY=$NPM_REGISTRY\n" > /tmp/.env
-    - sed -i 's/\r//g' /tmp/.env
-    - >
-      set -a;
-      source /tmp/.env
+    - npm install -g npm-cli-login
+    - NPM_USER=$NPM_USER NPM_PASS=$NPM_PASS NPM_EMAIL=$NPM_EMAIL NPM_REGISTRY=$NPM_REGISTRY NPM_SCOPE=@ssgw NPM_RC_PATH=./ npm-cli-login
     - npm run npm-publish
