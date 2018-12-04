@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeginButton renders correctly 1`] = `
+<button
+  aria-label="FOO"
+  className="beginButton is-dark"
+  onClick={[Function]}
+>
+  <div
+    className="outline outline-a"
+  />
+  <div
+    className="outline outline-b"
+  />
+  <div
+    className="text text-a"
+  >
+    FOO
+  </div>
+  <div
+    aria-hidden="true"
+    className="text text-b"
+  >
+    FOO
+  </div>
+</button>
+`;

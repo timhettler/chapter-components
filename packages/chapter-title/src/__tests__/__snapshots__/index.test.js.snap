@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChapterTitle renders correctly 1`] = `
+<header
+  className="header is-dark"
+>
+  <h1
+    className="title"
+  >
+    FOO
+  </h1>
+  <h2
+    className="subtitle"
+  >
+    <div
+      className="line"
+    >
+      <span
+        className="letter"
+        style={
+          Object {
+            "transition": "opacity 0ms 0ms, transform 0ms 0ms",
+          }
+        }
+      >
+        B
+      </span>
+      <span
+        className="letter"
+        style={
+          Object {
+            "transition": "opacity 100ms 40ms, transform 100ms 40ms",
+          }
+        }
+      >
+        A
+      </span>
+      <span
+        className="letter"
+        style={
+          Object {
+            "transition": "opacity 200ms 80ms, transform 200ms 80ms",
+          }
+        }
+      >
+        R
+      </span>
+    </div>
+  </h2>
+</header>
+`;

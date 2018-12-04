@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
-import BeginButton from './';
+import BeginButton from '@ssgw/begin-button';
 
 const stories = storiesOf('Bookend', module);
 

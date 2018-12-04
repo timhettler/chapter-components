@@ -29,7 +29,7 @@ Disclaimer.defaultProps = {
 
 Disclaimer.propTypes = {
   disabled: PropTypes.bool,
-  copy: PropTypes.string,
+  copy: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
 };
 
