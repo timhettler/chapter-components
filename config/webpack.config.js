@@ -7,9 +7,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
+    library: 'umd',
   },
   externals: {
     react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
       root: 'React',
     },
   },

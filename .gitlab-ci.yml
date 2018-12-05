@@ -1,10 +1,22 @@
 image: node:latest
 
+before_script:
+  - npm install
+
+cache:
+  paths:
+    - node_modules/
+
+test:
+  - npm run test
+
 publish:
   stage: deploy
   only:
-    - tags
-    - triggers
+    - web
+    - /^v.*$/
+  except:
+    - branches
   script:
     - echo "Starting NPM Deploy"
     - export NODE_ENV=dev && echo $NODE_ENV
