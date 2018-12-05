@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/disclaimer",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Text that warns user about performance requirements",
   "main": "dist/index.js",
   "scripts": {
@@ -18,8 +18,8 @@
     "prop-types": "^15.6.2"
   },
   "peerDependencies": {
+    "node-sass": "4.10.x",
     "react": "16.6.x",
-    "react-dom": "16.6.x",
-    "node-sass": "4.10.x"
+    "react-dom": "16.6.x"
   }
 }
