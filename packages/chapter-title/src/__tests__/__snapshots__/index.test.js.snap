@@ -2,7 +2,7 @@
 
 exports[`ChapterTitle renders correctly 1`] = `
 <header
-  className="header is-dark"
+  className="header is-dark is-default"
 >
   <h1
     className="title"
@@ -19,7 +19,8 @@ exports[`ChapterTitle renders correctly 1`] = `
         className="letter"
         style={
           Object {
-            "transition": "opacity 0ms 0ms, transform 0ms 0ms",
+            "transform": null,
+            "transition": "opacity 100ms 40ms, transform 100ms 40ms",
           }
         }
       >
@@ -29,7 +30,8 @@ exports[`ChapterTitle renders correctly 1`] = `
         className="letter"
         style={
           Object {
-            "transition": "opacity 100ms 40ms, transform 100ms 40ms",
+            "transform": null,
+            "transition": "opacity 200ms 80ms, transform 200ms 80ms",
           }
         }
       >
@@ -39,7 +41,8 @@ exports[`ChapterTitle renders correctly 1`] = `
         className="letter"
         style={
           Object {
-            "transition": "opacity 200ms 80ms, transform 200ms 80ms",
+            "transform": null,
+            "transition": "opacity 300ms 120ms, transform 300ms 120ms",
           }
         }
       >
