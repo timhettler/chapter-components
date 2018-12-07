@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/begin-button",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "The button used to start a Samsung Within experience",
   "main": "dist/index.js",
   "scripts": {
@@ -14,9 +14,9 @@
   "author": "Tim Hettler",
   "license": "UNLICENSED",
   "dependencies": {
+    "@ssgw/utils": "^0.1.0",
     "classnames": "^2.2.6",
-    "prop-types": "^15.6.2",
-    "@ssgw/utils": "*"
+    "prop-types": "^15.6.2"
   },
   "peerDependencies": {
     "node-sass": "4.10.x",
