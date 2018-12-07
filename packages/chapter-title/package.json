@@ -15,7 +15,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "classnames": "^2.2.6",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "@ssgw/utils": "*"
   },
   "peerDependencies": {
     "node-sass": "4.10.x",

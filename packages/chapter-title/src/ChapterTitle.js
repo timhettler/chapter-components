@@ -25,15 +25,6 @@ class ChapterTitle extends PureComponent {
     document.body.removeEventListener('mousemove', this.handleMouseMove);
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.expanded !== prevProps.expanded) {
-      this.toggleLetterTransform(this.props.expanded);
-    }
-    if (this.props.faded !== prevProps.faded) {
-      this.zoomAndFade(this.props.faded);
-    }
-  }
-
   getBoundedNumber(numA, numB) {
     const randomNumber = Math.round(Math.random() * numA) + numB;
     return randomNumber;
@@ -46,19 +37,10 @@ class ChapterTitle extends PureComponent {
     return abs ? Math.abs(random) : random;
   }
 
-  getExpandTransform() {
+  getExpandedTransform() {
     const $tD = this.randomNumber(true);
     const $rY = this.randomNumber(false, 1.3);
     return `translate3d(0, 0, ${$tD}px) rotateX(0deg) rotateY(${$rY}deg)`;
-  }
-
-  toggleLetterTransform(bool) {
-    const $letters = this.$subtitle.current.querySelectorAll(
-      `.${cx('letter')}`
-    );
-    $letters.forEach(letter => {
-      letter.style.transform = bool ? this.getExpandTransform() : null;
-    });
   }
 
   panElement(e, nodeElement, lag) {
@@ -84,24 +66,11 @@ class ChapterTitle extends PureComponent {
     return true;
   }
 
-  zoomAndFade(bool) {
-    const $header = this.$header.current;
-    const $letters = this.$subtitle.current.querySelectorAll(
-      `.${cx('letter')}`
-    );
-
-    $header.style.opacity = bool ? 0 : 1;
-
-    $letters.forEach(letter => {
-      const $randomZ = this.getBoundedNumber(300, 150);
-      const $randomY =
-        this.getBoundedNumber(10, 7) * (Math.random() < 0.5 ? -1 : 1);
-      if (bool) {
-        letter.style.transform = `translate3d(0, 0, ${$randomZ}px) rotateX(0deg) rotateY(${$randomY}deg)`;
-      } else {
-        letter.style.transform = null;
-      }
-    });
+  getFadedTransform() {
+    const $randomZ = this.getBoundedNumber(300, 150);
+    const $randomY =
+      this.getBoundedNumber(10, 7) * (Math.random() < 0.5 ? -1 : 1);
+    return `translate3d(0, 0, ${$randomZ}px) rotateX(0deg) rotateY(${$randomY}deg)`;
   }
 
   handleMouseMove(e) {
@@ -110,13 +79,13 @@ class ChapterTitle extends PureComponent {
   }
 
   getLetterTransition(i) {
-    const increment = 100 * i;
-    const delay = 40 * i;
+    const increment = 100 * (i + 1);
+    const delay = 40 * (i + 1);
 
     return `opacity ${increment}ms ${delay}ms, transform ${increment}ms ${delay}ms`;
   }
 
-  renderSubtitle() {
+  renderSubtitle(state) {
     const lines = this.props.subtitle.split('<br>');
 
     return lines.map((line, i) => {
@@ -126,6 +95,12 @@ class ChapterTitle extends PureComponent {
           className={cx('letter')}
           style={{
             transition: this.getLetterTransition(i),
+            transform:
+              state === 'expanded'
+                ? this.getExpandedTransform()
+                : state === 'faded'
+                ? this.getFadedTransform()
+                : null,
           }}
         >
           {letter.replace(' ', '\u00A0')}
@@ -141,18 +116,18 @@ class ChapterTitle extends PureComponent {
   }
 
   render() {
-    const { disabled, title, theme, expanded } = this.props;
+    const { state, title, theme } = this.props;
 
     return (
       <header
         ref={this.$header}
-        className={cx('header', `is-${theme}`, { 'is-disabled': disabled })}
+        className={cx('header', `is-${theme}`, `is-${state}`)}
       >
         <h1 ref={this.$title} className={cx('title')}>
           {title}
         </h1>
         <h2 ref={this.$subtitle} className={cx('subtitle')}>
-          {this.renderSubtitle()}
+          {this.renderSubtitle(state)}
         </h2>
       </header>
     );
@@ -161,15 +136,14 @@ class ChapterTitle extends PureComponent {
 
 ChapterTitle.defaultProps = {
   theme: 'dark',
+  state: 'default',
 };
 
 ChapterTitle.proptTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
-  disabled: PropTypes.bool,
-  expanded: PropTypes.bool,
-  faded: PropTypes.bool,
+  state: PropTypes.oneOf(['pre', 'default', 'expanded', 'faded']),
 };
 
 export default ChapterTitle;

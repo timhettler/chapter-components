@@ -14,9 +14,16 @@ stories.add(
       title={text('Title', 'Chapter X')}
       subtitle={text('Subtitle', 'Limits Are<br>Meant to be<br>Crossed')}
       theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
-      disabled={boolean('Disabled', false)}
-      expanded={boolean('Expanded', false)}
-      faded={boolean('faded', false)}
+      state={radios(
+        'State',
+        {
+          Pre: 'pre',
+          Default: 'default',
+          Expanded: 'expanded',
+          Faded: 'faded',
+        },
+        'default'
+      )}
     />
   ),
   {

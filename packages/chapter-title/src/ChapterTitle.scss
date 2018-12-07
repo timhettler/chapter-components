@@ -14,6 +14,10 @@
   &.is-dark {
     color: black;
   }
+
+  &.is-faded {
+    opacity: 0;
+  }
 }
 
 .title,
@@ -29,7 +33,7 @@
   top: 0;
   transition: top 800ms, opacity 800ms;
 
-  .header.is-disabled & {
+  .header.is-pre & {
     opacity: 0;
     top: 70px;
   }
@@ -53,10 +57,8 @@
 
 .letter {
   display: inline-block;
-  transform-style: preserve-3d;
-  transition: transform 1500ms;
 
-  .header.is-disabled & {
+  .header.is-pre & {
     opacity: 0;
     transform: translate3d(0, 0, 900px) rotateX(0deg) rotateY(0deg);
   }
