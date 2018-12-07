@@ -1,0 +1,26 @@
+@mixin _mq($media-queries) {
+  $query-list: ();
+  $keys: map-keys($media-queries);
+  $values: map-values($media-queries);
+  @for $i from 1 through length($keys) {
+    $string: '(' + nth($keys, $i) + ':' + nth($values, $i) + ')';
+    @if (length($query-list) != 0) {
+      $string: 'and ' + $string;
+    }
+    $query-list: append($query-list, unquote($string));
+  }
+
+  @media #{$query-list} {
+    @content;
+  }
+}
+
+@mixin prefers-reduced-motion() {
+  @include _mq(
+    (
+      prefers-reduced-motion: 'reduce',
+    )
+  ) {
+    @content;
+  }
+}

@@ -1,20 +1,12 @@
-.beginButton {
-  /* reset styles */
-  -webkit-touch-callout: none;
-  user-select: none;
-  background-color: transparent;
-  border: 0;
-  color: inherit;
-  font-size: inherit;
-  -webkit-font-smoothing: inherit;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  display: block;
-  text-align: inherit;
-  cursor: pointer;
+@import '~@ssgw/utils/src/scss/index';
 
-  /* component-specific styles */
+$begin-button--scale-1: scaleX(1) scaleY(1);
+$begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
+
+.beginButton {
+  @include reset-button;
+  @include box-size;
+
   font-family: 'SamsungOne', Arial, sans-serif;
   width: 180px;
   height: 50px;
@@ -23,9 +15,15 @@
   transition: opacity 1s 500ms, transform 800ms 500ms;
 
   &[disabled] {
-    cursor: default;
     opacity: 0;
     transform: translateY(40%);
+  }
+
+  @include prefers-reduced-motion {
+    & * {
+      transform: none !important;
+      transition: none !important;
+    }
   }
 }
 
@@ -81,7 +79,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 180px;
+  width: 100%;
+  height: 100%;
   opacity: 0.8;
   border-radius: 25px;
   transition: opacity 600ms, transform 600ms;
@@ -89,9 +88,8 @@
 
 .outline-a {
   border: 2px solid;
-  height: 46px;
   background-size: 180px 46px;
-  transform: scaleX(1) scaleY(1);
+  transform: $begin-button--scale-1;
 
   .is-dark & {
     border-color: black;
@@ -101,16 +99,17 @@
     border-color: white;
   }
 
-  .beginButton:hover & {
-    transform: scaleX(0.9375) scaleY(0.8);
+  .beginButton:hover &,
+  .beginButton:focus & {
+    opacity: 0;
+    transform: $begin-button--scale-2;
   }
 }
 
 .outline-b {
-  height: 50px;
   background-size: 180px 50px;
   opacity: 0;
-  transform: scaleX(0.9375) scaleY(0.8);
+  transform: $begin-button--scale-2;
 
   .is-dark & {
     background-color: black;
@@ -120,8 +119,9 @@
     background-color: white;
   }
 
-  .beginButton:hover & {
+  .beginButton:hover &,
+  .beginButton:focus & {
     opacity: 1;
-    transform: scaleX(1) scaleY(1);
+    transform: $begin-button--scale-1;
   }
 }
