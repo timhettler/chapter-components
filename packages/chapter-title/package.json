@@ -4,8 +4,7 @@
   "description": "Animated text used in chapter bookends",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "rm -rf dist && mkdir dist && cp src/*.scss $_",
-    "build": "../../node_modules/.bin/babel --root-mode upward src/*.js -d dist --source-maps --ignore \"src/**/*.stories.js\"",
+    "build": "node ../../scripts/build.js",
     "webpack": "../../node_modules/.bin/webpack ./src/index.js --o ./dist/index.js --config ../../config/webpack.config.js",
     "clean": "rm -rf dist node_modules",
     "publish": "npm publish || echo 'could not publish, skipping'",
