@@ -3,9 +3,7 @@
   "version": "0.0.17",
   "description": "UI components common to all Samsung Within projects",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
@@ -63,6 +61,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "file-loader": "^2.0.0",
     "fs-extra": "^7.0.1",
+    "globby": "^9.0.0",
     "husky": "^1.2.0",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^4.5.0",
