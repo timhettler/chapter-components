@@ -1,9 +1,11 @@
 {
   "name": "chapter-components",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "UI components common to all Samsung Within projects",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
@@ -14,10 +16,8 @@
     "postlerna-version": "npm version patch",
     "postversion": "git push --follow-tags",
     "test": "jest",
-    "publish:all":
-      "lerna run build --npm-client=npm && for D in packages/*; do (cd $D && npm run publish || true); done",
-    "npm-publish":
-      "npm install && lerna bootstrap --npm-client=npm && npm run publish:all"
+    "publish:all": "lerna run build --npm-client=npm && for D in packages/*; do (cd $D && npm run publish || true); done",
+    "npm-publish": "npm install && lerna bootstrap --npm-client=npm && npm run publish:all"
   },
   "lint-staged": {
     "packages/*/src/*.{js,json}": [
