@@ -1,10 +1,4 @@
 .header {
-  z-index: 19 !important;
-  position: fixed;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%);
-  text-align: center;
   transition: opacity 1500ms;
 
   &.is-light {
