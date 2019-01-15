@@ -15,8 +15,10 @@ Chapter-components are React components designed for Samsung Within projects. Th
 ### Core
 
 - **Environment:** Node 10.x
-- **Package Management:** Yarn > 1.7.x, Yarn Workspaces, Lerna
+- **Package Management:** Yarn\* > 1.7.x, Yarn Workspaces, Lerna
 - **Framework:** React 16.6.x
+
+> \*Why Yarn, and not NPM? The main reason is to utilize [Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/). Additionally, Yarn tends to be faster, better at producing deterministic dependency trees, and to have better caching.
 
 ### Tools
 
@@ -27,7 +29,7 @@ Chapter-components are React components designed for Samsung Within projects. Th
 - **Linting:** [ESLint](https://eslint.org/docs/user-guide/integrations), [Prettier](https://prettier.io/docs/en/editors.html), Stylelint and [EditorConfig](https://editorconfig.org/#download).\*
 - **Testing:** TBD
 
-\*It is strongly recommended that you integrate these tools into your editor or IDE.
+> \*It is strongly recommended that you integrate these tools into your editor or IDE.
 
 ## Development:
 
@@ -78,13 +80,13 @@ Learn more by reading the [Storybook documentation](https://storybook.js.org/bas
 
 After your merge request has been reviewed and approved, use the following steps to publish new versions of the packages.
 
-- After approval, `git pull` on the master branch, checkout your branch, and rebase on master.
+- After approval, `git pull` on the master branch, checkout your branch, and rebase\* on master.
 
-```shel
+```shell
 git pull --rebase origin master
 ```
 
-> Why perform a rebase, and not a merge? Read this ["Merging vs. Rebasing"](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) article for more information.
+> \* Why perform a rebase, and not a merge? Read this ["Merging vs. Rebasing"](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) article for more information.
 
 - Handle any issue surfaced during your rebase, then merge your feature branch into master.
 
@@ -114,3 +116,13 @@ yarn lerna-version
 ```
 
 - If this command runs successfully, it will also perform a PATCH update on the mono repo itself, then push the updated code and tags to origin. This triggers the CI to publish the updated packages to our private npm server.
+
+### Creating a New Package
+
+To create a new package, run the following command:
+
+```shell
+yarn create-package
+```
+
+Enter the required info and a set of boilerplate files will be created.

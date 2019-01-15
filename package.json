@@ -3,20 +3,21 @@
   "version": "0.0.16",
   "description": "UI components common to all Samsung Within projects",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
+    "create-package": "node ./scripts/create.js",
     "lerna-build": "lerna run build",
     "lerna-updated": "lerna updated",
     "lerna-version": "lerna version --no-commit-hooks",
     "postlerna-version": "npm version patch",
     "postversion": "git push --follow-tags",
     "test": "jest",
-    "publish:all": "lerna run build --npm-client=npm && for D in packages/*; do (cd $D && npm run publish || true); done",
-    "npm-publish": "npm install && lerna bootstrap --npm-client=npm && npm run publish:all"
+    "publish:all":
+      "lerna run build --npm-client=npm && for D in packages/*; do (cd $D && npm run publish || true); done",
+    "npm-publish":
+      "npm install && lerna bootstrap --npm-client=npm && npm run publish:all"
   },
   "lint-staged": {
     "packages/*/src/*.{js,json}": [
@@ -52,8 +53,10 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
+    "change-case": "^3.1.0",
     "css-loader": "^1.0.1",
     "cssnano": "^4.1.7",
+    "enquirer": "^2.3.0",
     "eslint": "^5.8.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-babel": "^5.2.1",

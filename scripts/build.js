@@ -55,9 +55,9 @@ async function transformScript(file) {
 
     await fs.writeFile(`${destination}/${base}`, contents.code);
     // TODO determine if source mapping is necessary since we aren't minifying source
-    // await fs.writeFile(
+    // await fs.writeJson(
     //   `${destination}/${base}.map`,
-    //   JSON.stringify(contents.map)
+    //   contents.map
     // );
 
     return true;
