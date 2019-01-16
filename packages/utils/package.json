@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/utils",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Common JS and Sass code used across chapter-componets",
   "main": "src/js/index.js",
   "scripts": {
