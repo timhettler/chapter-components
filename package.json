@@ -11,6 +11,7 @@
     "lerna-build": "lerna run build",
     "lerna-updated": "lerna updated",
     "lerna-version": "lerna version --no-commit-hooks",
+    "lerna-force-publish": "lerna version patch --force-publish --no-commit-hooks",
     "postlerna-version": "npm version patch",
     "postversion": "git push --follow-tags",
     "test": "jest",
