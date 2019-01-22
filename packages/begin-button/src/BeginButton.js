@@ -8,14 +8,13 @@ const cx = classNames.bind(styles);
 
 class BeginButton extends PureComponent {
   render() {
-    const { label, disabled, theme, callback } = this.props;
+    const { label, theme, ...rest } = this.props;
 
     return (
       <button
-        onClick={callback}
-        disabled={disabled}
         className={cx('beginButton', `is-${theme}`)}
         aria-label={label}
+        {...rest}
       >
         <div className={cx('outline', 'outline-a')} />
         <div className={cx('outline', 'outline-b')} />
@@ -30,14 +29,11 @@ class BeginButton extends PureComponent {
 
 BeginButton.defaultProps = {
   theme: 'dark',
-  callback: () => {},
 };
 
 BeginButton.propTypes = {
   label: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
   theme: PropTypes.oneOf(['light', 'dark']),
-  callback: PropTypes.func,
 };
 
 export default BeginButton;
