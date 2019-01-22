@@ -1,0 +1,5 @@
+window.utag = {
+  track: jest.fn().mockImplementation((label, data)=> {
+    return data;
+  }),
+};
