@@ -85,8 +85,8 @@ class ChapterTitle extends PureComponent {
     return `opacity ${increment}ms ${delay}ms, transform ${increment}ms ${delay}ms`;
   }
 
-  renderSubtitle(state) {
-    const lines = this.props.subtitle.split('<br>');
+  renderSubtitle(subtitle, state) {
+    const lines = subtitle.split('<br>');
 
     return lines.map((line, i) => {
       const letters = line.split('').map((letter, i) => (
@@ -116,7 +116,7 @@ class ChapterTitle extends PureComponent {
   }
 
   render() {
-    const { state, title, theme, ...rest } = this.props;
+    const { state, title, subtitle, theme, ...rest } = this.props;
 
     return (
       <header
@@ -128,7 +128,7 @@ class ChapterTitle extends PureComponent {
           {title}
         </h1>
         <h2 ref={this.$subtitle} className={cx('subtitle')}>
-          {this.renderSubtitle(state)}
+          {this.renderSubtitle(subtitle, state)}
         </h2>
       </header>
     );
