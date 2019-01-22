@@ -4,7 +4,6 @@ exports[`BeginButton renders correctly 1`] = `
 <button
   aria-label="FOO"
   className="beginButton is-dark"
-  onClick={[Function]}
 >
   <div
     className="outline outline-a"
