@@ -1,0 +1,91 @@
+@import '~@ssgw/utils/src/scss/index';
+
+.UINextChapter {
+  width: 314px;
+  height: 112px;
+}
+
+.UINextChapter *:not(a) {
+  position: absolute;
+}
+
+.title,
+.subtitle,
+.thumbnail {
+
+  .UINextChapter.is-dark & {
+    color: #000;
+  }
+
+  .UINextChapter.is-light & {
+    color: #fff;
+  }
+
+  .UINextChapter.show & {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.link {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  font-family: 'SamsungOne', serif;
+  font-size: 10px;
+  color: rgb(0,0,0);
+  letter-spacing: 0.1em;
+  top: 50%;
+  margin-top: -30px;
+  text-align: right;
+  text-decoration: none;
+  right: 184px;
+  transform: translate3d(60px, 0, 0);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 800ms cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms,
+    -webkit-transform 800ms cubic-bezier(0.215, 0.61, 0.355, 1) 1000ms;
+}
+
+.subtitle {
+  font-family: 'SamsungSharpSansBold', serif;
+  font-size: 18px;
+  color: rgb(0,0,0);
+  letter-spacing: 0.05em;
+  top: 50%;
+  margin-top: -15px;
+  text-align: right;
+  right: 184px;
+  cursor: pointer;
+  transform: translate3d(60px, 0, 0);
+  opacity: 0;
+  transition: opacity 800ms cubic-bezier(0.215, 0.61, 0.355, 1) 1150ms,
+    -webkit-transform 800ms cubic-bezier(0.215, 0.61, 0.355, 1) 1150ms;
+}
+
+.thumbnail {
+  width: 164px;
+  height: 112px;
+  top: 50%;
+  margin-top: -56px;
+  right: 0;
+  background-size: 164px 112px;
+  background-position: 164px 112px;
+  border-radius: 10px;
+  transform: translate3d(60px, 0, 0);
+  opacity: 0;
+  transition: opacity 800ms cubic-bezier(0.215, 0.61, 0.355, 1) 1450ms,
+    -webkit-transform 800ms cubic-bezier(0.215, 0.61, 0.355, 1) 1450ms;
+
+  .UINextChapter.is-dark & {
+    border: 1px solid rgb(68, 68, 68);
+  }
+
+  .UINextChapter.is-light & {
+    border: 1px solid rgb(255, 255, 255);
+  }
+}
