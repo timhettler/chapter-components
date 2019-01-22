@@ -46,6 +46,7 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-centered": "^4.1.7",
     "@storybook/addon-info": "^4.1.7",
     "@storybook/addon-knobs": "^4.1.7",
     "@storybook/addon-options": "^4.1.7",
