@@ -116,12 +116,13 @@ class ChapterTitle extends PureComponent {
   }
 
   render() {
-    const { state, title, theme } = this.props;
+    const { state, title, theme, ...rest } = this.props;
 
     return (
       <header
         ref={this.$header}
         className={cx('header', `is-${theme}`, `is-${state}`)}
+        {...rest}
       >
         <h1 ref={this.$title} className={cx('title')}>
           {title}
