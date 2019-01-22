@@ -2,6 +2,10 @@ function replaceWithId(string, id = '', template = '{id}') {
   return string.replace(template, id);
 }
 
+// Notes:
+// 'window.utag.track' is used on the Samsung US site
+// 'window.track' is used everywhere else
+
 export function track(data, id) {
   if (!window.track && !window.utag) return;
 
