@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chevron renders correctly 1`] = `
+<svg
+  className="container"
+  height={null}
+  viewBox="0 0 14 8"
+  width="100%"
+>
+  <polyline
+    points="0,1 6,7 7,8 8,7 14,1 13,0 7,6 1,0 "
+  />
+</svg>
+`;
