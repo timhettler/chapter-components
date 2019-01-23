@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 class Disclaimer extends PureComponent {
   render() {
-    const { disabled, copy, theme } = this.props;
+    const { disabled, copy, theme, ...rest } = this.props;
 
     return (
       <div
@@ -16,6 +16,7 @@ class Disclaimer extends PureComponent {
           'is-disabled': disabled,
         })}
         aria-hidden={disabled}
+        {...rest}
       >
         <p>{copy}</p>
       </div>

@@ -1,13 +1,11 @@
 {
   "name": "chapter-components",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "UI components common to all Samsung Within projects",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -s ./.storybook/public -p 9001 -c .storybook",
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
     "create-package": "node ./scripts/create.js",
     "lerna-build": "lerna run build",
@@ -46,6 +44,7 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-centered": "^4.1.7",
     "@storybook/addon-info": "^4.1.7",
     "@storybook/addon-knobs": "^4.1.7",
     "@storybook/addon-options": "^4.1.7",

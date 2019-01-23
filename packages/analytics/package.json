@@ -1,0 +1,14 @@
+{
+  "name": "@ssgw/analytics",
+  "version": "0.1.0",
+  "description": "This package contains a helper function for explicit tracking",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node ../../scripts/build.js",
+    "clean": "rm -rf dist node_modules",
+    "publish": "npm publish || echo 'could not publish, skipping'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R/GA",
+  "license": "UNLICENSED"
+}
