@@ -12,7 +12,8 @@ stories.add('NextChapter', () => (
     href={text('Link', 'https://www.samsung.com/uk/explore/samsung-within-5/')}
     title={text('Title', 'Next: Chapter 5')}
     subtitle={text('Subtitle', 'More than a Stylus')}
-    state={radios('Toggle', { Show: 'show', Hide: 'hide' }, 'show')}
+    disabled={boolean('Disabled', false)}
     theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
+    imgSrc={text('Image Url', '')}
   />
 ));

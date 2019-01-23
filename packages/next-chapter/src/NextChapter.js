@@ -8,37 +8,41 @@ const cx = classNames.bind(styles);
 
 class NextChapter extends PureComponent {
   render() {
-    const { href, title, subtitle, state, theme } = this.props;
+    const { href, imgSrc, title, subtitle, disabled, theme } = this.props;
     return (
-      <div
+      <a
         className={cx(
-          'UINextChapter',
+          'nextChapter',
           `is-${theme}`,
-          `${state !== 'show' ? 'hide' : 'show'}`
+          `${disabled ? '' : 'show'}`
         )}
+        href={href}
       >
-        <a className={cx('link')} href={href}>
-          <div className={cx('title')}> {title} </div>
-          <div className={cx('subtitle')}>{subtitle}</div>
-          <div className={cx('thumbnail')} />
-        </a>
-      </div>
+        <div className={cx('copy')}>
+          <div className={cx('title')}> {title} </div>{' '}
+          <div className={cx('subtitle')}> {subtitle} </div>{' '}
+        </div>
+        <div
+          className={cx('thumbnail')}
+          style={{
+            backgroundImage: `url(${imgSrc})`,
+          }}
+        />{' '}
+      </a>
     );
   }
 }
 
 NextChapter.defaultProps = {
-  title: 'Next: Chapter X',
-  subtitle: 'Title of Chapter X',
   theme: 'light',
-  state: 'hide',
+  disabled: false,
 };
 
 NextChapter.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
   theme: PropTypes.oneOf(['light', 'dark']),
-  state: PropTypes.oneOf(['show', 'hide']),
+  disabled: PropTypes.bool,
 };
 
 export default NextChapter;
