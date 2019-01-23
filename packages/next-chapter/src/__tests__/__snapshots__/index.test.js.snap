@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NextChapter renders correctly 1`] = `
+<a
+  className="nextChapter is-light show"
+>
+  <div
+    className="copy"
+  >
+    <div
+      className="title ui_next"
+    />
+    <div
+      className="subtitle ui_next"
+    />
+  </div>
+  <div
+    className="thumbnail ui_next"
+    style={
+      Object {
+        "backgroundImage": "url(undefined)",
+      }
+    }
+  />
+</a>
+`;

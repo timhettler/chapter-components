@@ -1,0 +1,62 @@
+@import '~@ssgw/utils/src/scss/index';
+
+.nextChapter {
+  display: flex;
+  align-items: center;
+  width: 314px;
+  text-decoration: none;
+}
+
+.copy {
+  margin-right: 15px;
+  text-align: right;
+}
+
+.title {
+  font-family: 'SamsungOne', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  margin-bottom: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-delay: 0ms;
+}
+
+.subtitle {
+  font-family: 'SamsungSharpSansBold', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  transition-delay: 150ms;
+}
+
+.thumbnail {
+  width: 164px;
+  min-height: 112px;
+  flex-shrink: 0;
+  background-size: 164px 112px;
+  background-position: 164px 112px;
+  border-radius: 10px;
+  border: 1px solid #444444;
+  transition-delay: 150ms * 2;
+}
+
+.ui_next {
+  opacity: 0;
+  transform: translateX(60px);
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-duration: 800ms;
+
+  .nextChapter.is-dark & {
+    color: #000;
+  }
+
+  .nextChapter.is-light & {
+    color: #fff;
+  }
+
+  .nextChapter.show & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
