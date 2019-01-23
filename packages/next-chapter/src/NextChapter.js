@@ -8,26 +8,26 @@ const cx = classNames.bind(styles);
 
 class NextChapter extends PureComponent {
   render() {
-    const { href, imgSrc, title, subtitle, disabled, theme } = this.props;
+    const { imgSrc, title, subtitle, disabled, theme, ...rest } = this.props;
     return (
       <a
         className={cx(
           'nextChapter',
           `is-${theme}`,
-          `${disabled ? '' : 'show'}`
+          `${disabled ? null : 'show'}`
         )}
-        href={href}
+        {...rest}
       >
         <div className={cx('copy')}>
-          <div className={cx('title')}> {title} </div>{' '}
-          <div className={cx('subtitle')}> {subtitle} </div>{' '}
+          <div className={cx('title', 'ui_next')}>{title}</div>
+          <div className={cx('subtitle', 'ui_next')}>{subtitle}</div>
         </div>
         <div
-          className={cx('thumbnail')}
+          className={cx('thumbnail', 'ui_next')}
           style={{
             backgroundImage: `url(${imgSrc})`,
           }}
-        />{' '}
+        />
       </a>
     );
   }
@@ -39,8 +39,9 @@ NextChapter.defaultProps = {
 };
 
 NextChapter.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
   disabled: PropTypes.bool,
 };

@@ -14,6 +14,9 @@ stories.add('NextChapter', () => (
     subtitle={text('Subtitle', 'More than a Stylus')}
     disabled={boolean('Disabled', false)}
     theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
-    imgSrc={text('Image Url', '')}
+    imgSrc={text(
+      'Image Url',
+      'https://www.foot.com/wp-content/uploads/2017/03/placeholder.gif'
+    )}
   />
 ));
