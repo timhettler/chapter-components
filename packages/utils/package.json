@@ -12,8 +12,8 @@
   "author": "Tim Hettler",
   "license": "UNLICENSED",
   "peerDependencies": {
-    "node-sass": "4.10.x",
-    "react": "16.6.x",
-    "react-dom": "16.6.x"
+    "node-sass": ">=4.10.0",
+    "react": ">=16.6.0",
+    "react-dom": ">=16.6.0"
   }
 }
