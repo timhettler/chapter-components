@@ -1,9 +1,11 @@
 {
   "name": "chapter-components",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "UI components common to all Samsung Within projects",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "storybook": "start-storybook -s ./.storybook/public -p 9001 -c .storybook",
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
