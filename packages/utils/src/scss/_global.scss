@@ -1,0 +1,26 @@
+@mixin global-styles() {
+  // Make page full-screen and disallow scrolling
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  // The AEM target needs to be visible in the editor in order to access the variable config,
+  // but hidden from view in production
+  .aem-target {
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+
+    .aem-AuthorLayer-Edit & {
+      height: 30px;
+    }
+  }
+
+  // This is a mock header used in development to ensure that our app scales correctly when it's not 100% of the viewport
+  .aem-header {
+    background-color: #666;
+    height: 100px;
+  }
+}
