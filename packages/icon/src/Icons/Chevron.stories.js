@@ -10,6 +10,7 @@ stories.addDecorator(withKnobs);
 stories.add(`${Component.name}`, () => (
   <Component
     width={text('Width', '200px')}
+    height={text('Height', '')}
     fill={color('Fill', '#000000')}
     dir={select(
       'Direction',
