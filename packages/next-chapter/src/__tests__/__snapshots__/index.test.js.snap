@@ -9,16 +9,20 @@ exports[`NextChapter renders correctly 1`] = `
   >
     <div
       className="title ui_next"
-    />
+    >
+      FOO
+    </div>
     <div
       className="subtitle ui_next"
-    />
+    >
+      BAR
+    </div>
   </div>
   <div
     className="thumbnail ui_next"
     style={
       Object {
-        "backgroundImage": "url(undefined)",
+        "backgroundImage": "url(BUZ)",
       }
     }
   />
