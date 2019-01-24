@@ -6,6 +6,8 @@ import styles from './Icon.scss';
 export default function Icon(props) {
   const { height, width, children, ...rest } = props;
 
+  // We want the default dimensions to be 100% width, which covers most
+  // use-cases, but only if BOTH the width and height props are unset
   const trueWidth = props.width || props.height ? props.width : '100%';
   const trueHeight = props.width || props.height ? props.height : null;
 
