@@ -8,8 +8,8 @@ export default function Icon(props) {
 
   // We want the default dimensions to be 100% width, which covers most
   // use-cases, but only if BOTH the width and height props are unset
-  const trueWidth = props.width || props.height ? props.width : '100%';
-  const trueHeight = props.width || props.height ? props.height : null;
+  const trueWidth = width || height ? width : '100%';
+  const trueHeight = width || height ? height : null;
 
   return (
     <svg
