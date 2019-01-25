@@ -1,48 +1,37 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
-import ShareGroup from './';
+import ShareGroup, { ShareLink, ReplayButton } from './';
 
 const stories = storiesOf('Bookend', module);
 
-const tracking = {
-  shareFacebook: {
-    'data-omni-type': 'microsite_sns',
-    'data-omni': 'share:facebook',
-  },
-  shareTwitter: {
-    'data-omni-type': 'microsite_sns',
-    'data-omni': 'share:twitter',
-  },
-  shareEmail: {
-    'data-omni-type': 'microsite_sns',
-    'data-omni': 'share:email',
-  },
-  replay: {
-    'data-omni-type': 'microsite_contentinter',
-    'data-omni': 'brand hub topic landing:more than a stylus_replay',
-  },
-};
-
 stories.addDecorator(withKnobs);
 
-stories.add(`ShareGroup`, () => (
+stories.add('ShareGroup', () => (
   <ShareGroup
-    replay={text('ReplayText', 'Replay')}
-    shareOn={text('ShareText', 'Share On')}
-    fb={text('FB:Name', 'Facebook')}
-    tw={text('TWT:Name', 'Twitter')}
-    mail={text('Email:Name', 'Email')}
+    title={text('ShareGroupTitle', 'Share On')}
+    disabled={boolean('Disabled', false)}
     theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
-    facebookLink={text('FB:Link', 'http://smsng.co/within5ukFS')}
-    twitterLink={text('TW:Link', 'http://smsng.co/within5ukTS')}
-    twitterHashtags={text('TW:Hashtags', 'DoWhatYouCant')}
-    twitterText={text('TW:Text', 'Do what you cant with samsung galaxy.')}
-    emailSubject={text(
-      'Email:Subject',
-      'Do what you cant with samsung galaxy.'
-    )}
-    trackingInfo={tracking}
-    emailBody={text('Email:Subject', 'Do what you cant with samsung galaxy.')}
-  />
+  >
+    <ShareLink
+      label="Twitter"
+      icon="data:image/svg+xml,%3Csvg height='56.693' width='56.693' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M52.837 15.065a20.11 20.11 0 0 1-5.805 1.591 10.125 10.125 0 0 0 4.444-5.592 20.232 20.232 0 0 1-6.418 2.454 10.093 10.093 0 0 0-7.377-3.192c-5.581 0-10.106 4.525-10.106 10.107 0 .791.089 1.562.262 2.303-8.4-.422-15.848-4.445-20.833-10.56a10.055 10.055 0 0 0-1.368 5.082c0 3.506 1.784 6.6 4.496 8.412a10.078 10.078 0 0 1-4.578-1.265l-.001.128c0 4.896 3.484 8.98 8.108 9.91a10.162 10.162 0 0 1-4.565.172c1.287 4.015 5.019 6.938 9.441 7.019a20.276 20.276 0 0 1-12.552 4.327c-.815 0-1.62-.048-2.411-.142a28.6 28.6 0 0 0 15.493 4.541c18.591 0 28.756-15.4 28.756-28.756 0-.438-.009-.875-.028-1.309a20.47 20.47 0 0 0 5.042-5.23z'/%3E%3C/svg%3E"
+      url="http://smsng.co/within5ukTS"
+    />
+    <ShareLink
+      label="Facebook"
+      icon="data:image/svg+xml,%3Csvg width='512' height='512' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' d='M-1-1h582v402H-1z'/%3E%3Cg%3E%3Cpath d='M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64h-64z'/%3E%3C/g%3E%3C/svg%3E"
+      url="http://smsng.co/within5ukFS"
+    />
+    <ShareLink
+      label="Email"
+      icon="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100.354 100.352'%3E%3Cpath d='M93.09 76.224c.047-.145.079-.298.079-.459V22.638c0-.162-.032-.316-.08-.462-.007-.02-.011-.04-.019-.06a1.492 1.492 0 0 0-.276-.46c-.008-.009-.009-.02-.017-.029-.005-.005-.011-.007-.016-.012a1.504 1.504 0 0 0-.442-.323c-.013-.006-.023-.014-.036-.02a1.48 1.48 0 0 0-.511-.123c-.018-.001-.035-.005-.053-.005-.017-.001-.032-.005-.049-.005H8.465c-.017 0-.033.004-.05.005l-.048.005a1.497 1.497 0 0 0-.518.125c-.01.004-.018.011-.028.015-.17.081-.321.191-.448.327-.005.005-.011.006-.016.011-.008.008-.009.019-.017.028a1.5 1.5 0 0 0-.277.461c-.008.02-.012.04-.019.061-.048.146-.08.3-.08.462v53.128c0 .164.033.32.082.468l.018.059a1.5 1.5 0 0 0 .28.462c.007.008.009.018.016.026.006.007.014.011.021.018.049.051.103.096.159.14.025.019.047.042.073.06.066.046.137.083.21.117.018.008.034.021.052.028.181.077.38.121.589.121h83.204c.209 0 .408-.043.589-.121.028-.012.054-.03.081-.044.062-.031.124-.063.181-.102.03-.021.057-.048.086-.071.051-.041.101-.082.145-.129l.025-.022c.008-.009.01-.021.018-.03a1.5 1.5 0 0 0 .275-.458c.01-.022.015-.043.022-.065zM9.965 26.04l25.247 23.061L9.965 72.346V26.04zm51.746 21.931c-.104.068-.214.125-.301.221-.033.036-.044.083-.073.121l-11.27 10.294-37.736-34.469h75.472L61.711 47.971zm-24.275 3.161l11.619 10.613a1.496 1.496 0 0 0 2.023 0l11.475-10.481 25.243 23.002H12.309l25.127-23.134zm27.342-1.9L90.169 26.04v46.33L64.778 49.232z'/%3E%3C/svg%3E"
+      url="email.com/share"
+    />
+    <ReplayButton
+      label={text('Replay Text', 'Replay')}
+      icon="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512'%3E%3Cpath fill='none' d='M-1-1h582v402H-1z'/%3E%3Cg%3E%3Cpath d='M256 512c-68.4 0-132.7-26.6-181-75S0 324.4 0 256 26.6 123.3 75 75 187.6 0 256 0c48.5 0 95.7 13.6 136.6 39.4 28.7 18.1 53.3 41.6 72.7 69.1V24.4c0-5.8 4.7-10.5 10.5-10.5s10.5 4.7 10.5 10.5v122.3c0 4.9-3.4 9.1-8.1 10.3-4.8 1.1-9.7-1.2-11.9-5.6C426.3 71 345.7 21.1 256 21.1 126.5 21.1 21.1 126.5 21.1 256S126.5 490.9 256 490.9 490.9 385.5 490.9 256c0-5.8 4.7-10.5 10.5-10.5s10.5 4.7 10.5 10.5c0 68.4-26.6 132.7-75 181S324.4 512 256 512z'/%3E%3Cpath d='M474.8 158.2H357.5c-5.8 0-10.5-4.7-10.5-10.5s4.7-10.5 10.5-10.5h117.3c5.8 0 10.5 4.7 10.5 10.5s-4.7 10.5-10.5 10.5z'/%3E%3C/g%3E%3C/svg%3E"
+      onClick={() => console.log('replay!')}
+    />
+  </ShareGroup>
 ));
