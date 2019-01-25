@@ -1,53 +1,56 @@
 @import '~@ssgw/utils/src/scss/index';
 
-%transition-default-properties {
+@mixin transition-default-properties() {
   transition-property: opacity, transform;
   transition-delay: 0ms;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+@function border-divider-style() {
+  @return 1px solid #888888;
+}
+
 .share-group {
   display: flex;
-  width: auto;
-  height: 50px;
-  padding: 2px 0px;
+  flex-direction: column;
   font-family: 'SamsungSansMedium', sans-serif;
-
-  &__line {
-    height: 50px;
-    border-width: 0.8px;
-    border-style: solid;
-    border-color: inherit;
-    margin: 0 30px 0 20px;
-  }
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+  transition: opacity 350ms, transform 350ms, visibility 400ms;
 
   &__title {
-    position: absolute;
+    align-self: flex-start;
     font-family: 'SamsungSharpSans', sans-serif;
     font-size: 9px;
     color: inherit;
-    left: 0;
-    top: -20px;
     letter-spacing: 0.2em;
-    opacity: 1;
+    margin-bottom: 8px;
     text-transform: uppercase;
+  }
+
+  &__content {
+    display: flex;
   }
 
   &.is-light {
     color: #fff;
-    border-color: #fff;
   }
 
   &.is-dark {
     color: #323232;
-    border-color: #888888;
+  }
+
+  &.fade-in {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .shareLink {
   position: relative;
   display: block;
-  flex: 1;
   width: 50px;
   height: 50px;
   margin: 0 5px;
@@ -65,10 +68,6 @@
     margin-left: 0;
   }
 
-  span {
-    display: block;
-  }
-
   &__border {
     top: 0;
     left: 0;
@@ -79,12 +78,12 @@
     border-style: solid;
     border-color: inherit;
 
-    &:nth-child(1) {
+    &--primary {
       opacity: 0.4;
       transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1) 0ms;
     }
 
-    &:nth-child(2) {
+    &--secondary {
       opacity: 0;
       transition: opacity 800ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms,
         transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1) 0ms;
@@ -92,13 +91,15 @@
   }
 
   &__icon {
+    display: block;
     width: 20px;
     height: 20px;
     left: 50%;
     top: 50%;
     margin-left: -10px;
     margin-top: -10px;
-    @extend %transition-default-properties;
+    background-size: cover;
+    @include transition-default-properties();
 
     &--primary {
       opacity: 0.7;
@@ -113,13 +114,13 @@
     }
   }
 
-  &:hover &__border:nth-child(1),
-  &:focus &__border:nth-child(1) {
+  &:hover &__border--primary,
+  &:focus &__border--primary {
     opacity: 1;
   }
 
-  &:hover &__border:nth-child(2),
-  &:focus &__border:nth-child(2) {
+  &:hover &__border--secondary,
+  &:focus &__border--secondary {
     animation: borderFade 400ms 0ms cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
   }
 
@@ -153,40 +154,49 @@
 .replayBtn {
   @include reset-button();
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   position: relative;
-  width: 50px;
-  height: 50px;
+  padding: 0 15px;
   opacity: 1;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
 
-  * {
-    position: absolute;
+  &.replayBtn--divider {
+    &_l {
+      border-left: border-divider-style();
+      margin-left: 15px;
+    }
+
+    &_r {
+      border-right: border-divider-style();
+      margin-right: 15px;
+    }
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
   }
 
   &__text {
     font-family: 'SamsungSharpSans', sans-serif;
     font-size: 9px;
     color: inherit;
-    bottom: -2px;
-    width: 100%;
     letter-spacing: 0.2em;
-    transform-style: preserve-3d;
-    @extend %transition-default-properties;
+    @include transition-default-properties();
 
     &--primary {
       opacity: 0.7;
       transition-duration: 600ms;
-      transform: translate3d(0, 0, 0);
+      transform: translateY(11px);
     }
 
     &--secondary {
       opacity: 0;
       transition-duration: 300ms;
-      transform: translate3d(0, 5px, 0);
+      transform: translateY(5px);
     }
   }
 
@@ -196,7 +206,7 @@
     height: 30px;
     background-size: 30px 30px;
     opacity: 0.7;
-    @extend %transition-default-properties;
+    @include transition-default-properties();
     transition-duration: 500ms;
     transform: rotate(0deg);
     transform-origin: center;
@@ -212,23 +222,13 @@
   &:focus &__text--primary {
     opacity: 0;
     transition-duration: 300ms;
-    transform: translate3d(0, -5px, 0);
+    transform: translateY(0);
   }
 
   &:hover &__text--secondary,
   &:focus &__text--secondary {
     opacity: 1;
     transition-duration: 600ms;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
   }
-}
-
-.fade-in {
-  opacity: 1;
-  transition: opacity 1s;
-}
-
-.fade-out {
-  opacity: 0;
-  transition: opacity 1s;
 }
