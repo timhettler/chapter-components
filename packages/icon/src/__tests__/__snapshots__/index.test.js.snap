@@ -2,7 +2,7 @@
 
 exports[`Chevron renders correctly 1`] = `
 <svg
-  className="container"
+  className="icon_style"
   height={null}
   viewBox="0 0 14 8"
   width="100%"
