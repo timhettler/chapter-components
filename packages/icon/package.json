@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/icon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A generalized component to display SVGs",
   "main": "dist/index.js",
   "scripts": {
