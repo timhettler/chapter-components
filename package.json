@@ -7,6 +7,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prestorybook": "yarn lerna-build",
     "storybook": "start-storybook -s ./.storybook/public -p 9001 -c .storybook",
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
     "create-package": "node ./scripts/create.js",
@@ -42,10 +43,10 @@
   "dependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.5",
-    "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/polyfill": "^7.0.0",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
     "@storybook/addon-centered": "^4.1.7",
     "@storybook/addon-info": "^4.1.7",
     "@storybook/addon-knobs": "^4.1.7",
@@ -89,6 +90,7 @@
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   }

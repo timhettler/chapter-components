@@ -2,7 +2,7 @@
   "name": "@ssgw/begin-button",
   "version": "0.1.14",
   "description": "The button used to start a Samsung Within experience",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "node ../../scripts/build.js",
     "webpack": "../../node_modules/.bin/webpack ./src/index.js --o ./dist/index.js --config ../../config/webpack.config.js",

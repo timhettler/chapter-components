@@ -2,7 +2,7 @@
   "name": "@ssgw/disclaimer",
   "version": "0.1.11",
   "description": "Text that warns user about performance requirements",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "node ../../scripts/build.js",
     "webpack": "../../node_modules/.bin/webpack ./src/index.js --o ./dist/index.js --config ../../config/webpack.config.js",
@@ -13,6 +13,7 @@
   "author": "Tim Hettler",
   "license": "UNLICENSED",
   "dependencies": {
+    "@ssgw/begin-button": "^0.1.14",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2"
   },
