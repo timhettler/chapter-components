@@ -20,7 +20,6 @@ class ShareLink extends PureComponent {
 
   render() {
     const { icon, url, label, ...rest } = this.props;
-    console.log(icon);
     return (
       <a
         className={cx('shareLink')}
@@ -36,14 +35,12 @@ class ShareLink extends PureComponent {
         <span
           className={cx('shareLink__border', 'shareLink__border--secondary')}
         />
-        <span
-          style={{ backgroundImage: `url("${icon}")` }}
-          className={cx('shareLink__icon', 'shareLink__icon--primary')}
-        />
-        <span
-          style={{ backgroundImage: `url("${icon}")` }}
-          className={cx('shareLink__icon', 'shareLink__icon--secondary')}
-        />
+        <span className={cx('shareLink__icon', 'shareLink__icon--primary')}>
+          {icon}
+        </span>
+        <span className={cx('shareLink__icon', 'shareLink__icon--secondary')}>
+          {icon}
+        </span>
       </a>
     );
   }
@@ -54,7 +51,7 @@ ShareLink.defaultProps = {};
 ShareLink.propTypes = {
   label: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  icon: PropTypes.string,
+  icon: PropTypes.node,
 };
 
-export { ShareLink };
+export default ShareLink;

@@ -60,7 +60,7 @@
   border: none;
   background-color: transparent;
 
-  * {
+  [class*='shareLink__'] {
     position: absolute;
   }
 
@@ -98,7 +98,6 @@
     top: 50%;
     margin-left: -10px;
     margin-top: -10px;
-    background-size: cover;
     @include transition-default-properties();
 
     &--primary {
@@ -204,12 +203,11 @@
     top: 0;
     width: 30px;
     height: 30px;
-    background-size: 30px 30px;
     opacity: 0.7;
     @include transition-default-properties();
     transition-duration: 500ms;
     transform: rotate(0deg);
-    transform-origin: center;
+    transform-origin: 45% center;
   }
 
   &:hover &__icon,
