@@ -1,3 +1,3 @@
 export { default } from './js/ShareGroup';
-export { ShareLink } from './js/ShareLink';
-export { ReplayButton } from './js/ReplayButton';
+export { default as ShareLink } from './js/ShareLink';
+export { default as ReplayButton } from './js/ReplayButton';

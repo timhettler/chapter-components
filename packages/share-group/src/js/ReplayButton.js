@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
+import { Replay } from '../../../icon/src/';
 import styles from '../ShareGroup.scss';
 
 const cx = classNames.bind(styles);
@@ -17,10 +18,7 @@ class ReplayButton extends PureComponent {
         )}
         {...rest}
       >
-        <span
-          className={cx('replayBtn__icon')}
-          style={{ backgroundImage: `url("${icon}")` }}
-        />
+        <span className={cx('replayBtn__icon')}>{icon}</span>
         <div className={cx('replayBtn__copy')}>
           <span className={cx('replayBtn__text', 'replayBtn__text--primary')}>
             {label}
@@ -41,7 +39,7 @@ ReplayButton.defaultProps = {
 ReplayButton.propTypes = {
   label: PropTypes.string.isRequired,
   dividerPos: PropTypes.oneOf(['left', 'right']),
-  icon: PropTypes.string,
+  icon: PropTypes.node,
 };
 
-export { ReplayButton };
+export default ReplayButton;

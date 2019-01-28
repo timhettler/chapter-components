@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 
 import styles from './Icon.scss';
+
+const cx = classNames.bind(styles);
 
 export default function Icon(props) {
   const { height, width, children, ...rest } = props;
@@ -15,7 +18,7 @@ export default function Icon(props) {
     <svg
       width={trueWidth}
       height={trueHeight}
-      className={styles.container}
+      className={cx('icon_style')}
       {...rest}
     >
       {children}
