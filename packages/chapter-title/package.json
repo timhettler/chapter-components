@@ -1,8 +1,8 @@
 {
   "name": "@ssgw/chapter-title",
-  "version": "0.2.9",
+  "version": "0.2.8",
   "description": "Animated text used in chapter bookends",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "node ../../scripts/build.js",
     "webpack": "../../node_modules/.bin/webpack ./src/index.js --o ./dist/index.js --config ../../config/webpack.config.js",
