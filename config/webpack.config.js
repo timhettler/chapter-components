@@ -1,22 +1,15 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   bail: true,
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
-    library: 'umd',
+    libraryTarget: 'commonjs2',
   },
-  externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'react',
-      root: 'React',
-    },
-  },
+  externals: ['react'],
   module: {
     strictExportPresence: true,
     rules: [
@@ -25,6 +18,7 @@ module.exports = {
       {
         test: /\.js$/,
         enforce: 'pre',
+        exclude: /(node_modules)/,
         use: [
           {
             options: {
@@ -40,6 +34,7 @@ module.exports = {
           {
             test: /\.js$/,
             loader: require.resolve('babel-loader'),
+            exclude: /(node_modules)/,
             options: {
               rootMode: 'upward',
               compact: true,

@@ -1,9 +1,20 @@
 module.exports = {
-  presets: ['@babel/preset-env', '@babel/preset-react'],
-  plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]],
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          esmodules: true,
+        },
+        modules: false,
+      },
+    ],
+    '@babel/preset-react',
+  ],
+  plugins: [['@babel/plugin-transform-runtime']],
   env: {
     test: {
-      plugins: [['@babel/plugin-transform-runtime', { useESModules: false }]],
+      presets: ['@babel/preset-env', '@babel/preset-react'],
     },
   },
 };
