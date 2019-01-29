@@ -3,16 +3,19 @@ import PropTypes from 'prop-types';
 
 import { Icon } from '../';
 
-export default function Facebook(props) {
+export default function Close(props) {
   const { ...rest } = props;
 
   return (
-    <Icon viewBox="0 0 60 60" {...rest}>
-      <path d="M58 0L30 28.1 1.9 0 0 1.9 28 30 0 58.1 1.9 60 30 31.9 58 60l2-1.9L31.9 30 60 1.9 58 0z" />
+    <Icon viewBox="0 0 64 64" {...rest}>
+      <g id="Icon-Close" transform="translate(381 231)">
+        <path d="M-370.7-174.7l-2.3-2.3 46-46 2.3 2.3-46 46" />
+        <path d="M-327-174.7l-46-46 2.3-2.3 46 46-2.3 2.3" />
+      </g>{' '}
     </Icon>
   );
 }
 
-Facebook.defaultProps = {};
+Close.defaultProps = {};
 
-Facebook.propTypes = {};
+Close.propTypes = {};

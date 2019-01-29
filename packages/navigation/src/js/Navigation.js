@@ -28,6 +28,7 @@ class Navigation extends PureComponent {
       chapters,
       chapterIcon,
       closeIcon,
+      currentChapter,
       label,
       theme,
       disable,
@@ -51,7 +52,11 @@ class Navigation extends PureComponent {
           isActive={this.state.isActive}
           {...rest}
         />
-        <MenuList chapters={chapters} isActive={this.state.isActive} />
+        <MenuList
+          chapters={chapters}
+          isActive={this.state.isActive}
+          currentChapter={currentChapter}
+        />
       </div>
     );
   }
@@ -65,8 +70,9 @@ Navigation.defaultProps = {
 Navigation.propTypes = {
   chapterIcon: PropTypes.node,
   closeIcon: PropTypes.node,
+  currentChapter: PropTypes.string,
   label: PropTypes.string,
-  theme: PropTypes.oneOf(['light', 'grey', 'dark']),
+  theme: PropTypes.oneOf(['light', 'dark']),
   disable: PropTypes.bool,
 };
 

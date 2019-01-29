@@ -70,19 +70,12 @@ $grey: #898787;
     transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
     opacity: 0.3;
 
-    .menuButton--op_full & {
-      opacity: 1;
-    }
     .menuButton--is-light & {
       background-color: $white;
     }
 
     .menuButton--is-dark & {
       background-color: $black;
-    }
-
-    .menuButton--is-grey & {
-      background-color: $grey;
     }
   }
 
@@ -101,11 +94,6 @@ $grey: #898787;
     opacity: 0.6;
   }
 
-  &--op_full:hover &__bgLayer,
-  &--op_full:focus &__bgLayer {
-    opacity: 1;
-  }
-
   [class*='__icon'],
   [class*='__text'] {
     transition-property: opacity, transform;
@@ -120,6 +108,7 @@ $grey: #898787;
       top: 50%;
       margin-top: -8.8px;
       left: 20px;
+      color: $white;
       opacity: 1;
       transform: translateX(0);
       .menuButton--active & {
@@ -189,8 +178,6 @@ $grey: #898787;
     pointer-events: inherit;
     visibility: visible;
   }
-
-  // &__container {}
 }
 
 .menuLink {
@@ -286,6 +273,7 @@ $grey: #898787;
   }
 
   &--active &__line,
+  &--current &__line,
   &:hover &__line,
   &:focus &__line {
     transform-origin: 0% 50% 0;

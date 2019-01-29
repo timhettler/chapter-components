@@ -51,7 +51,7 @@ MenuButton.propTypes = {
   chapterIcon: PropTypes.node,
   closeIcon: PropTypes.node,
   label: PropTypes.string,
-  theme: PropTypes.oneOf(['light', 'grey', 'dark']),
+  theme: PropTypes.oneOf(['light', 'dark']),
 };
 
 export default MenuButton;

@@ -4,3 +4,4 @@ export { default as Facebook } from './Icons/Facebook';
 export { default as Twitter } from './Icons/Twitter';
 export { default as Mail } from './Icons/Mail';
 export { default as Replay } from './Icons/Replay';
+export { default as Close } from './Icons/Close';
