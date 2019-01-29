@@ -15,7 +15,7 @@
     "lerna-updated": "lerna updated",
     "lerna-version": "lerna version --no-commit-hooks",
     "lerna-force-publish": "lerna version patch --force-publish --no-commit-hooks",
-    "postlerna-version": "npm version patch",
+    "postlerna-version": "npm version patch --commit-hooks=false",
     "postversion": "git push --follow-tags",
     "test": "jest",
     "publish:all": "lerna run build --npm-client=npm && for D in packages/*; do (cd $D && npm run publish || true); done",
