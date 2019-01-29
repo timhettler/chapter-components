@@ -52,8 +52,10 @@ async function transformScript(file) {
 
   if (contents) {
     const base = path.parse(file).base;
+    const dest = path.parse(file).dir.replace(source, destination);
 
-    await fs.writeFile(`${destination}/${base}`, contents.code);
+    await fs.ensureDir(dest);
+    await fs.writeFile(`${dest}/${base}`, contents.code);
     // TODO determine if source mapping is necessary since we aren't minifying source
     // await fs.writeJson(
     //   `${destination}/${base}.map`,
