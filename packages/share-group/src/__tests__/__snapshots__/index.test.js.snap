@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShareGroup renders correctly 1`] = `
+<div
+  aria-labelledby="shareLabel"
+  className="share-group is-light"
+  role="group"
+>
+  <div
+    className="share-group__title"
+    id="shareLabel"
+  />
+  <div
+    className="share-group__content"
+  />
+</div>
+`;
