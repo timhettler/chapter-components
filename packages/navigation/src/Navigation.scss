@@ -1,0 +1,295 @@
+@import '~@ssgw/utils/src/scss/index';
+
+$chaptersTotal: 12;
+$navigationWidth: 320;
+$transition-time-func: cubic-bezier(0.215, 0.61, 0.355, 1);
+$white: #fff;
+$black: #000;
+$grey: #898787;
+
+[class*='__bgLayer'] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.navigation {
+  position: relative;
+  width: $navigationWidth + px;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 1;
+  pointer-events: initial;
+  transition: opacity 300ms ease;
+  &--hidden {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &__bgLayer {
+    background-color: $white;
+    opacity: 0.8;
+    transform: translateX(-$navigationWidth + px);
+    transition-property: transform;
+    transition-timing-function: $transition-time-func;
+    transition-duration: 500ms;
+    transition-delay: 100ms;
+
+    .navigation--active & {
+      transition-delay: 0;
+      transform: translateX(0);
+    }
+  }
+}
+
+.menuButton {
+  @include reset-button();
+  position: relative;
+  width: 180px;
+  height: 44px;
+  margin-top: 30px;
+  margin-left: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+
+  * {
+    position: absolute;
+  }
+
+  & ~ button {
+    transition: all 200ms linear 200ms;
+  }
+
+  &__bgLayer {
+    border-radius: 22px;
+    transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    opacity: 0.3;
+
+    .menuButton--op_full & {
+      opacity: 1;
+    }
+    .menuButton--is-light & {
+      background-color: $white;
+    }
+
+    .menuButton--is-dark & {
+      background-color: $black;
+    }
+
+    .menuButton--is-grey & {
+      background-color: $grey;
+    }
+  }
+
+  &--active &__bgLayer {
+    opacity: 1;
+    background-color: transparent;
+  }
+
+  &--active ~ button {
+    pointer-events: none;
+    opacity: 0 !important;
+  }
+
+  &:hover &__bgLayer,
+  &:focus &__bgLayer {
+    opacity: 0.6;
+  }
+
+  &--op_full:hover &__bgLayer,
+  &--op_full:focus &__bgLayer {
+    opacity: 1;
+  }
+
+  [class*='__icon'],
+  [class*='__text'] {
+    transition-property: opacity, transform;
+    transition-duration: 400ms;
+    transition-timing-function: $transition-time-func;
+  }
+
+  &__icon {
+    &--primary {
+      width: 17.6px;
+      height: 17.6px;
+      top: 50%;
+      margin-top: -8.8px;
+      left: 20px;
+      opacity: 1;
+      transform: translateX(0);
+      .menuButton--active & {
+        opacity: 0;
+        transform: translateX(-5px);
+      }
+    }
+
+    &--secondary {
+      width: 12.1px;
+      height: 12.1px;
+      background-size: 12.1px 12.1px;
+      top: 50%;
+      margin-top: -7px;
+      opacity: 0;
+      right: 22px;
+      transform: translateX(25px);
+      .menuButton--active & {
+        opacity: 1;
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  &__text {
+    font-family: 'SamsungSharpSansBold', serif;
+    font-size: 11px;
+    width: auto;
+    letter-spacing: 0.2em;
+    line-height: 12px;
+    top: 17px;
+
+    &--primary {
+      color: $white;
+      left: 50px;
+      opacity: 1;
+      transform: translateY(0);
+      .menuButton--active & {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+    }
+
+    &--secondary {
+      color: #222222;
+      left: 25px;
+      opacity: 0;
+      transform: translateY(5px);
+      .menuButton--active & {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.menuList {
+  margin-top: 30px;
+  margin-left: 50px;
+  visibility: hidden;
+  pointer-events: none;
+  transition-property: visibility;
+  transition-duration: 1ms;
+  transition-delay: 650ms;
+  &--active {
+    transition-delay: 1ms;
+    pointer-events: inherit;
+    visibility: visible;
+  }
+
+  // &__container {}
+}
+
+.menuLink {
+  height: 30px;
+  opacity: 0;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: baseline;
+
+  @for $i from 1 through $chaptersTotal {
+    &:nth-child(#{$i}) {
+      transform: translateY(10px * $i);
+      transition: transform 100ms ease (100ms * ($i - 1)),
+        opacity 300ms linear (10ms * ($i - 1));
+
+      .menuLink__number,
+      .menuLink__title {
+        transition-delay: (100ms * ($i - 1));
+      }
+    }
+  }
+
+  &,
+  & * {
+    color: $black;
+  }
+
+  &__number,
+  &__title,
+  &__dash {
+    position: relative;
+    font-family: 'SamsungSharpSansBold', serif;
+    font-size: 13px;
+    line-height: 13px;
+    margin-top: -6px;
+    top: 50%;
+    letter-spacing: 0.05em;
+  }
+
+  &__number,
+  &__title {
+    transition-property: transform;
+    transition-duration: 600ms;
+    transition-timing-function: $transition-time-func;
+  }
+
+  &__number {
+    transform: translateX(-15px);
+  }
+
+  &__title {
+    transform: translateX(15px);
+  }
+
+  &__dash {
+    padding: 0 6px;
+  }
+
+  &__line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 50%;
+    margin-top: 8px;
+    background-color: currentColor;
+    transform-origin: 100% 50% 0;
+    transform: scaleX(0);
+    transition: transform 400ms ease;
+  }
+
+  .menuList--active & {
+    transform: translateY(0);
+    opacity: 0.7;
+
+    @for $i from 1 through $chaptersTotal {
+      &:nth-child(#{$i}) {
+        transition: transform 600ms ease (100ms * ($i - 1)),
+          opacity 600ms linear (150ms * ($i - 1));
+      }
+    }
+
+    &__number,
+    &__title {
+      transform: translateX(0);
+      transition-duration: 900ms;
+    }
+
+    &__line {
+      background-color: $black;
+    }
+  }
+
+  &--active &__line,
+  &:hover &__line,
+  &:focus &__line {
+    transform-origin: 0% 50% 0;
+    transform: scaleX(1);
+    transition: transform 300ms ease;
+  }
+}
