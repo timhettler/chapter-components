@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation renders correctly 1`] = `
+<div
+  className="navigation navigation--hidden"
+>
+  <div
+    className="navigation__bgLayer"
+  />
+  <button
+    className="menuButton menuButton--is-light"
+    onClick={[Function]}
+  >
+    <span
+      className="menuButton__bgLayer"
+    />
+    <span
+      className="menuButton__icon menuButton__icon--primary"
+    />
+    <span
+      className="menuButton__icon menuButton__icon--secondary"
+    />
+    <span
+      className="menuButton__text menuButton__text--primary"
+    />
+    <span
+      className="menuButton__text menuButton__text--secondary"
+    />
+  </button>
+  <div
+    className="menuList"
+  >
+    <div
+      className="menuList__container"
+    />
+  </div>
+</div>
+`;

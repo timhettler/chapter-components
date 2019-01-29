@@ -9,12 +9,18 @@ const cx = classNames.bind(styles);
 
 class MenuList extends PureComponent {
   render() {
-    const { theme, isActive } = this.props;
+    const { theme, isActive, chapters, currentChapter } = this.props;
     return (
       <div className={cx('menuList', `${isActive ? 'menuList--active' : ''}`)}>
         <div className={cx('menuList__container')}>
-          {this.props.chapters.map((chapter, i) => {
-            return <MenuLink key={i} index={i} chapter={chapter} />;
+          {chapters.map((chapter, i) => {
+            return (
+              <MenuLink
+                key={i}
+                currentChapter={currentChapter}
+                chapter={chapter}
+              />
+            );
           })}
         </div>
       </div>

@@ -19,8 +19,8 @@ const LinkContent = ({ chapter }) => {
 
 class MenuLink extends PureComponent {
   render() {
-    const { isCurrentChapter, chapter, ...rest } = this.props;
-    if (!isCurrentChapter) {
+    const { currentChapter, chapter, ...rest } = this.props;
+    if (currentChapter !== chapter.id) {
       return (
         <a href={chapter.url} className={cx('menuLink')} {...rest}>
           <LinkContent chapter={chapter} />
