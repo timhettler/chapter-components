@@ -14,7 +14,7 @@ class ShareGroup extends PureComponent {
         className={cx(
           'share-group',
           `is-${theme}`,
-          `${disabled ? '' : 'fade-in'}`
+          {'is-disabled': disabled }
         )}
         role="group"
         aria-labelledby="shareLabel"
@@ -30,7 +30,6 @@ class ShareGroup extends PureComponent {
 
 ShareGroup.defaultProps = {
   theme: 'light',
-  disabled: true,
 };
 
 ShareGroup.propTypes = {

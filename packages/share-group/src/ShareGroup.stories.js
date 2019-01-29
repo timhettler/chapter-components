@@ -24,7 +24,7 @@ stories.add('ShareGroup', () => (
       icon={<Facebook />}
       url="http://smsng.co/within5ukFS"
     />
-    <ShareLink label="Email" icon={<Mail />} url="email.com/share" />
+    <ShareLink label="Email" icon={<Mail />} url="mailto:email.com/share" />
     <ShareLink
       label="Bug"
       icon={

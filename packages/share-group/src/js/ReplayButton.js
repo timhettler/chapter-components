@@ -14,7 +14,7 @@ class ReplayButton extends PureComponent {
       <button
         className={cx(
           'replayBtn',
-          `replayBtn--divider_${dividerPos === 'left' ? 'l' : 'r'}`
+          `replayBtn--divider_${dividerPos}`
         )}
         {...rest}
       >
