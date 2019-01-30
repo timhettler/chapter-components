@@ -19,7 +19,7 @@ $grey: #898787;
   position: relative;
   width: $navigationWidth + px;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   opacity: 1;
   pointer-events: initial;
   transition: opacity 300ms ease;
@@ -168,12 +168,14 @@ $grey: #898787;
 .menuList {
   margin-top: 30px;
   margin-left: 50px;
+  height: 0;
   visibility: hidden;
   pointer-events: none;
-  transition-property: visibility;
+  transition-property: visibility, height;
   transition-duration: 1ms;
   transition-delay: 650ms;
   &--active {
+    height: initial;
     transition-delay: 1ms;
     pointer-events: inherit;
     visibility: visible;
