@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 class MenuList extends PureComponent {
   render() {
-    const { theme, isActive, chapters, currentChapter } = this.props;
+    const { isActive, chapters, currentChapter } = this.props;
     return (
       <div className={cx('menuList', `${isActive ? 'menuList--active' : ''}`)}>
         <div className={cx('menuList__container')}>
