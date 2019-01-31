@@ -8,12 +8,13 @@ const cx = classNames.bind(styles);
 
 class BeginButton extends PureComponent {
   render() {
-    const { label, theme, ...rest } = this.props;
+    const { label, theme, disabled, ...rest } = this.props;
 
     return (
       <button
         className={cx('beginButton', `is-${theme}`)}
         aria-label={label}
+        disabled={disabled}
         {...rest}
       >
         <div className={cx('outline', 'outline-a')} />
@@ -34,6 +35,7 @@ BeginButton.defaultProps = {
 BeginButton.propTypes = {
   label: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
+  disabled: PropTypes.bool,
 };
 
 export default BeginButton;
