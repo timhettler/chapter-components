@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import { Replay } from '@ssgw/icon';
 import styles from '../ShareGroup.scss';
 
 const cx = classNames.bind(styles);
