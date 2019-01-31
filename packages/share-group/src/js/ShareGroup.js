@@ -33,6 +33,7 @@ ShareGroup.defaultProps = {
 };
 
 ShareGroup.propTypes = {
+  title: PropTypes.string,
   theme: PropTypes.oneOf(['dark', 'light']),
   disabled: PropTypes.bool,
   children: PropTypes.oneOfType([
