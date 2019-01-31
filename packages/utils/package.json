@@ -2,9 +2,9 @@
   "name": "@ssgw/utils",
   "version": "0.1.9",
   "description": "Common JS and Sass code used across chapter-componets",
-  "main": "src/js/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "echo 'utils does not build'",
+    "build": "node ../../scripts/build.js",
     "clean": "rm -rf dist node_modules",
     "publish": "npm publish || echo 'could not publish, skipping'",
     "test": "echo \"Error: no test specified\" && exit 1"
