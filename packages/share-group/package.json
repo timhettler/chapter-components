@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/share-group",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A component with social sharing and replay buttons.",
   "main": "dist/index.js",
   "scripts": {
