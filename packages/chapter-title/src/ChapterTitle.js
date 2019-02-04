@@ -79,33 +79,44 @@ class ChapterTitle extends PureComponent {
   }
 
   getLetterTransition(i) {
-    const increment = 100 * (i + 1);
-    const delay = 40 * (i + 1);
+    const increment = 100 * i;
+    const delay = 40 * i;
 
     return `opacity ${increment}ms ${delay}ms, transform ${increment}ms ${delay}ms`;
   }
 
   renderSubtitle(subtitle, state) {
+    let letterIndex = 0;
     const lines = subtitle.split('<br>');
 
     return lines.map((line, i) => {
-      const letters = line.split('').map((letter, i) => (
-        <span
-          key={`${letter}+${i}`}
-          className={cx('letter')}
-          style={{
-            transition: this.getLetterTransition(i),
-            transform:
-              state === 'expanded'
-                ? this.getExpandedTransform()
-                : state === 'faded'
-                ? this.getFadedTransform()
-                : null,
-          }}
-        >
-          {letter.replace(' ', '\u00A0')}
-        </span>
-      ));
+      const letters = line.split('').map((letter, i) => {
+        letterIndex++;
+
+        return (
+          <span
+            className={cx('letter')}
+            style={{
+              transition: this.getLetterTransition(letterIndex),
+            }}
+          >
+            <span
+              className={cx('letter-inner')}
+              key={`${letter}+${i}`}
+              style={{
+                transform:
+                  state === 'expanded'
+                    ? this.getExpandedTransform()
+                    : state === 'faded'
+                    ? this.getFadedTransform()
+                    : null,
+              }}
+            >
+              {letter.replace(' ', '\u00A0')}
+            </span>
+          </span>
+        );
+      });
 
       return (
         <div key={`${line}+${i}`} className={cx('line')}>

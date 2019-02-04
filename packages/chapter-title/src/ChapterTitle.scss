@@ -30,7 +30,6 @@
   .header.is-pre & {
     opacity: 0;
     top: 70px;
-    transition: none !important;
   }
 }
 
@@ -56,6 +55,10 @@
   .header.is-pre & {
     opacity: 0;
     transform: translate3d(0, 0, 900px) rotateX(0deg) rotateY(0deg);
-    transition: none !important;
   }
+}
+
+.letter-inner {
+  display: inline-block;
+  transition: transform 1500ms;
 }
