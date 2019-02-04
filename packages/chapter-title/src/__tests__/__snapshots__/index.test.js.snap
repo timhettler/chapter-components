@@ -19,34 +19,58 @@ exports[`ChapterTitle renders correctly 1`] = `
         className="letter"
         style={
           Object {
-            "transform": null,
             "transition": "opacity 100ms 40ms, transform 100ms 40ms",
           }
         }
       >
-        B
+        <span
+          className="letter-inner"
+          style={
+            Object {
+              "transform": null,
+            }
+          }
+        >
+          B
+        </span>
       </span>
       <span
         className="letter"
         style={
           Object {
-            "transform": null,
             "transition": "opacity 200ms 80ms, transform 200ms 80ms",
           }
         }
       >
-        A
+        <span
+          className="letter-inner"
+          style={
+            Object {
+              "transform": null,
+            }
+          }
+        >
+          A
+        </span>
       </span>
       <span
         className="letter"
         style={
           Object {
-            "transform": null,
             "transition": "opacity 300ms 120ms, transform 300ms 120ms",
           }
         }
       >
-        R
+        <span
+          className="letter-inner"
+          style={
+            Object {
+              "transform": null,
+            }
+          }
+        >
+          R
+        </span>
       </span>
     </div>
   </h2>
