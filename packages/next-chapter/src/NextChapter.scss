@@ -3,7 +3,6 @@
 .nextChapter {
   display: flex;
   align-items: center;
-  width: 314px;
   text-decoration: none;
 }
 
@@ -27,17 +26,28 @@
   font-size: 18px;
   letter-spacing: 0.05em;
   transition-delay: 150ms;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .thumbnail {
+  overflow: hidden;
+  position: relative;
   width: 164px;
-  min-height: 112px;
-  flex-shrink: 0;
-  background-size: 164px 112px;
-  background-position: 164px 112px;
+  flex: 0 0 52%;
+  background-size: cover;
+  background-position: center;
   border-radius: 10px;
   border: 1px solid #444444;
   transition-delay: 150ms * 2;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: percentage(0.68);
+  }
 }
 
 .ui_next {
