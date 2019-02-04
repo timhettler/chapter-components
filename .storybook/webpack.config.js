@@ -5,11 +5,24 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        loaders: [
-          'style-loader',
-          'css-loader',
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              singleton: true
+            }
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+              importLoaders: 2,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
           'postcss-loader',
-          'sass-loader',
+          'sass-loader'
         ],
         include: path.resolve(__dirname, '../'),
       },

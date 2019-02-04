@@ -18,11 +18,26 @@ class ChapterTitle extends PureComponent {
   }
 
   componentDidMount() {
-    document.body.addEventListener('mousemove', this.handleMouseMove);
+    if (this.props.movement) {
+      document.body.addEventListener('mousemove', this.handleMouseMove);
+    }
   }
 
   componentWillUnmount() {
-    document.body.removeEventListener('mousemove', this.handleMouseMove);
+    if (this.props.movement) {
+      document.body.addEventListener('mousemove', this.handleMouseMove);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.movement !== prevProps.movement) {
+      console.log('update');
+      if (this.props.movement) {
+        document.body.addEventListener('mousemove', this.handleMouseMove);
+      } else {
+        document.body.removeEventListener('mousemove', this.handleMouseMove);
+      }
+    }
   }
 
   getBoundedNumber(numA, numB) {
@@ -51,15 +66,14 @@ class ChapterTitle extends PureComponent {
     const $yTargetDistance =
       nodeElement.offsetHeight / 2 + nodeElement.offsetTop - e.pageY;
 
-    const $T = 0.035;
-    const $L = lag || null;
+    const $L = lag || 0.035;
 
     const $valX = !($xTargetDistance < 0)
-      ? $xTargetDistance * -($L ? lag : $T)
-      : Math.abs($xTargetDistance) * ($L ? lag : $T);
+      ? $xTargetDistance * -$L
+      : Math.abs($xTargetDistance) * $L;
     const $valY = !($yTargetDistance < 0)
-      ? $yTargetDistance * -($L ? lag : $T)
-      : Math.abs($yTargetDistance) * ($L ? lag : $T);
+      ? $yTargetDistance * -$L
+      : Math.abs($yTargetDistance) * $L;
 
     nodeElement.style.transform = `translate3d(${$valX}px, ${$valY}px, 0px)`;
 
@@ -96,13 +110,13 @@ class ChapterTitle extends PureComponent {
         return (
           <span
             className={cx('letter')}
+            key={`${letter}+${i}`}
             style={{
               transition: this.getLetterTransition(letterIndex),
             }}
           >
             <span
               className={cx('letter-inner')}
-              key={`${letter}+${i}`}
               style={{
                 transform:
                   state === 'expanded'
@@ -127,7 +141,7 @@ class ChapterTitle extends PureComponent {
   }
 
   render() {
-    const { state, title, subtitle, theme, ...rest } = this.props;
+    const { state, title, subtitle, theme, movement, ...rest } = this.props;
 
     return (
       <header
@@ -149,6 +163,7 @@ class ChapterTitle extends PureComponent {
 ChapterTitle.defaultProps = {
   theme: 'dark',
   state: 'default',
+  movement: true,
 };
 
 ChapterTitle.proptTypes = {
@@ -156,6 +171,7 @@ ChapterTitle.proptTypes = {
   subTitle: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
   state: PropTypes.oneOf(['pre', 'default', 'expanded', 'faded']),
+  movement: PropTypes.bool,
 };
 
 export default ChapterTitle;

@@ -24,6 +24,7 @@ stories.add(
         },
         'default'
       )}
+      movement={boolean('Movement', false)}
     />
   ),
   {
