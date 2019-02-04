@@ -20,23 +20,25 @@ const LinkContent = ({ chapter }) => {
 class MenuLink extends PureComponent {
   render() {
     const { currentChapter, chapter, ...rest } = this.props;
-    if (currentChapter !== chapter.id) {
-      return (
-        <a href={chapter.url} className={cx('menuLink')} {...rest}>
+    return (
+      <li
+        className={cx('menuLink', {
+          'menuLink--current': currentChapter === chapter.id,
+        })}
+      >
+        <a href={currentChapter === chapter.id ? null : chapter.url} {...rest}>
           <LinkContent chapter={chapter} />
         </a>
-      );
-    }
-    return (
-      <div className={cx('menuLink', 'menuLink--current')} {...rest}>
-        <LinkContent chapter={chapter} />
-      </div>
+      </li>
     );
   }
 }
 
 MenuLink.defaultProps = {};
 
-MenuLink.propTypes = {};
+MenuLink.propTypes = {
+  currentChapter: PropTypes.string.isRequired,
+  chapter: PropTypes.object.isRequired,
+};
 
 export default MenuLink;

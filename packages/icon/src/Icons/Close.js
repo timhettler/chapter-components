@@ -11,7 +11,7 @@ export default function Close(props) {
       <g id="Icon-Close" transform="translate(381 231)">
         <path d="M-370.7-174.7l-2.3-2.3 46-46 2.3 2.3-46 46" />
         <path d="M-327-174.7l-46-46 2.3-2.3 46 46-2.3 2.3" />
-      </g>{' '}
+      </g>
     </Icon>
   );
 }
