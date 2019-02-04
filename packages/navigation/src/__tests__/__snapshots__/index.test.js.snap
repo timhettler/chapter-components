@@ -1,38 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation renders correctly 1`] = `
-<div
-  className="navigation navigation--hidden"
+<nav
+  className="navigation"
 >
   <div
     className="navigation__bgLayer"
   />
   <button
+    aria-expanded={false}
+    aria-label="Open chapters menu"
     className="menuButton menuButton--is-light"
     onClick={[Function]}
   >
     <span
-      className="menuButton__bgLayer"
-    />
-    <span
       className="menuButton__icon menuButton__icon--primary"
-    />
+    >
+      <svg
+        className="icon_style"
+        height="100%"
+        viewBox="0 0 50 50"
+        width="100%"
+      >
+        <path
+          d="M11 1v6H1v42h38v-6h10V8.586L41.414 1H11zm31 3.414L45.586 8H42V4.414zM37 47H3V9h27v7h7v31zm-5-36.586L35.586 14H32v-3.586zM39 41V14.586L31.414 7H13V3h27v7h7v31h-8z"
+        />
+      </svg>
+    </span>
     <span
       className="menuButton__icon menuButton__icon--secondary"
-    />
-    <span
-      className="menuButton__text menuButton__text--primary"
-    />
-    <span
-      className="menuButton__text menuButton__text--secondary"
-    />
-  </button>
-  <div
-    className="menuList"
-  >
+    >
+      <svg
+        className="icon_style"
+        fill="#fff"
+        height="100%"
+        viewBox="0 0 64 64"
+        width="100%"
+      >
+        <g
+          id="Icon-Close"
+          transform="translate(381 231)"
+        >
+          <path
+            d="M-370.7-174.7l-2.3-2.3 46-46 2.3 2.3-46 46"
+          />
+          <path
+            d="M-327-174.7l-46-46 2.3-2.3 46 46-2.3 2.3"
+          />
+        </g>
+      </svg>
+    </span>
     <div
-      className="menuList__container"
-    />
-  </div>
-</div>
+      className="menuButton__copy"
+    >
+      <span
+        className="menuButton__text menuButton__text--primary"
+      >
+        All chapters
+      </span>
+      <span
+        className="menuButton__text menuButton__text--secondary"
+      >
+        All chapters
+      </span>
+    </div>
+  </button>
+  <ol
+    className="menuList"
+  />
+</nav>
 `;

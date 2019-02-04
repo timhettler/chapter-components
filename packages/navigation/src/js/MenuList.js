@@ -11,25 +11,29 @@ class MenuList extends PureComponent {
   render() {
     const { isActive, chapters, currentChapter } = this.props;
     return (
-      <div className={cx('menuList', `${isActive ? 'menuList--active' : ''}`)}>
-        <div className={cx('menuList__container')}>
-          {chapters.map((chapter, i) => {
-            return (
-              <MenuLink
-                key={i}
-                currentChapter={currentChapter}
-                chapter={chapter}
-              />
-            );
-          })}
-        </div>
-      </div>
+      <ol className={cx('menuList', { 'menuList--active': isActive })}>
+        {chapters.map((chapter, i) => {
+          return (
+            <MenuLink
+              key={i}
+              currentChapter={currentChapter}
+              chapter={chapter}
+            />
+          );
+        })}
+      </ol>
     );
   }
 }
 
-MenuList.defaultProps = {};
+MenuList.defaultProps = {
+  isActive: false,
+};
 
-MenuList.propTypes = {};
+MenuList.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+  currentChapter: PropTypes.string.isRequired,
+  chapters: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default MenuList;

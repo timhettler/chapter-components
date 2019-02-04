@@ -26,8 +26,6 @@ class Navigation extends PureComponent {
   render() {
     const {
       chapters,
-      chapterIcon,
-      closeIcon,
       currentChapter,
       label,
       theme,
@@ -35,17 +33,15 @@ class Navigation extends PureComponent {
       ...rest
     } = this.props;
     return (
-      <div
+      <nav
         className={cx(
           'navigation',
-          `${disable ? 'navigation--hidden' : ''}`,
-          `${this.state.isActive ? 'navigation--active' : ''}`
+          { 'navigation--hidden': disable },
+          { 'navigation--active': this.state.isActive }
         )}
       >
         <div className={cx('navigation__bgLayer')} />
         <MenuButton
-          chapterIcon={chapterIcon}
-          closeIcon={closeIcon}
           label={label}
           theme={theme}
           onClick={this.toggleNavigation}
@@ -57,19 +53,17 @@ class Navigation extends PureComponent {
           isActive={this.state.isActive}
           currentChapter={currentChapter}
         />
-      </div>
+      </nav>
     );
   }
 }
 
 Navigation.defaultProps = {
   theme: 'light',
-  disable: true,
+  disable: false,
 };
 
 Navigation.propTypes = {
-  chapterIcon: PropTypes.node,
-  closeIcon: PropTypes.node,
   currentChapter: PropTypes.string,
   label: PropTypes.string,
   theme: PropTypes.oneOf(['light', 'dark']),

@@ -1,37 +1,36 @@
 @import '~@ssgw/utils/src/scss/index';
 
+@mixin position-style($pos, $size) {
+  position: $pos;
+  top: 0;
+  left: 0;
+  width: $size;
+  height: $size;
+}
 $chaptersTotal: 12;
-$navigationWidth: 320;
+$navigationWidth: 320px;
+$inverseType: -1; // Direction of navigation content sliding from left or right
 $transition-time-func: cubic-bezier(0.215, 0.61, 0.355, 1);
 $white: #fff;
 $black: #000;
 $grey: #898787;
 
-[class*='__bgLayer'] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .navigation {
   position: relative;
-  width: $navigationWidth + px;
   height: 100vh;
   overflow-x: hidden;
-  opacity: 1;
-  pointer-events: initial;
   transition: opacity 300ms ease;
+
   &--hidden {
     pointer-events: none;
     opacity: 0;
   }
 
   &__bgLayer {
+    @include position-style(absolute, 100%);
     background-color: $white;
     opacity: 0.8;
-    transform: translateX(-$navigationWidth + px);
+    transform: translateX($navigationWidth * $inverseType);
     transition-property: transform;
     transition-timing-function: $transition-time-func;
     transition-duration: 500ms;
@@ -47,7 +46,6 @@ $grey: #898787;
 .menuButton {
   @include reset-button();
   position: relative;
-  width: 180px;
   height: 44px;
   margin-top: 30px;
   margin-left: 30px;
@@ -57,40 +55,29 @@ $grey: #898787;
   border: none;
   background-color: transparent;
 
-  * {
-    position: absolute;
-  }
-
-  & ~ button {
-    transition: all 200ms linear 200ms;
-  }
-
-  &__bgLayer {
+  &:before {
+    content: '';
+    @include position-style(absolute, 100%);
     border-radius: 22px;
     transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
     opacity: 0.3;
-
-    .menuButton--is-light & {
-      background-color: $white;
-    }
-
-    .menuButton--is-dark & {
-      background-color: $black;
-    }
   }
 
-  &--active &__bgLayer {
+  &--is-light:before {
+    background-color: $white;
+  }
+
+  &--is-dark:before {
+    background-color: $black;
+  }
+
+  &--active:before {
     opacity: 1;
     background-color: transparent;
   }
 
-  &--active ~ button {
-    pointer-events: none;
-    opacity: 0 !important;
-  }
-
-  &:hover &__bgLayer,
-  &:focus &__bgLayer {
+  &:hover:before,
+  &:focus:before {
     opacity: 0.6;
   }
 
@@ -101,7 +88,46 @@ $grey: #898787;
     transition-timing-function: $transition-time-func;
   }
 
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 25px;
+    padding-left: 55px;
+  }
+
+  &__text {
+    font-family: 'SamsungSharpSansBold', serif;
+    font-size: 11px;
+    width: auto;
+    letter-spacing: 0.2em;
+    line-height: 11px;
+
+    &--primary {
+      color: $white;
+      opacity: 1;
+      transform: translateY(7px);
+      .menuButton--active & {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+    }
+
+    &--secondary {
+      color: #222222;
+      left: 25px;
+      opacity: 0;
+      transform: translate(-25px, 10px);
+      .menuButton--active & {
+        opacity: 1;
+        transform: translate(-25px, -5px);
+      }
+    }
+  }
+
   &__icon {
+    position: absolute;
     &--primary {
       width: 17.6px;
       height: 17.6px;
@@ -120,7 +146,6 @@ $grey: #898787;
     &--secondary {
       width: 12.1px;
       height: 12.1px;
-      background-size: 12.1px 12.1px;
       top: 50%;
       margin-top: -7px;
       opacity: 0;
@@ -132,48 +157,18 @@ $grey: #898787;
       }
     }
   }
-
-  &__text {
-    font-family: 'SamsungSharpSansBold', serif;
-    font-size: 11px;
-    width: auto;
-    letter-spacing: 0.2em;
-    line-height: 12px;
-    top: 17px;
-
-    &--primary {
-      color: $white;
-      left: 50px;
-      opacity: 1;
-      transform: translateY(0);
-      .menuButton--active & {
-        opacity: 0;
-        transform: translateY(-5px);
-      }
-    }
-
-    &--secondary {
-      color: #222222;
-      left: 25px;
-      opacity: 0;
-      transform: translateY(5px);
-      .menuButton--active & {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  }
 }
 
 .menuList {
-  margin-top: 30px;
-  margin-left: 50px;
+  margin: 30px 50px 0;
   height: 0;
   visibility: hidden;
   pointer-events: none;
   transition-property: visibility, height;
   transition-duration: 1ms;
   transition-delay: 650ms;
+  padding: 0;
+  list-style: none;
   &--active {
     height: initial;
     transition-delay: 1ms;
@@ -183,18 +178,20 @@ $grey: #898787;
 }
 
 .menuLink {
-  height: 30px;
+  height: 40px;
   opacity: 0;
-  text-decoration: none;
   font-weight: 600;
-  display: inline-flex;
-  align-items: baseline;
+  display: flex;
+  color: $black;
+  font-family: 'SamsungSharpSansBold', serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
 
   @for $i from 1 through $chaptersTotal {
     &:nth-child(#{$i}) {
       transform: translateY(10px * $i);
-      transition: transform 100ms ease (100ms * ($i - 1)),
-        opacity 300ms linear (10ms * ($i - 1));
+      transition: transform 300ms ease (100ms * ($i - 1)),
+        opacity 300ms ease (10ms * ($i - 1));
 
       .menuLink__number,
       .menuLink__title {
@@ -203,21 +200,21 @@ $grey: #898787;
     }
   }
 
-  &,
-  & * {
-    color: $black;
+  a {
+    position: relative;
+    display: inline-flex;
+    text-decoration: none;
+    align-items: baseline;
+    color: inherit;
   }
 
   &__number,
   &__title,
   &__dash {
     position: relative;
-    font-family: 'SamsungSharpSansBold', serif;
-    font-size: 13px;
     line-height: 13px;
     margin-top: -6px;
     top: 50%;
-    letter-spacing: 0.05em;
   }
 
   &__number,
@@ -259,7 +256,12 @@ $grey: #898787;
     @for $i from 1 through $chaptersTotal {
       &:nth-child(#{$i}) {
         transition: transform 600ms ease (100ms * ($i - 1)),
-          opacity 600ms linear (150ms * ($i - 1));
+          opacity 600ms ease (150ms * ($i - 1));
+
+        .menuLink__number,
+        .menuLink__title {
+          transition-delay: (150ms * ($i - 1));
+        }
       }
     }
 
@@ -272,6 +274,10 @@ $grey: #898787;
     &__line {
       background-color: $black;
     }
+  }
+
+  &--current a {
+    pointer-events: none;
   }
 
   &--active &__line,
