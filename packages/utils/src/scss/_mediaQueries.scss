@@ -1,3 +1,7 @@
+$size--small-viewport: 375px; // iPhone X width
+$size--medium-viewport: 768px; // iPad width (portrait)
+// $size--large-viewport: 1024px; // iPad width (landscape)
+
 @mixin _mq($media-queries) {
   $query-list: ();
   $keys: map-keys($media-queries);
@@ -14,6 +18,57 @@
     @content;
   }
 }
+
+// Viewport Sizes
+
+@mixin small() {
+  @include _mq(
+    (
+      max-width: (
+        $size--small-viewport,
+      ),
+    )
+  ) {
+    @content;
+  }
+}
+
+@mixin smallAndMedium() {
+  @include _mq(
+    (
+      max-width: (
+        $size--medium-viewport,
+      ),
+    )
+  ) {
+    @content;
+  }
+}
+
+@mixin medium() {
+  @include _mq(
+    (
+      min-width: $size--small-viewport + 1,
+      max-width: (
+        $size--medium-viewport,
+      ),
+    )
+  ) {
+    @content;
+  }
+}
+
+@mixin large() {
+  @include _mq(
+    (
+      min-width: $size--medium-viewport + 1,
+    )
+  ) {
+    @content;
+  }
+}
+
+// Other
 
 @mixin prefers-reduced-motion() {
   @include _mq(
