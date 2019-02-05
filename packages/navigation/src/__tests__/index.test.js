@@ -5,7 +5,12 @@ import renderer from 'react-test-renderer';
 it(`${Component.name} renders correctly`, () => {
   const tree = renderer
     .create(
-      <Component chapters={[]} label={'All chapters'} currentChapter={'04'} />
+      <Component
+        chapters={[]}
+        accessibility={{}}
+        label={'All chapters'}
+        currentChapter={'04'}
+      />
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
