@@ -14,11 +14,7 @@ class MenuList extends PureComponent {
       <ol className={cx('menuList', { 'menuList--active': isActive })}>
         {chapters.map((chapter, i) => {
           return (
-            <MenuLink
-              key={i}
-              currentChapter={currentChapter}
-              chapter={chapter}
-            />
+            <MenuLink key={i} currentChapter={currentChapter} data={chapter} />
           );
         })}
       </ol>

@@ -27,6 +27,7 @@ class Navigation extends PureComponent {
     const {
       chapters,
       currentChapter,
+      accessibility,
       label,
       theme,
       disable,
@@ -46,6 +47,7 @@ class Navigation extends PureComponent {
           theme={theme}
           onClick={this.toggleNavigation}
           isActive={this.state.isActive}
+          data={accessibility}
           {...rest}
         />
         <MenuList
