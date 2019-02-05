@@ -19,10 +19,12 @@ const imgUrls = [
 stories.addDecorator(withKnobs);
 
 stories.add(`${Component.name}`, () => (
-  <Component
-    imageList={imgUrls}
-    // duration={number('Duration(ms)', 3000)}
-    duration={3000}
-    disabled={boolean('Disabled', false)}
-  />
+  <div style={{ width: '300px', height: '250px' }}>
+    <Component
+      images={imgUrls}
+      // duration={number('Duration(ms)', 3000)}
+      duration={number('Duration', 3000)}
+      disabled={boolean('Disabled', false)}
+    />
+  </div>
 ));

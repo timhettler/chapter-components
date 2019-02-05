@@ -8,13 +8,12 @@ const cx = classNames.bind(styles);
 
 class Image extends PureComponent {
   render() {
-    const { url, duration, id, active } = this.props;
+    const { url, duration, active } = this.props;
     return (
       <div
         className={cx('bgTransition__img', {
           'bgTransition__img--active': active,
         })}
-        data-id={id}
         style={{
           backgroundImage: `url(${url})`,
           transitionDuration: `${duration}ms`,
@@ -28,33 +27,18 @@ class BackgroundTransition extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      shouldDisable: false,
       activeIndex: 0,
-      images: null,
     };
   }
 
   componentDidMount() {
-    this.startTransition();
+    if (!this.props.disabled) {
+      this.startTransition();
+    }
   }
 
   componentWillUnmount() {
     this.stopTransition();
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    if (
-      props.imageList !== state.images ||
-      props.disabled !== state.shouldDisable
-    ) {
-      return {
-        shouldDisable: props.disabled,
-        activeIndex: state.activeIndex,
-        images: props.imageList,
-      };
-    }
-
-    return null;
   }
 
   componentDidUpdate(prevProps) {
@@ -63,6 +47,11 @@ class BackgroundTransition extends PureComponent {
         return this.stopTransition();
       }
       return this.startTransition();
+    }
+
+    if (this.props.duration !== prevProps.duration) {
+      this.stopTransition();
+      this.startTransition();
     }
   }
 
@@ -74,7 +63,7 @@ class BackgroundTransition extends PureComponent {
     this.crossFadeInterval = setInterval(() => {
       this.setState({
         activeIndex:
-          this.state.activeIndex !== this.state.images.length - 1
+          this.state.activeIndex !== this.props.images.length - 1
             ? this.state.activeIndex + 1
             : 0,
       });
@@ -82,7 +71,7 @@ class BackgroundTransition extends PureComponent {
   }
 
   render() {
-    const { duration, imageList, disabled } = this.props;
+    const { duration, images, disabled } = this.props;
     return (
       <div
         ref={this.$parent}
@@ -90,12 +79,11 @@ class BackgroundTransition extends PureComponent {
           'bgTransition--disabled': disabled,
         })}
       >
-        {imageList.map((url, i) => (
+        {images.map((url, i) => (
           <Image
             key={i}
             url={url}
             duration={duration}
-            id={i}
             active={this.state.activeIndex === i}
           />
         ))}
@@ -106,11 +94,10 @@ class BackgroundTransition extends PureComponent {
 
 BackgroundTransition.defaultProps = {
   duration: 3000,
-  disabled: false,
 };
 
 BackgroundTransition.propTypes = {
-  imageList: PropTypes.array.isRequired,
+  images: PropTypes.array.isRequired,
   duration: PropTypes.number,
   disabled: PropTypes.bool,
 };
