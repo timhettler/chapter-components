@@ -9,7 +9,6 @@ exports[`Navigation renders correctly 1`] = `
   />
   <button
     aria-expanded={false}
-    aria-label="Open chapters menu"
     className="menuButton menuButton--is-light"
     onClick={[Function]}
   >

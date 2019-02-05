@@ -47,7 +47,10 @@ MenuButton.defaultProps = {
 };
 
 MenuButton.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.shape({
+    open: PropTypes.string,
+    close: PropTypes.string,
+  }),
   label: PropTypes.string,
   theme: PropTypes.oneOf(['light', 'dark']),
 };
