@@ -4,8 +4,6 @@ exports[`Disclaimer renders correctly 1`] = `
 <div
   className="disclaimer is-dark"
 >
-  <p>
-    FOO
-  </p>
+  FOO
 </div>
 `;
