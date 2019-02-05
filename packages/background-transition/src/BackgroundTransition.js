@@ -8,10 +8,12 @@ const cx = classNames.bind(styles);
 
 class Image extends PureComponent {
   render() {
-    const { url, duration, id } = this.props;
+    const { url, duration, id, active } = this.props;
     return (
       <div
-        className={cx('bgTransition__img')}
+        className={cx('bgTransition__img', {
+          'bgTransition__img--active': active,
+        })}
         data-id={id}
         style={{
           backgroundImage: `url(${url})`,
@@ -25,54 +27,77 @@ class Image extends PureComponent {
 class BackgroundTransition extends PureComponent {
   constructor(props) {
     super(props);
-    this.$parent = React.createRef();
-    this.currentIndex = 0;
-    this.imageLength = this.props.imageList.length - 1;
-    this.currentTarget = null;
+    this.state = {
+      shouldDisable: false,
+      activeIndex: 0,
+      images: null,
+    };
+  }
+
+  componentDidMount() {
+    this.startTransition();
   }
 
   componentWillUnmount() {
-    this.clearInterval();
+    this.stopTransition();
   }
 
-  clearInterval() {
+  static getDerivedStateFromProps(props, state) {
+    if (
+      props.imageList !== state.images ||
+      props.disabled !== state.shouldDisable
+    ) {
+      return {
+        shouldDisable: props.disabled,
+        activeIndex: state.activeIndex,
+        images: props.imageList,
+      };
+    }
+
+    return null;
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.disabled !== prevProps.disabled) {
+      if (this.props.disabled) {
+        return this.stopTransition();
+      }
+      return this.startTransition();
+    }
+  }
+
+  stopTransition() {
     clearInterval(this.crossFadeInterval);
   }
 
-  setInterval() {
+  startTransition() {
     this.crossFadeInterval = setInterval(() => {
-      if (this.currentTarget) {
-        this.currentTarget.classList.remove('active');
-      }
-      this.currentTarget = this.$parent.current.querySelector(
-        `[data-id='${this.currentIndex}']`
-      );
-      this.currentTarget.classList.add('active');
-
-      this.currentIndex =
-        this.currentIndex !== this.imageLength
-          ? this.currentIndex + 1
-          : (this.currentIndex = 0);
+      this.setState({
+        activeIndex:
+          this.state.activeIndex !== this.state.images.length - 1
+            ? this.state.activeIndex + 1
+            : 0,
+      });
     }, this.props.duration);
   }
 
   render() {
-    const { imageList, duration, disabled } = this.props;
-    if (disabled) {
-      this.clearInterval();
-    } else {
-      this.setInterval();
-    }
+    const { duration, imageList, disabled } = this.props;
     return (
       <div
         ref={this.$parent}
-        className={cx(
-          'bgTransition',
-          `${disabled ? 'bgTransition--disabled' : ''}`
-        )}
+        className={cx('bgTransition', {
+          'bgTransition--disabled': disabled,
+        })}
       >
         {imageList.map((url, i) => (
-          <Image key={i} url={url} duration={duration} id={i} />
+          <Image
+            key={i}
+            url={url}
+            duration={duration}
+            id={i}
+            active={this.state.activeIndex === i}
+          />
         ))}
       </div>
     );
