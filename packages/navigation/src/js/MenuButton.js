@@ -9,21 +9,14 @@ const cx = classNames.bind(styles);
 
 class MenuButton extends PureComponent {
   render() {
-    const {
-      label,
-      chapterIcon,
-      closeIcon,
-      theme,
-      isActive,
-      ...rest
-    } = this.props;
+    const { label, data, theme, isActive, ...rest } = this.props;
     return (
       <button
         className={cx('menuButton', `menuButton--is-${theme}`, {
           'menuButton--active': isActive,
         })}
         aria-expanded={isActive ? true : false}
-        aria-label={isActive ? 'Close chapters menu' : 'Open chapters menu'}
+        aria-label={isActive ? data.close : data.open}
         {...rest}
       >
         <span className={cx('menuButton__icon', 'menuButton__icon--primary')}>
@@ -54,6 +47,7 @@ MenuButton.defaultProps = {
 };
 
 MenuButton.propTypes = {
+  data: PropTypes.object,
   label: PropTypes.string,
   theme: PropTypes.oneOf(['light', 'dark']),
 };
