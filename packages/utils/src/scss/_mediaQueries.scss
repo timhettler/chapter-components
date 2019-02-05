@@ -58,6 +58,16 @@ $size--medium-viewport: 768px; // iPad width (portrait)
   }
 }
 
+@mixin mediumAndLarge() {
+  @include _mq(
+    (
+      min-width: $size--small-viewport + 1,
+    )
+  ) {
+    @content;
+  }
+}
+
 @mixin large() {
   @include _mq(
     (
