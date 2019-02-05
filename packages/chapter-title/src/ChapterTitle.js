@@ -31,7 +31,6 @@ class ChapterTitle extends PureComponent {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.movement !== prevProps.movement) {
-      console.log('update');
       if (this.props.movement) {
         document.body.addEventListener('mousemove', this.handleMouseMove);
       } else {
@@ -149,9 +148,11 @@ class ChapterTitle extends PureComponent {
         className={cx('header', `is-${theme}`, `is-${state}`)}
         {...rest}
       >
-        <h1 ref={this.$title} className={cx('title')}>
-          {title}
-        </h1>
+        {title && (
+          <h1 ref={this.$title} className={cx('title')}>
+            {title}
+          </h1>
+        )}
         <h2 ref={this.$subtitle} className={cx('subtitle')}>
           {this.renderSubtitle(subtitle, state)}
         </h2>
@@ -167,7 +168,7 @@ ChapterTitle.defaultProps = {
 };
 
 ChapterTitle.proptTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   subTitle: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
   state: PropTypes.oneOf(['pre', 'default', 'expanded', 'faded']),
