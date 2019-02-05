@@ -29,7 +29,7 @@
   letter-spacing: 0.05em;
   transition-delay: 150ms;
 
-  @media screen and (max-width: 768px) {
+  @include small() {
     font-size: 14px;
   }
 }

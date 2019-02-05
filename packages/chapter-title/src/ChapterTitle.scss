@@ -1,3 +1,5 @@
+@import '~@ssgw/utils/src/scss/index';
+
 .header {
   transition: opacity 1500ms;
 
@@ -32,7 +34,7 @@
     top: 70px;
   }
 
-  @media screen and (max-width: 768px) {
+  @include smallAndMedium() {
     margin-bottom: 35px;
   }
 }
@@ -52,7 +54,7 @@
   width: 100%;
   white-space: nowrap;
 
-  @media screen and (max-width: 768px) {
+  @include smallAndMedium() {
     font-size: 13.5vw;
   }
 }
