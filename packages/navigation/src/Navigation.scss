@@ -340,3 +340,20 @@ $grey: #898787;
     transition: transform 300ms ease;
   }
 }
+
+.cta-msg {
+  opacity: 0;
+  height: 0;
+  display: block;
+  color: $black;
+  margin-top: 20px;
+  margin-left: 50px;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  .navigation--active & {
+    transition-delay: 2.5s;
+    opacity: 0.7;
+    height: auto;
+  }
+}

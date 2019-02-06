@@ -31,6 +31,7 @@ class Navigation extends PureComponent {
       label,
       theme,
       disable,
+      cta,
       ...rest
     } = this.props;
     return (
@@ -55,6 +56,7 @@ class Navigation extends PureComponent {
           isActive={this.state.isActive}
           currentChapter={currentChapter}
         />
+        {cta ? <span className={cx('cta-msg')}>Coming Soon</span> : null}
       </nav>
     );
   }
@@ -70,6 +72,7 @@ Navigation.propTypes = {
   label: PropTypes.string,
   theme: PropTypes.oneOf(['light', 'dark']),
   disable: PropTypes.bool,
+  cta: PropTypes.bool,
 };
 
 export default Navigation;

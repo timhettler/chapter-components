@@ -94,6 +94,7 @@ stories.add('Navigation', () => (
         close: 'Close chapters menu',
       }}
       chapters={chapters}
+      cta={boolean('Coming soon', true)}
     />
   </div>
 ));
