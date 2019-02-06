@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/chapter-title",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "Animated text used in chapter bookends",
   "main": "dist/index.js",
   "scripts": {
