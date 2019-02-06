@@ -8,11 +8,9 @@
   height: $size;
 }
 $chaptersTotal: 12;
-$inverseType: -1; // Direction of navigation content sliding from left or right
 $transition-time-func: cubic-bezier(0.215, 0.61, 0.355, 1);
 $white: #fff;
 $black: #000;
-$grey: #898787;
 
 .navigation {
   position: relative;
@@ -49,7 +47,7 @@ $grey: #898787;
     @include large() {
       display: block;
       opacity: 0.8;
-      transform: translateX(100% * $inverseType);
+      transform: translateX(100% * -1);
       transition-property: transform;
       transition-timing-function: $transition-time-func;
       .navigation--active & {
@@ -109,8 +107,8 @@ $grey: #898787;
     }
   }
 
-  [class*='__icon'],
-  [class*='__text'] {
+  &__icon,
+  &__text {
     transition-property: opacity, transform;
     transition-duration: 400ms;
     transition-timing-function: $transition-time-func;
@@ -298,6 +296,15 @@ $grey: #898787;
     transform-origin: 100% 50% 0;
     transform: scaleX(0);
     transition: transform 400ms ease;
+
+    .menuLink--active &,
+    .menuLink--current &,
+    .menuLink:hover &,
+    .menuLink:focus & {
+      transform-origin: 0% 50% 0;
+      transform: scaleX(1);
+      transition: transform 300ms ease;
+    }
   }
 
   .menuList--active & {
@@ -330,22 +337,14 @@ $grey: #898787;
   &--current a {
     pointer-events: none;
   }
-
-  &--active &__line,
-  &--current &__line,
-  &:hover &__line,
-  &:focus &__line {
-    transform-origin: 0% 50% 0;
-    transform: scaleX(1);
-    transition: transform 300ms ease;
-  }
 }
 
-.cta-msg {
+.cta {
   opacity: 0;
   height: 0;
-  display: block;
   color: $black;
+  font-family: 'SamsungSharpSansBold', serif;
+  font-size: 13px;
   margin-top: 20px;
   margin-left: 50px;
   transition-property: all;
