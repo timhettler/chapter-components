@@ -20,7 +20,7 @@ $grey: #898787;
   overflow: hidden;
   transition: opacity 300ms ease;
 
-  @media screen and (max-width: 768px) {
+  @include smallAndMedium {
     background-color: rgba(255, 255, 255, 0);
     transition: background-color 400ms ease-out;
 
@@ -46,14 +46,14 @@ $grey: #898787;
     transition-duration: 500ms;
     transition-delay: 100ms;
 
-    @media screen and (min-width: 768px) {
+    @include large() {
       display: block;
       opacity: 0.8;
       transform: translateX(100% * $inverseType);
       transition-property: transform;
       transition-timing-function: $transition-time-func;
       .navigation--active & {
-        transition-delay: 0;
+        transition-delay: 0ms;
         transform: translateX(0);
       }
     }
@@ -75,7 +75,7 @@ $grey: #898787;
   transition-duration: 400ms;
   transition-property: background-color;
 
-  @media screen and (max-width: 768px) {
+  @include smallAndMedium {
     width: 44px;
     overflow: hidden;
     &--active {
@@ -140,7 +140,7 @@ $grey: #898787;
         opacity: 0;
         transform: translateY(-5px);
       }
-      @media screen and (max-width: 768px) {
+      @include smallAndMedium {
         display: none;
       }
     }
@@ -154,7 +154,7 @@ $grey: #898787;
         opacity: 1;
         transform: translate(-25px, -5px);
       }
-      @media screen and (max-width: 768px) {
+      @include smallAndMedium {
         transform: translate(-35px, 10px);
         transition-duration: 0ms !important;
         .menuButton--active & {
@@ -173,7 +173,7 @@ $grey: #898787;
       top: 50%;
       color: $white;
       opacity: 1;
-      @media screen and (min-width: 768px) {
+      @include large() {
         margin-top: -8.8px;
         left: 20px;
         transform: translateX(0);
@@ -183,7 +183,7 @@ $grey: #898787;
         }
       }
 
-      @media screen and (max-width: 768px) {
+      @include smallAndMedium {
         left: 50%;
         transform: translate(-50%, -50%);
         .menuButton--active & {
@@ -207,7 +207,7 @@ $grey: #898787;
         transform: translateX(5px);
       }
 
-      // @media screen and (max-width: 768px) {
+      // @include smallAndMedium {
       //   display: none;
       //   .menuButton--active & {
       //     display: initial;
