@@ -84,11 +84,16 @@ const chapters = [
 stories.addDecorator(withKnobs);
 
 stories.add('Navigation', () => (
-  <Navigation
-    label={text('Button Text', 'All Chapters')}
-    theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
-    currentChapter={text('Current Chapter', '02')}
-    accessibility={{ open: 'Open chapters menu', close: 'Close chapters menu' }}
-    chapters={chapters}
-  />
+  <div style={{ height: '100vh', width: '100%' }}>
+    <Navigation
+      label={text('Button Text', 'All Chapters')}
+      theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
+      currentChapter={text('Current Chapter', '02')}
+      accessibility={{
+        open: 'Open chapters menu',
+        close: 'Close chapters menu',
+      }}
+      chapters={chapters}
+    />
+  </div>
 ));
