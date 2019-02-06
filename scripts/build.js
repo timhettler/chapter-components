@@ -27,9 +27,12 @@ fs.emptyDirSync(destination);
 async function copyStyles() {
   const paths = await globby(`${source}/**/*.scss`);
 
-  paths.forEach(file => {
+  paths.forEach(async file => {
     const base = path.parse(file).base;
-    fs.copyFile(file, `${destination}/${base}`);
+    const dest = path.parse(file).dir.replace(source, destination);
+
+    await fs.ensureDir(dest);
+    await fs.copyFile(file, `${dest}/${base}`);
   });
 }
 
@@ -56,11 +59,10 @@ async function transformScript(file) {
 
     await fs.ensureDir(dest);
     await fs.writeFile(`${dest}/${base}`, contents.code);
-    // TODO determine if source mapping is necessary since we aren't minifying source
-    // await fs.writeJson(
-    //   `${destination}/${base}.map`,
-    //   contents.map
-    // );
+    await fs.writeJson(
+      `${dest}/${base}.map`,
+      contents.map
+    );
 
     return true;
   }
