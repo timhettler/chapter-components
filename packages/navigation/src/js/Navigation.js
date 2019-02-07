@@ -59,6 +59,7 @@ class Navigation extends PureComponent {
 Navigation.defaultProps = {
   theme: 'light',
   disabled: false,
+  onClick: () => {},
 };
 
 Navigation.propTypes = {

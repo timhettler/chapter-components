@@ -9,6 +9,7 @@ exports[`Navigation renders correctly 1`] = `
   />
   <button
     aria-expanded={false}
+    aria-label="foo"
     className="menuButton menuButton--is-light"
     onClick={[Function]}
   >
@@ -66,6 +67,61 @@ exports[`Navigation renders correctly 1`] = `
   </button>
   <ol
     className="menuList"
-  />
+  >
+    <li
+      className="menuLink menuLink--current"
+    >
+      <a
+        href="https://www.samsung.com/uk/explore/samsung-within-1"
+        tabIndex={-1}
+      >
+        <div
+          className="menuLink__number"
+        >
+          01
+        </div>
+        <div
+          className="menuLink__dash"
+        >
+          –
+        </div>
+        <div
+          className="menuLink__title"
+        >
+          Our Philosophy
+        </div>
+        <div
+          className="menuLink__line"
+        />
+      </a>
+    </li>
+    <li
+      className="menuLink"
+    >
+      <a
+        href="https://www.samsung.com/uk/explore/samsung-within-2"
+        tabIndex={null}
+      >
+        <div
+          className="menuLink__number"
+        >
+          02
+        </div>
+        <div
+          className="menuLink__dash"
+        >
+          –
+        </div>
+        <div
+          className="menuLink__title"
+        >
+          What's in a Name
+        </div>
+        <div
+          className="menuLink__line"
+        />
+      </a>
+    </li>
+  </ol>
 </nav>
 `;
