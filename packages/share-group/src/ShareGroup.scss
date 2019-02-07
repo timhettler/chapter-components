@@ -14,12 +14,14 @@
   display: flex;
   flex-direction: column;
   font-family: 'SamsungSansMedium', sans-serif;
+  font-weight: 500;
   transition: opacity 350ms, transform 350ms, visibility 400ms;
 
   &__title {
     align-self: flex-start;
     font-family: 'SamsungSharpSans', sans-serif;
     font-size: 9px;
+    font-weight: bold;
     color: inherit;
     letter-spacing: 0.2em;
     margin-bottom: 8px;
