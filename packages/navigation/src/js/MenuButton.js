@@ -46,13 +46,15 @@ MenuButton.defaultProps = {
   theme: 'light',
 };
 
-MenuButton.propTypes = {
+export const MenuButtonPropTypes = {
   data: PropTypes.shape({
     open: PropTypes.string,
     close: PropTypes.string,
-  }),
-  label: PropTypes.string,
+  }).isRequired,
+  label: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
 };
+
+MenuButton.propTypes = MenuButtonPropTypes;
 
 export default MenuButton;

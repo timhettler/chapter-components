@@ -3,33 +3,42 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import styles from '../Navigation.scss';
-import MenuLink from './MenuLink';
+import MenuLink, { MenuLinkPropTypes } from './MenuLink';
 
 const cx = classNames.bind(styles);
 
 class MenuList extends PureComponent {
   render() {
-    const { isActive, chapters, currentChapter } = this.props;
+    const { isActive, chapters, currentChapter, cta } = this.props;
     return (
       <ol className={cx('menuList', { 'menuList--active': isActive })}>
         {chapters.map((chapter, i) => {
+          const isCurrent = currentChapter === chapter.id;
+
           return (
-            <MenuLink key={i} currentChapter={currentChapter} data={chapter} />
+            <li
+              key={i}
+              className={cx('menuLink', {
+                'menuLink--current': isCurrent,
+              })}
+            >
+              <MenuLink isCurrent={isCurrent} data={chapter} />
+            </li>
           );
         })}
+        {cta ? <li className={cx('menuLink')}>{cta}</li> : null}
       </ol>
     );
   }
 }
 
-MenuList.defaultProps = {
-  isActive: false,
-};
+MenuList.defaultProps = {};
 
 MenuList.propTypes = {
-  isActive: PropTypes.bool.isRequired,
+  isActive: PropTypes.bool,
   currentChapter: PropTypes.string.isRequired,
-  chapters: PropTypes.arrayOf(PropTypes.object).isRequired,
+  chapters: PropTypes.arrayOf(MenuLinkPropTypes.data).isRequired,
+  cta: PropTypes.string,
 };
 
 export default MenuList;

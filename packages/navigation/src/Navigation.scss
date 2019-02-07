@@ -7,7 +7,7 @@
   width: $size;
   height: $size;
 }
-$chaptersTotal: 12;
+$chaptersTotal: 20;
 $transition-time-func: cubic-bezier(0.215, 0.61, 0.355, 1);
 $white: #fff;
 $black: #000;
@@ -62,32 +62,26 @@ $black: #000;
   @include reset-button();
   position: relative;
   height: 44px;
-  margin-top: 30px;
-  margin-left: 30px;
   text-transform: uppercase;
-  -webkit-appearance: none;
-  border: none;
   border-radius: 22px;
-  background-color: rgba(128, 128, 128, 0.3);
-  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition-duration: 400ms;
-  transition-property: background-color;
+  transition-timing-function: background-color $transition-time-func 400ms;
 
   @include smallAndMedium {
     width: 44px;
     overflow: hidden;
+
     &--active {
-      width: initial;
+      width: auto;
     }
   }
 
-  &:hover,
-  &:focus {
-    background-color: rgba(128, 128, 128, 0.6);
-  }
-
   &--is-light {
-    background-color: $white;
+    background-color: rgba(128, 128, 128, 0.3);
+
+    &:hover,
+    &:focus {
+      background-color: rgba(128, 128, 128, 0.6);
+    }
   }
 
   &--is-dark {
@@ -99,19 +93,7 @@ $black: #000;
   }
 
   &--active {
-    opacity: 1;
-    background-color: transparent;
-    &:hover,
-    &:focus {
-      background-color: transparent;
-    }
-  }
-
-  &__icon,
-  &__text {
-    transition-property: opacity, transform;
-    transition-duration: 400ms;
-    transition-timing-function: $transition-time-func;
+    background-color: transparent !important;
   }
 
   &__copy {
@@ -128,16 +110,18 @@ $black: #000;
     font-size: 11px;
     width: auto;
     letter-spacing: 0.2em;
-    line-height: 11px;
+    line-height: 1;
 
     &--primary {
       color: $white;
       opacity: 1;
       transform: translateY(7px);
+
       .menuButton--active & {
         opacity: 0;
         transform: translateY(-5px);
       }
+
       @include smallAndMedium {
         display: none;
       }
@@ -148,10 +132,12 @@ $black: #000;
       left: 25px;
       opacity: 0;
       transform: translate(-25px, 10px);
+
       .menuButton--active & {
         opacity: 1;
         transform: translate(-25px, -5px);
       }
+
       @include smallAndMedium {
         transform: translate(-35px, 10px);
         transition-duration: 0ms !important;
@@ -163,18 +149,28 @@ $black: #000;
     }
   }
 
+  &__icon,
+  &__text {
+    transition-property: opacity, transform;
+    transition-duration: 400ms;
+    transition-timing-function: $transition-time-func;
+  }
+
   &__icon {
     position: absolute;
+
     &--primary {
       width: 17.6px;
       height: 17.6px;
       top: 50%;
       color: $white;
       opacity: 1;
+
       @include large() {
         margin-top: -8.8px;
         left: 20px;
         transform: translateX(0);
+
         .menuButton--active & {
           opacity: 0;
           transform: translateX(-5px);
@@ -184,6 +180,7 @@ $black: #000;
       @include smallAndMedium {
         left: 50%;
         transform: translate(-50%, -50%);
+
         .menuButton--active & {
           transition-property: opacity;
           transition-duration: 0ms;
@@ -200,6 +197,7 @@ $black: #000;
       opacity: 0;
       right: 22px;
       transform: translateX(25px);
+
       .menuButton--active & {
         opacity: 1;
         transform: translateX(5px);
@@ -209,17 +207,18 @@ $black: #000;
 }
 
 .menuList {
-  margin: 30px 50px 0;
+  margin: 20px;
   height: 0;
+  padding: 0;
+  list-style: none;
   visibility: hidden;
   pointer-events: none;
   transition-property: visibility, height;
   transition-duration: 1ms;
   transition-delay: 650ms;
-  padding: 0;
-  list-style: none;
+
   &--active {
-    height: initial;
+    height: auto;
     transition-delay: 1ms;
     pointer-events: inherit;
     visibility: visible;
@@ -230,7 +229,6 @@ $black: #000;
   height: 40px;
   opacity: 0;
   font-weight: 600;
-  display: flex;
   color: $black;
   font-family: 'SamsungSharpSansBold', serif;
   font-size: 13px;
@@ -246,7 +244,22 @@ $black: #000;
       .menuLink__title {
         transition-delay: (100ms * ($i - 1));
       }
+
+      .menuList--active & {
+        transition: transform 600ms ease (100ms * ($i - 1)),
+          opacity 600ms ease (150ms * ($i - 1));
+
+        .menuLink__number,
+        .menuLink__title {
+          transition-delay: (150ms * ($i - 1));
+        }
+      }
     }
+  }
+
+  .menuList--active & {
+    transform: translateY(0);
+    opacity: 0.7;
   }
 
   a {
@@ -255,6 +268,10 @@ $black: #000;
     text-decoration: none;
     align-items: baseline;
     color: inherit;
+
+    .menuLink--current & {
+      pointer-events: none;
+    }
   }
 
   &__number,
@@ -266,19 +283,24 @@ $black: #000;
     top: 50%;
   }
 
-  &__number,
-  &__title {
-    transition-property: transform;
-    transition-duration: 600ms;
-    transition-timing-function: $transition-time-func;
-  }
-
   &__number {
     transform: translateX(-15px);
   }
 
   &__title {
     transform: translateX(15px);
+  }
+
+  &__number,
+  &__title {
+    transition-property: transform;
+    transition-duration: 600ms;
+    transition-timing-function: $transition-time-func;
+
+    .menuList--active & {
+      transform: translateX(0);
+      transition-duration: 900ms;
+    }
   }
 
   &__dash {
@@ -292,12 +314,11 @@ $black: #000;
     left: 0;
     top: 50%;
     margin-top: 8px;
-    background-color: currentColor;
+    background-color: $black;
     transform-origin: 100% 50% 0;
     transform: scaleX(0);
     transition: transform 400ms ease;
 
-    .menuLink--active &,
     .menuLink--current &,
     .menuLink:hover &,
     .menuLink:focus & {
@@ -305,54 +326,5 @@ $black: #000;
       transform: scaleX(1);
       transition: transform 300ms ease;
     }
-  }
-
-  .menuList--active & {
-    transform: translateY(0);
-    opacity: 0.7;
-
-    @for $i from 1 through $chaptersTotal {
-      &:nth-child(#{$i}) {
-        transition: transform 600ms ease (100ms * ($i - 1)),
-          opacity 600ms ease (150ms * ($i - 1));
-
-        .menuLink__number,
-        .menuLink__title {
-          transition-delay: (150ms * ($i - 1));
-        }
-      }
-    }
-
-    &__number,
-    &__title {
-      transform: translateX(0);
-      transition-duration: 900ms;
-    }
-
-    &__line {
-      background-color: $black;
-    }
-  }
-
-  &--current a {
-    pointer-events: none;
-  }
-}
-
-.cta {
-  opacity: 0;
-  height: 0;
-  color: $black;
-  font-family: 'SamsungSharpSansBold', serif;
-  font-size: 13px;
-  margin-top: 20px;
-  margin-left: 50px;
-  transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
-  .navigation--active & {
-    transition-delay: 2.5s;
-    opacity: 0.7;
-    height: auto;
   }
 }
