@@ -103,17 +103,13 @@ git push
 git pull origin master --tags
 ```
 
-- Run the Lerna update command. This tells you which packages have changed since your merge. Ensure that any updated packages are working properly.
-
-```shell
-yarn lerna-updated
-```
-
 - Run the Lerna version command. This prompts you to update the version any packages that have changed. For most changes, a PATCH update is what you want. (Check out the [Semantic Versioning docs](https://semver.org/) to learn when to use each version type.)
 
 ```shell
 yarn lerna-version
 ```
+
+> See packages listed that you didn't change? This probably means that someone push a change and forgot to run this command. Reach out to the team to coordinate, or simply give the mysteriously-upddated package a PATCH version.
 
 - If this command runs successfully, it will also perform a PATCH update on the mono repo itself, then push the updated code and tags to origin. This triggers the CI to publish the updated packages to our private npm server.
 
