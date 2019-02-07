@@ -72,7 +72,7 @@ $black: #000;
   height: 44px;
   text-transform: uppercase;
   border-radius: 22px;
-  transition-timing-function: background-color $transition-time-func 400ms;
+  transition: background-color $transition-time-func 400ms;
   pointer-events: auto;
 
   @include smallAndMedium {
