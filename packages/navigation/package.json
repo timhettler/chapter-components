@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/navigation",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A component with a list of chapters to navigate through.",
   "main": "dist/index.js",
   "scripts": {
@@ -12,8 +12,8 @@
   "author": "R/GA",
   "license": "UNLICENSED",
   "dependencies": {
-    "@ssgw/icon": "^0.1.8",
-    "@ssgw/utils": "^0.2.3",
+    "@ssgw/icon": "^0.1.9",
+    "@ssgw/utils": "^0.2.4",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2"
   },
