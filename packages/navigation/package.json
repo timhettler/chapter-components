@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/navigation",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A component with a list of chapters to navigate through.",
   "main": "dist/index.js",
   "scripts": {
