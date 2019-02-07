@@ -63,6 +63,11 @@ $black: #000;
 
 .menuButton {
   @include reset-button();
+  font-family: 'SamsungSharpSans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  line-height: 1;
   position: relative;
   height: 44px;
   text-transform: uppercase;
@@ -110,11 +115,7 @@ $black: #000;
   }
 
   &__text {
-    font-family: 'SamsungSharpSans', serif;
-    font-size: 11px;
     width: auto;
-    letter-spacing: 0.2em;
-    line-height: 1;
 
     &--primary {
       color: $white;
@@ -232,9 +233,9 @@ $black: #000;
 .menuLink {
   height: 40px;
   opacity: 0;
-  font-weight: 600;
   color: $black;
-  font-family: 'SamsungSharpSansBold', serif;
+  font-family: 'SamsungSharpSans', Arial, sans-serif;
+  font-weight: bold;
   font-size: 13px;
   letter-spacing: 0.05em;
 
