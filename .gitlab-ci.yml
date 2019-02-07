@@ -4,8 +4,9 @@ test:
   only:
     - master
   script:
-    - npm install
-    - npm run test
+    - yarn
+    - yarn lerna-build
+    - yarn test
 
 publish:
   stage: deploy
