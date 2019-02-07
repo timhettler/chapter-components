@@ -4,8 +4,9 @@ import classNames from 'classnames/bind';
 
 import styles from '../Navigation.scss';
 
-import MenuList from './MenuList';
-import MenuButton from './MenuButton';
+import { MenuLinkPropTypes } from './MenuLink';
+import MenuList, { MenuListProps } from './MenuList';
+import MenuButton, { MenuButtonPropTypes } from './MenuButton';
 
 const cx = classNames.bind(styles);
 
@@ -55,8 +56,8 @@ class Navigation extends PureComponent {
           chapters={chapters}
           isActive={this.state.isActive}
           currentChapter={currentChapter}
+          cta={cta}
         />
-        {cta ? <p className={cx('cta')}>{cta}</p> : null}
       </nav>
     );
   }
@@ -68,11 +69,13 @@ Navigation.defaultProps = {
 };
 
 Navigation.propTypes = {
-  currentChapter: PropTypes.string,
-  label: PropTypes.string,
+  chapters: PropTypes.arrayOf(MenuLinkPropTypes.data).isRequired,
+  currentChapter: PropTypes.string.isRequired,
+  accessibility: MenuButtonPropTypes.data,
+  label: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
   disable: PropTypes.bool,
-  cta: PropTypes.string,
+  cta: MenuListProps.cta,
 };
 
 export default Navigation;

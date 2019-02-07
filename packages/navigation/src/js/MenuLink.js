@@ -6,48 +6,31 @@ import styles from '../Navigation.scss';
 
 const cx = classNames.bind(styles);
 
-const LinkContent = ({ chapterInfo }) => {
-  return (
-    <React.Fragment>
-      <div className={cx('menuLink__number')}>{chapterInfo.id}</div>
-      <div className={cx('menuLink__dash')}>&ndash;</div>
-      <div className={cx('menuLink__title')}>{chapterInfo.chapterTitle}</div>
-      <div className={cx('menuLink__line')} />
-    </React.Fragment>
-  );
-};
-
 class MenuLink extends PureComponent {
   render() {
-    const { currentChapter, data, ...rest } = this.props;
+    const { isCurrent, data, ...rest } = this.props;
     return (
-      <li
-        className={cx('menuLink', {
-          'menuLink--current': currentChapter === data.id,
-        })}
-      >
-        <a
-          href={data.url}
-          tabIndex={currentChapter === data.id ? -1 : null}
-          {...rest}
-        >
-          <LinkContent chapterInfo={data} />
-        </a>
-      </li>
+      <a href={data.url} tabIndex={isCurrent ? -1 : null} {...rest}>
+        <div className={cx('menuLink__number')}>{data.id}</div>
+        <div className={cx('menuLink__dash')}>&ndash;</div>
+        <div className={cx('menuLink__title')}>{data.title}</div>
+        <div className={cx('menuLink__line')} />
+      </a>
     );
   }
 }
 
 MenuLink.defaultProps = {};
 
-MenuLink.propTypes = {
-  currentChapter: PropTypes.string.isRequired,
+export const MenuLinkPropTypes = {
+  isCurrent: PropTypes.bool,
   data: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    chapterName: PropTypes.string.isRequired,
-    chapterTitle: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
   }).isRequired,
 };
+
+MenuLink.propTypes = MenuLinkPropTypes;
 
 export default MenuLink;

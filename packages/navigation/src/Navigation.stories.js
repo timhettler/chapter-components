@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
+import { withKnobs, text, radios } from '@storybook/addon-knobs';
 import Navigation from '.';
 
 const stories = storiesOf('Bookend', module);
@@ -8,74 +8,74 @@ const stories = storiesOf('Bookend', module);
 const chapters = [
   {
     id: '01',
-    chapterName: 'Chapter 1',
-    chapterTitle: 'Our Philosophy',
+    chapter: 'Chapter 1',
+    title: 'Our Philosophy',
     url: 'https://www.samsung.com/uk/explore/samsung-within-1',
   },
   {
     id: '02',
-    chapterName: 'Chapter 2',
-    chapterTitle: "What's in a Name",
+    chapter: 'Chapter 2',
+    title: "What's in a Name",
     url: 'https://www.samsung.com/uk/explore/samsung-within-2',
   },
   {
     id: '03',
-    chapterName: 'Chapter 3',
-    chapterTitle: 'Extreme Conditions',
+    chapter: 'Chapter 3',
+    title: 'Extreme Conditions',
     url: 'https://www.samsung.com/uk/explore/samsung-within-3',
   },
   {
     id: '04',
-    chapterName: 'Chapter 4',
-    chapterTitle: "A Phone Built on Can't",
+    chapter: 'Chapter 4',
+    title: "A Phone Built on Can't",
     url: 'https://www.samsung.com/uk/explore/samsung-within-4',
   },
   {
     id: '05',
-    chapterName: 'Chapter 1',
-    chapterTitle: 'Our Philosophy',
+    chapter: 'Chapter 1',
+    title: 'Our Philosophy',
     url: 'https://www.samsung.com/uk/explore/samsung-within-1',
   },
   {
     id: '06',
-    chapterName: 'Chapter 2',
-    chapterTitle: "What's in a Name",
+    chapter: 'Chapter 2',
+    title: "What's in a Name",
     url: 'https://www.samsung.com/uk/explore/samsung-within-2',
   },
   {
     id: '07',
-    chapterName: 'Chapter 3',
-    chapterTitle: 'Extreme Conditions',
+    chapter: 'Chapter 3',
+    title: 'Extreme Conditions',
     url: 'https://www.samsung.com/uk/explore/samsung-within-3',
   },
   {
     id: '08',
-    chapterName: 'Chapter 4',
-    chapterTitle: "A Phone Built on Can't",
+    chapter: 'Chapter 4',
+    title: "A Phone Built on Can't",
     url: 'https://www.samsung.com/uk/explore/samsung-within-4',
   },
   {
     id: '09',
-    chapterName: 'Chapter 1',
-    chapterTitle: 'Our Philosophy',
+    chapter: 'Chapter 1',
+    title: 'Our Philosophy',
     url: 'https://www.samsung.com/uk/explore/samsung-within-1',
   },
   {
     id: '10',
-    chapterName: 'Chapter 2',
-    chapterTitle: "What's in a Name",
+    chapter: 'Chapter 2',
+    title: "What's in a Name",
     url: 'https://www.samsung.com/uk/explore/samsung-within-2',
   },
   {
     id: '11',
-    chapterName: 'Chapter 3',
-    chapterTitle: 'Extreme Conditions',
+    chapter: 'Chapter 3',
+    title: 'Extreme Conditions',
     url: 'https://www.samsung.com/uk/explore/samsung-within-3',
   },
   {
     id: '12',
-    chapterName: 'Chapter 4',
-    chapterTitle: "A Phone Built on Can't",
+    chapter: 'Chapter 4',
+    title: "A Phone Built on Can't",
     url: 'https://www.samsung.com/uk/explore/samsung-within-4',
   },
 ];
