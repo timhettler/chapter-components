@@ -13,15 +13,6 @@ const cx = classNames.bind(styles);
 class Navigation extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      isActive: false,
-    };
-
-    this.toggleNavigation = this.toggleNavigation.bind(this);
-  }
-
-  toggleNavigation() {
-    this.setState({ isActive: !this.state.isActive });
   }
 
   render() {
@@ -31,30 +22,32 @@ class Navigation extends PureComponent {
       accessibility,
       label,
       theme,
-      disable,
+      disabled,
+      isActive,
       cta,
+      onClick,
       ...rest
     } = this.props;
     return (
       <nav
         className={cx(
           'navigation',
-          { 'navigation--hidden': disable },
-          { 'navigation--active': this.state.isActive }
+          { 'navigation--hidden': disabled },
+          { 'navigation--active': isActive }
         )}
       >
         <div className={cx('navigation__bgLayer')} />
         <MenuButton
           label={label}
           theme={theme}
-          onClick={this.toggleNavigation}
-          isActive={this.state.isActive}
+          onClick={onClick}
+          isActive={isActive}
           data={accessibility}
           {...rest}
         />
         <MenuList
           chapters={chapters}
-          isActive={this.state.isActive}
+          isActive={isActive}
           currentChapter={currentChapter}
           cta={cta}
         />
@@ -65,7 +58,7 @@ class Navigation extends PureComponent {
 
 Navigation.defaultProps = {
   theme: 'light',
-  disable: false,
+  disabled: false,
 };
 
 Navigation.propTypes = {
@@ -74,8 +67,10 @@ Navigation.propTypes = {
   accessibility: MenuButtonPropTypes.data,
   label: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
-  disable: PropTypes.bool,
+  disabled: PropTypes.bool,
+  isActive: PropTypes.bool,
   cta: MenuListProps.cta,
+  onClick: PropTypes.func,
 };
 
 export default Navigation;

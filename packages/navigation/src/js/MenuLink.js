@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { ssgwPropTypes } from '@ssgw/utils';
 
 import styles from '../Navigation.scss';
 
@@ -10,7 +11,12 @@ class MenuLink extends PureComponent {
   render() {
     const { isCurrent, data, ...rest } = this.props;
     return (
-      <a href={data.url} tabIndex={isCurrent ? -1 : null} {...rest}>
+      <a
+        href={data.url}
+        tabIndex={isCurrent ? -1 : null}
+        {...data.tracking}
+        {...rest}
+      >
         <div className={cx('menuLink__number')}>{data.id}</div>
         <div className={cx('menuLink__dash')}>&ndash;</div>
         <div className={cx('menuLink__title')}>{data.title}</div>
@@ -28,6 +34,7 @@ export const MenuLinkPropTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
+    tracking: ssgwPropTypes.tracking,
   }).isRequired,
 };
 

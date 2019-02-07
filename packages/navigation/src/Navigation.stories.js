@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, radios } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, radios } from '@storybook/addon-knobs';
 import Navigation from '.';
 
 const stories = storiesOf('Bookend', module);
@@ -85,6 +85,8 @@ stories.addDecorator(withKnobs);
 stories.add('Navigation', () => (
   <div style={{ height: '100vh', width: '100%' }}>
     <Navigation
+      isActive={boolean('Active', false)}
+      disabled={boolean('Disabled', false)}
       label={text('Button Text', 'All Chapters')}
       theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
       currentChapter={text('Current Chapter', '02')}
