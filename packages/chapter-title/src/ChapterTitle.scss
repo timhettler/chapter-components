@@ -22,7 +22,7 @@
 }
 
 .title {
-  font-family: 'SamsungOne', Arial, sans-serif;
+  font-family: $font-family--one;
   font-weight: normal;
   font-size: 18px;
   margin-bottom: 70px;
@@ -41,7 +41,7 @@
 }
 
 .subtitle {
-  font-family: 'SamsungSharpSans', Arial, sans-serif;
+  font-family: $font-family--sharp-sans;
   font-weight: bold;
   transform-style: preserve-3d;
   perspective: 2000px;

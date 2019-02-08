@@ -11,10 +11,7 @@ class ReplayButton extends PureComponent {
     const { label, icon, dividerPos, ...rest } = this.props;
     return (
       <button
-        className={cx(
-          'replayBtn',
-          `replayBtn--divider_${dividerPos}`
-        )}
+        className={cx('replayBtn', `replayBtn--divider_${dividerPos}`)}
         {...rest}
       >
         <span className={cx('replayBtn__icon')}>{icon}</span>

@@ -63,7 +63,7 @@ $black: #000;
 
 .menuButton {
   @include reset-button();
-  font-family: 'SamsungSharpSans', Arial, sans-serif;
+  font-family: $font-family--sharp-sans;
   font-weight: bold;
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -234,7 +234,7 @@ $black: #000;
   height: 40px;
   opacity: 0;
   color: $black;
-  font-family: 'SamsungSharpSans', Arial, sans-serif;
+  font-family: $font-family--sharp-sans;
   font-weight: bold;
   font-size: 13px;
   letter-spacing: 0.05em;

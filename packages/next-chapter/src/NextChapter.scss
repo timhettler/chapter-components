@@ -14,7 +14,7 @@
 }
 
 .title {
-  font-family: 'SamsungOne', sans-serif;
+  font-family: $font-family--one;
   font-size: 10px;
   letter-spacing: 0.1em;
   margin-bottom: 5px;
@@ -24,7 +24,7 @@
 }
 
 .subtitle {
-  font-family: 'SamsungSharpSans', sans-serif;
+  font-family: $font-family--sharp-sans;
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 0.05em;

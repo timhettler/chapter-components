@@ -13,15 +13,13 @@
 .share-group {
   display: flex;
   flex-direction: column;
-  font-family: 'SamsungSans', sans-serif;
-  font-weight: 500;
   transition: opacity 350ms, transform 350ms, visibility 400ms;
 
   &__title {
     align-self: flex-start;
-    font-family: 'SamsungSharpSans', sans-serif;
-    font-size: 9px;
+    font-family: $font-family--sharp-sans;
     font-weight: bold;
+    font-size: 9px;
     color: inherit;
     letter-spacing: 0.2em;
     margin-bottom: 8px;
@@ -48,6 +46,8 @@
 }
 
 .shareLink {
+  font-family: $font-family--sans;
+  font-weight: 500;
   position: relative;
   display: block;
   width: 50px;
@@ -152,6 +152,9 @@
 
 .replayBtn {
   @include reset-button();
+  font-family: $font-family--sharp-sans;
+  font-size: 9px;
+  letter-spacing: 0.2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,10 +183,6 @@
   }
 
   &__text {
-    font-family: 'SamsungSharpSans', sans-serif;
-    font-size: 9px;
-    color: inherit;
-    letter-spacing: 0.2em;
     @include transition-default-properties();
 
     &--primary {

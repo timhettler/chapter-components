@@ -1,7 +1,9 @@
+@import '~@ssgw/utils/dist/scss/index';
+
 .disclaimer {
   position: relative;
   font-size: 12px;
-  font-family: 'SamsungOne', Arial, sans-serif;
+  font-family: $font-family--one;
   text-align: center;
   line-height: 1.5;
   opacity: 0.6;
