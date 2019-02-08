@@ -5,3 +5,4 @@ export { default as Twitter } from './Icons/Twitter';
 export { default as Mail } from './Icons/Mail';
 export { default as Replay } from './Icons/Replay';
 export { default as Close } from './Icons/Close';
+export { default as Audio } from './Icons/Audio';

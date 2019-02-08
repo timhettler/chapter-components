@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AudioButton renders correctly 1`] = `
+<button
+  aria-hidden={false}
+  className="audioButton audioButton--is-dark"
+  onClick={[Function]}
+>
+  <span
+    className="audioButton__icon"
+  />
+</button>
+`;
