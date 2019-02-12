@@ -15,5 +15,8 @@
     "node-sass": ">=4.10.0",
     "react": ">=16.6.0",
     "react-dom": ">=16.6.0"
+  },
+  "dependencies": {
+    "react-matchmedia-connect": "^0.2.1"
   }
 }
