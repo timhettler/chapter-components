@@ -3,6 +3,7 @@
 exports[`Button renders correctly 1`] = `
 <button
   className="btn btn--is-dark"
+  disabled={false}
 >
   <span
     className="btn__icon"
