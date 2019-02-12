@@ -1,19 +1,21 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Button from '@ssgw/button';
-import { Audio } from '@ssgw/icon';
+import Button, { ButtonPropTypes } from '@ssgw/button';
 import styles from './AudioButton.scss';
 
 const cx = classNames.bind(styles);
 
 class AudioButton extends PureComponent {
   render() {
-    const { theme, isMuted, ...rest } = this.props;
+    const { disabled, theme, isMuted, render, ...rest } = this.props;
     return (
-      <Button theme={theme} {...rest}>
-        <Audio isMuted={isMuted} />
-      </Button>
+      <Button
+        theme={theme}
+        icon={render(isMuted)}
+        disabled={disabled}
+        {...rest}
+      />
     );
   }
 }
@@ -23,7 +25,9 @@ AudioButton.defaultProps = {
 };
 
 AudioButton.propTypes = {
-  theme: PropTypes.oneOf(['light', 'dark']),
+  render: PropTypes.func,
+  disabled: ButtonPropTypes.disabled,
+  theme: ButtonPropTypes.theme,
   isMuted: PropTypes.bool,
 };
 

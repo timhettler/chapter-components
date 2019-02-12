@@ -9,7 +9,7 @@ stories.addDecorator(withKnobs);
 
 stories.add('BeginButton', () => (
   <BeginButton
-    label={text('Label', 'Begin')}
+    label={text('Label', '시작하기')}
     theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
     disabled={boolean('Disabled', false)}
   />

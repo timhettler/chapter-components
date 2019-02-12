@@ -7,7 +7,7 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
   @include reset-button;
   @include box-size;
 
-  font-family: 'SamsungOne', Arial, sans-serif;
+  font-family: $font-family--one;
   width: 180px;
   height: 50px;
   z-index: 12;

@@ -167,9 +167,9 @@ ChapterTitle.defaultProps = {
   movement: true,
 };
 
-ChapterTitle.proptTypes = {
+ChapterTitle.propTypes = {
   title: PropTypes.string,
-  subTitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
   state: PropTypes.oneOf(['pre', 'default', 'expanded', 'faded']),
   movement: PropTypes.bool,
