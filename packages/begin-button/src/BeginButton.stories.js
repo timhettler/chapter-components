@@ -12,5 +12,6 @@ stories.add('BeginButton', () => (
     label={text('Label', '시작하기')}
     theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
     disabled={boolean('Disabled', false)}
+    movement={boolean('Movement', true)}
   />
 ));
