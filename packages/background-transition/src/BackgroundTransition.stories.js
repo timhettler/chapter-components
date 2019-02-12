@@ -22,7 +22,6 @@ stories.add(`${Component.name}`, () => (
   <div style={{ width: '300px', height: '250px' }}>
     <Component
       images={imgUrls}
-      // duration={number('Duration(ms)', 3000)}
       duration={number('Duration', 3000)}
       disabled={boolean('Disabled', false)}
     />
