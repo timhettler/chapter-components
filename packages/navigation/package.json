@@ -12,6 +12,7 @@
   "author": "R/GA",
   "license": "UNLICENSED",
   "dependencies": {
+    "@ssgw/audio-button": "^0.1.0",
     "@ssgw/icon": "^0.1.11",
     "@ssgw/utils": "^0.2.5",
     "classnames": "^2.2.6",

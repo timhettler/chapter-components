@@ -7,122 +7,130 @@ exports[`Navigation renders correctly 1`] = `
   <div
     className="navigation__bgLayer"
   />
-  <button
-    aria-expanded={false}
-    aria-label="foo"
-    className="menuButton menuButton--is-light"
-    onClick={[Function]}
+  <div
+    className="navigation__top"
   >
-    <span
-      className="menuButton__icon menuButton__icon--primary"
-    >
-      <svg
-        className="icon_style"
-        fill="#fff"
-        height="100%"
-        viewBox="0 0 50 50"
-        width="100%"
-      >
-        <path
-          d="M11 1v6H1v42h38v-6h10V8.586L41.414 1H11zm31 3.414L45.586 8H42V4.414zM37 47H3V9h27v7h7v31zm-5-36.586L35.586 14H32v-3.586zM39 41V14.586L31.414 7H13V3h27v7h7v31h-8z"
-        />
-      </svg>
-    </span>
-    <span
-      className="menuButton__icon menuButton__icon--secondary"
-    >
-      <svg
-        className="icon_style"
-        fill="#fff"
-        height="100%"
-        viewBox="0 0 64 64"
-        width="100%"
-      >
-        <g
-          id="Icon-Close"
-          transform="translate(381 231)"
-        >
-          <path
-            d="M-370.7-174.7l-2.3-2.3 46-46 2.3 2.3-46 46"
-          />
-          <path
-            d="M-327-174.7l-46-46 2.3-2.3 46 46-2.3 2.3"
-          />
-        </g>
-      </svg>
-    </span>
-    <div
-      className="menuButton__copy"
+    <button
+      aria-expanded={false}
+      aria-label="foo"
+      className="menuButton menuButton--is-light"
+      onClick={[Function]}
     >
       <span
-        className="menuButton__text menuButton__text--primary"
+        className="menuButton__icon menuButton__icon--primary"
       >
-        All chapters
+        <svg
+          className="icon_style"
+          fill="#fff"
+          height="100%"
+          viewBox="0 0 50 50"
+          width="100%"
+        >
+          <path
+            d="M11 1v6H1v42h38v-6h10V8.586L41.414 1H11zm31 3.414L45.586 8H42V4.414zM37 47H3V9h27v7h7v31zm-5-36.586L35.586 14H32v-3.586zM39 41V14.586L31.414 7H13V3h27v7h7v31h-8z"
+          />
+        </svg>
       </span>
       <span
-        className="menuButton__text menuButton__text--secondary"
+        className="menuButton__icon menuButton__icon--secondary"
       >
-        All chapters
+        <svg
+          className="icon_style"
+          fill="#fff"
+          height="100%"
+          viewBox="0 0 64 64"
+          width="100%"
+        >
+          <g
+            id="Icon-Close"
+            transform="translate(381 231)"
+          >
+            <path
+              d="M-370.7-174.7l-2.3-2.3 46-46 2.3 2.3-46 46"
+            />
+            <path
+              d="M-327-174.7l-46-46 2.3-2.3 46 46-2.3 2.3"
+            />
+          </g>
+        </svg>
       </span>
-    </div>
-  </button>
-  <ol
-    className="menuList"
+      <div
+        className="menuButton__copy"
+      >
+        <span
+          className="menuButton__text menuButton__text--primary"
+        >
+          All chapters
+        </span>
+        <span
+          className="menuButton__text menuButton__text--secondary"
+        >
+          All chapters
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    className="navigation__bottom"
   >
-    <li
-      className="menuLink menuLink--current"
+    <ol
+      className="menuList"
     >
-      <a
-        href="https://www.samsung.com/uk/explore/samsung-within-1"
-        tabIndex={-1}
+      <li
+        className="menuLink menuLink--current"
       >
-        <div
-          className="menuLink__number"
+        <a
+          href="https://www.samsung.com/uk/explore/samsung-within-1"
+          tabIndex={-1}
         >
-          01
-        </div>
-        <div
-          className="menuLink__dash"
-        >
-          –
-        </div>
-        <div
-          className="menuLink__title"
-        >
-          Our Philosophy
-        </div>
-        <div
-          className="menuLink__line"
-        />
-      </a>
-    </li>
-    <li
-      className="menuLink"
-    >
-      <a
-        href="https://www.samsung.com/uk/explore/samsung-within-2"
-        tabIndex={null}
+          <div
+            className="menuLink__number"
+          >
+            01
+          </div>
+          <div
+            className="menuLink__dash"
+          >
+            –
+          </div>
+          <div
+            className="menuLink__title"
+          >
+            Our Philosophy
+          </div>
+          <div
+            className="menuLink__line"
+          />
+        </a>
+      </li>
+      <li
+        className="menuLink"
       >
-        <div
-          className="menuLink__number"
+        <a
+          href="https://www.samsung.com/uk/explore/samsung-within-2"
+          tabIndex={null}
         >
-          02
-        </div>
-        <div
-          className="menuLink__dash"
-        >
-          –
-        </div>
-        <div
-          className="menuLink__title"
-        >
-          What's in a Name
-        </div>
-        <div
-          className="menuLink__line"
-        />
-      </a>
-    </li>
-  </ol>
+          <div
+            className="menuLink__number"
+          >
+            02
+          </div>
+          <div
+            className="menuLink__dash"
+          >
+            –
+          </div>
+          <div
+            className="menuLink__title"
+          >
+            What's in a Name
+          </div>
+          <div
+            className="menuLink__line"
+          />
+        </a>
+      </li>
+    </ol>
+  </div>
 </nav>
 `;

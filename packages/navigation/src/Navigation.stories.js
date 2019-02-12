@@ -96,6 +96,12 @@ stories.add('Navigation', () => (
       }}
       chapters={chapters}
       cta={text('CTA Text', 'More Coming Soon')}
+      audio={{
+        ['aria-label']: 'Toggle Audio',
+        ['data-omni-type']: 'microsite_contentinter',
+        ['data-omni']: 'brand hub topic landing:more than a stylus_audio_off',
+        ['aria-pressed']: true,
+      }}
     />
   </div>
 ));
