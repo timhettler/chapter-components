@@ -20,7 +20,7 @@ class MovementContainer extends Component {
 
   componentWillUnmount() {
     if (this.props.movement) {
-      document.body.addEventListener('mousemove', this.handleMouseMove);
+      document.body.removeEventListener('mousemove', this.handleMouseMove);
     }
   }
 
