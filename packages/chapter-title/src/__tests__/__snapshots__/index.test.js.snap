@@ -4,76 +4,80 @@ exports[`ChapterTitle renders correctly 1`] = `
 <header
   className="header is-dark is-default"
 >
-  <h1
-    className="title"
-  >
-    FOO
-  </h1>
-  <h2
-    className="subtitle"
-  >
-    <div
-      className="line"
+  <div>
+    <h1
+      className="title"
     >
-      <span
-        className="letter"
-        style={
-          Object {
-            "transition": "opacity 100ms 40ms, transform 100ms 40ms",
-          }
-        }
+      FOO
+    </h1>
+  </div>
+  <div>
+    <h2
+      className="subtitle"
+    >
+      <div
+        className="line"
       >
         <span
-          className="letter-inner"
+          className="letter"
           style={
             Object {
-              "transform": null,
+              "transition": "opacity 100ms 40ms, transform 100ms 40ms",
             }
           }
         >
-          B
+          <span
+            className="letter-inner"
+            style={
+              Object {
+                "transform": null,
+              }
+            }
+          >
+            B
+          </span>
         </span>
-      </span>
-      <span
-        className="letter"
-        style={
-          Object {
-            "transition": "opacity 200ms 80ms, transform 200ms 80ms",
-          }
-        }
-      >
         <span
-          className="letter-inner"
+          className="letter"
           style={
             Object {
-              "transform": null,
+              "transition": "opacity 200ms 80ms, transform 200ms 80ms",
             }
           }
         >
-          A
+          <span
+            className="letter-inner"
+            style={
+              Object {
+                "transform": null,
+              }
+            }
+          >
+            A
+          </span>
         </span>
-      </span>
-      <span
-        className="letter"
-        style={
-          Object {
-            "transition": "opacity 300ms 120ms, transform 300ms 120ms",
-          }
-        }
-      >
         <span
-          className="letter-inner"
+          className="letter"
           style={
             Object {
-              "transform": null,
+              "transition": "opacity 300ms 120ms, transform 300ms 120ms",
             }
           }
         >
-          R
+          <span
+            className="letter-inner"
+            style={
+              Object {
+                "transform": null,
+              }
+            }
+          >
+            R
+          </span>
         </span>
-      </span>
-    </div>
-  </h2>
+      </div>
+    </h2>
+  </div>
 </header>
 `;
 
@@ -81,70 +85,72 @@ exports[`ChapterTitle renders correctly without title 1`] = `
 <header
   className="header is-dark is-default"
 >
-  <h2
-    className="subtitle"
-  >
-    <div
-      className="line"
+  <div>
+    <h2
+      className="subtitle"
     >
-      <span
-        className="letter"
-        style={
-          Object {
-            "transition": "opacity 100ms 40ms, transform 100ms 40ms",
-          }
-        }
+      <div
+        className="line"
       >
         <span
-          className="letter-inner"
+          className="letter"
           style={
             Object {
-              "transform": null,
+              "transition": "opacity 100ms 40ms, transform 100ms 40ms",
             }
           }
         >
-          B
+          <span
+            className="letter-inner"
+            style={
+              Object {
+                "transform": null,
+              }
+            }
+          >
+            B
+          </span>
         </span>
-      </span>
-      <span
-        className="letter"
-        style={
-          Object {
-            "transition": "opacity 200ms 80ms, transform 200ms 80ms",
-          }
-        }
-      >
         <span
-          className="letter-inner"
+          className="letter"
           style={
             Object {
-              "transform": null,
+              "transition": "opacity 200ms 80ms, transform 200ms 80ms",
             }
           }
         >
-          A
+          <span
+            className="letter-inner"
+            style={
+              Object {
+                "transform": null,
+              }
+            }
+          >
+            A
+          </span>
         </span>
-      </span>
-      <span
-        className="letter"
-        style={
-          Object {
-            "transition": "opacity 300ms 120ms, transform 300ms 120ms",
-          }
-        }
-      >
         <span
-          className="letter-inner"
+          className="letter"
           style={
             Object {
-              "transform": null,
+              "transition": "opacity 300ms 120ms, transform 300ms 120ms",
             }
           }
         >
-          R
+          <span
+            className="letter-inner"
+            style={
+              Object {
+                "transform": null,
+              }
+            }
+          >
+            R
+          </span>
         </span>
-      </span>
-    </div>
-  </h2>
+      </div>
+    </h2>
+  </div>
 </header>
 `;

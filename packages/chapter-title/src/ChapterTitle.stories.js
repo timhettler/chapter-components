@@ -24,7 +24,7 @@ stories.add(
         },
         'default'
       )}
-      movement={boolean('Movement', false)}
+      movement={boolean('Movement', true)}
     />
   ),
   {

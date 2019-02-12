@@ -1,26 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BeginButton renders correctly 1`] = `
-<button
-  aria-label="FOO"
-  className="beginButton is-dark"
->
-  <div
-    className="outline outline-a"
-  />
-  <div
-    className="outline outline-b"
-  />
-  <div
-    className="text text-a"
+<div>
+  <button
+    aria-label="FOO"
+    className="beginButton is-dark"
   >
-    FOO
-  </div>
-  <div
-    aria-hidden="true"
-    className="text text-b"
-  >
-    FOO
-  </div>
-</button>
+    <div
+      className="outline outline-a"
+    />
+    <div
+      className="outline outline-b"
+    />
+    <div
+      className="text text-a"
+    >
+      FOO
+    </div>
+    <div
+      aria-hidden="true"
+      className="text text-b"
+    >
+      FOO
+    </div>
+  </button>
+</div>
 `;
