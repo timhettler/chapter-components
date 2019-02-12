@@ -11,9 +11,8 @@ class Button extends PureComponent {
     const { icon, theme, disabled, ...rest } = this.props;
     return (
       <button
-        className={cx('btn', `btn--is-${theme}`, {
-          'btn--hidden': disabled,
-        })}
+        className={cx('btn', `btn--is-${theme}`)}
+        disabled={disabled ? 'disabled' : false}
         {...rest}
       >
         <span className={cx('btn__icon')}>{icon}</span>
