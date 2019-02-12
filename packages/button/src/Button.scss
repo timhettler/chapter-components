@@ -9,13 +9,14 @@
   align-items: center;
   border-radius: 50%;
   transition: background-color 400ms ease;
+  color: #fff;
 
-  &__icon {
+  &__inner {
     width: 20px;
     height: 20px;
   }
 
-  &--hidden {
+  &[disabled] {
     visibility: hidden;
   }
 
