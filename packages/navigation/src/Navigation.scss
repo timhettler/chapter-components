@@ -103,6 +103,9 @@ $black: #000;
 
   &--active {
     background-color: transparent !important;
+    svg {
+      fill: $black;
+    }
   }
 
   &__copy {

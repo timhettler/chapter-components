@@ -1,7 +1,7 @@
 {
-  "name": "@ssgw/audio-button",
+  "name": "@ssgw/button",
   "version": "0.0.0",
-  "description": "A component that controls audio sound",
+  "description": "A reusable button component that accepts icon and callback properties",
   "main": "dist/index.js",
   "scripts": {
     "build": "node ../../scripts/build.js",

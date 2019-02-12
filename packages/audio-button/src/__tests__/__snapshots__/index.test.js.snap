@@ -2,12 +2,16 @@
 
 exports[`AudioButton renders correctly 1`] = `
 <button
-  aria-hidden={false}
-  className="audioButton audioButton--is-dark"
-  onClick={[Function]}
+  className="btn btn--is-dark"
+  data={
+    Object {
+      "accessibility": Object {},
+      "tracking": Object {},
+    }
+  }
 >
   <span
-    className="audioButton__icon"
+    className="btn__icon"
   />
 </button>
 `;

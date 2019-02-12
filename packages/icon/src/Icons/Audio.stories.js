@@ -12,6 +12,6 @@ stories.add(`${Component.name}`, () => (
     width={text('Width', '100px')}
     height={text('Height', '')}
     fill={color('Fill', '#000')}
-    isActive={boolean('Audio On', true)}
+    isMuted={boolean('Mute Audio', false)}
   />
 ));

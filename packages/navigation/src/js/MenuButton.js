@@ -20,7 +20,7 @@ class MenuButton extends PureComponent {
         {...rest}
       >
         <span className={cx('menuButton__icon', 'menuButton__icon--primary')}>
-          <Icon viewBox="0 0 50 50">
+          <Icon fill="#fff" viewBox="0 0 50 50">
             <path d="M11 1v6H1v42h38v-6h10V8.586L41.414 1H11zm31 3.414L45.586 8H42V4.414zM37 47H3V9h27v7h7v31zm-5-36.586L35.586 14H32v-3.586zM39 41V14.586L31.414 7H13V3h27v7h7v31h-8z" />
           </Icon>
         </span>
