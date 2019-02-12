@@ -11,11 +11,9 @@ class ShareGroup extends PureComponent {
     const { title, theme, disabled, children } = this.props;
     return (
       <div
-        className={cx(
-          'share-group',
-          `is-${theme}`,
-          {'is-disabled': disabled }
-        )}
+        className={cx('share-group', `is-${theme}`, {
+          'is-disabled': disabled,
+        })}
         role="group"
         aria-labelledby="shareLabel"
       >

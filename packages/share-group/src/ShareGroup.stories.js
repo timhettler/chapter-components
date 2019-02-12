@@ -17,14 +17,21 @@ stories.add('ShareGroup', () => (
     <ShareLink
       label="Twitter"
       icon={<Twitter />}
+      aria-label={'Share on Twitter'}
       url="http://smsng.co/within5ukTS"
     />
     <ShareLink
       label="Facebook"
       icon={<Facebook />}
+      aria-label={'Share on Facebook'}
       url="http://smsng.co/within5ukFS"
     />
-    <ShareLink label="Email" icon={<Mail />} url="mailto:email.com/share" />
+    <ShareLink
+      label="Email"
+      aria-label={'Share By Email'}
+      icon={<Mail />}
+      url="mailto:email.com/share"
+    />
     <ShareLink
       label="Bug"
       icon={
@@ -37,11 +44,13 @@ stories.add('ShareGroup', () => (
           </g>
         </Icon>
       }
+      aria-label={"Don't share a bug"}
       url="email.com/share"
     />
     <ReplayButton
       label={text('Replay Text', 'Replay')}
       icon={<Replay />}
+      aria-label={'Replay Experience'}
       onClick={() => console.log('replay!')}
     />
   </ShareGroup>

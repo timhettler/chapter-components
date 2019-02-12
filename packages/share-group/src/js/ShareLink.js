@@ -29,15 +29,35 @@ class ShareLink extends PureComponent {
         }}
       >
         <span
-          className={cx('shareLink__child', 'shareLink__border', 'shareLink__border--primary')}
+          className={cx(
+            'shareLink__child',
+            'shareLink__border',
+            'shareLink__border--primary'
+          )}
         />
         <span
-          className={cx('shareLink__child', 'shareLink__border', 'shareLink__border--secondary')}
+          className={cx(
+            'shareLink__child',
+            'shareLink__border',
+            'shareLink__border--secondary'
+          )}
         />
-        <span className={cx('shareLink__child', 'shareLink__icon', 'shareLink__icon--primary')}>
+        <span
+          className={cx(
+            'shareLink__child',
+            'shareLink__icon',
+            'shareLink__icon--primary'
+          )}
+        >
           {icon}
         </span>
-        <span className={cx('shareLink__child', 'shareLink__icon', 'shareLink__icon--secondary')}>
+        <span
+          className={cx(
+            'shareLink__child',
+            'shareLink__icon',
+            'shareLink__icon--secondary'
+          )}
+        >
           {icon}
         </span>
       </a>
