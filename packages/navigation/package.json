@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/navigation",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A component with a list of chapters to navigate through.",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "R/GA",
   "license": "UNLICENSED",
   "dependencies": {
-    "@ssgw/audio-button": "^0.1.0",
+    "@ssgw/audio-button": "^0.1.1",
     "@ssgw/icon": "^0.1.12",
     "@ssgw/utils": "^0.2.6",
     "classnames": "^2.2.6",
