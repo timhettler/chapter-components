@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { panElement } from '../';
 
@@ -42,5 +43,10 @@ class MovementContainer extends Component {
     return <div ref={this.$elem}>{children}</div>;
   }
 }
+
+MovementContainer.propTypes = {
+  lag: PropTypes.number,
+  movement: PropTypes.bool,
+};
 
 export default MovementContainer;
