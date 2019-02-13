@@ -22,3 +22,36 @@ export function track(data, id) {
 
   return window.track('scroll', replaceWithId(data, id));
 }
+
+export function mockClickTracker(e) {
+  // TODO 'closest' doesn't work in IE - Do we need to polyfill?
+  const taggedElem = e.target.closest('[data-omni]');
+
+  if (!taggedElem) {
+    const interactiveParent = e.target.closest('a, button');
+    if (interactiveParent) {
+      console.warn(
+        'An interactive element was clicked, but there is no tracking information.'
+      );
+    }
+    return true;
+  }
+
+  console.info('Click tracking triggered:');
+  console.table({
+    ['data-omni']: taggedElem.getAttribute('data-omni'),
+    ['data-omni-type']: taggedElem.getAttribute('data-omni-type'),
+  });
+}
+
+export function mockExplicitTracker(type, data) {
+  console.log('Explicit tracking triggered:');
+  console.log(type, data);
+}
+
+export function registerMockListeners() {
+  window.addEventListener('click', mockClickTracker, { passive: true });
+  window.track = mockExplicitTracker;
+
+  return true;
+}
