@@ -2,7 +2,7 @@
 
 exports[`NextChapter renders correctly 1`] = `
 <a
-  className="nextChapter is-light show"
+  className="nextChapter is-light"
 >
   <div
     className="copy"

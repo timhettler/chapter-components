@@ -75,6 +75,7 @@ exports[`Navigation renders correctly 1`] = `
   >
     <ol
       className="menuList"
+      hidden={true}
     >
       <li
         className="menuLink menuLink--current"
