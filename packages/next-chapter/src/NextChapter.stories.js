@@ -16,7 +16,7 @@ stories.add('NextChapter', () => (
       )}
       title={text('Title', 'Next: Chapter 5')}
       subtitle={text('Subtitle', 'More than a Stylus')}
-      disabled={boolean('Disabled', false)}
+      hidden={boolean('Hidden', false)}
       theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
       imgSrc={text(
         'Image Url',

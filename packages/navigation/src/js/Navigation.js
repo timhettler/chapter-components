@@ -24,20 +24,13 @@ class Navigation extends PureComponent {
       accessibility,
       label,
       theme,
-      disabled,
       isActive,
       cta,
       onClick,
       ...rest
     } = this.props;
     return (
-      <nav
-        className={cx(
-          'navigation',
-          { 'navigation--hidden': disabled },
-          { 'navigation--active': isActive }
-        )}
-      >
+      <nav className={cx('navigation', { 'navigation--active': isActive })}>
         <div className={cx('navigation__bgLayer')} />
 
         <div className={cx('navigation__top')}>
@@ -66,7 +59,6 @@ class Navigation extends PureComponent {
 
 Navigation.defaultProps = {
   theme: 'light',
-  disabled: false,
   onClick: () => {},
 };
 
@@ -77,7 +69,6 @@ Navigation.propTypes = {
   accessibility: MenuButtonPropTypes.data,
   label: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
-  disabled: PropTypes.bool,
   isActive: PropTypes.bool,
   cta: MenuListProps.cta,
   onClick: PropTypes.func,

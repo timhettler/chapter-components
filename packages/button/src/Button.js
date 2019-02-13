@@ -19,12 +19,10 @@ class Button extends PureComponent {
 
 Button.defaultProps = {
   theme: 'dark',
-  disabled: false,
 };
 
 export const ButtonPropTypes = {
   theme: PropTypes.oneOf(['light', 'dark']),
-  disabled: PropTypes.bool,
 };
 
 Button.propTypes = ButtonPropTypes;

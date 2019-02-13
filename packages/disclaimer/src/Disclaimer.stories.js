@@ -12,7 +12,7 @@ stories.add(
   () => (
     <Disclaimer
       theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
-      disabled={boolean('Disabled', false)}
+      hidden={boolean('Hidden', false)}
     >
       {text(
         'Copy',

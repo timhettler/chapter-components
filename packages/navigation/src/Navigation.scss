@@ -37,7 +37,7 @@ $black: #000;
     overflow-y: auto;
   }
 
-  &--hidden {
+  &[hidden] {
     pointer-events: none;
     opacity: 0;
   }
@@ -103,16 +103,16 @@ $black: #000;
   &--is-light {
     background-color: rgba(128, 128, 128, 0.3);
 
-    &:hover,
-    &:focus {
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
       background-color: rgba(128, 128, 128, 0.6);
     }
   }
 
   &--is-dark {
     background-color: rgba(0, 0, 0, 0.3);
-    &:hover,
-    &:focus {
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
       background-color: rgba(0, 0, 0, 0.6);
     }
   }
@@ -231,59 +231,57 @@ $black: #000;
 }
 
 .menuList {
-  height: 0;
+  display: block;
   margin: 0;
   padding: 0;
   list-style: none;
-  visibility: hidden;
   pointer-events: none;
   transition-property: visibility, height;
-  transition-duration: 1ms;
-  transition-delay: 650ms;
+  transition-delay: 1ms;
 
-  &--active {
-    height: auto;
-    transition-delay: 1ms;
-    pointer-events: inherit;
-    visibility: visible;
+  &[hidden] {
+    height: 0;
+    transition-delay: 650ms;
+    visibility: hidden;
   }
 }
 
 .menuLink {
   height: 40px;
-  opacity: 0;
   color: $black;
   font-family: $font-family--sharp-sans;
   font-weight: bold;
   font-size: 13px;
   letter-spacing: 0.05em;
+  pointer-events: auto;
+  transform: translateY(0);
+  opacity: 0.7;
+
+  .menuList[hidden] & {
+    opacity: 0;
+  }
 
   @for $i from 1 through $chaptersTotal {
     &:nth-child(#{$i}) {
-      transform: translateY(10px * $i);
-      transition: transform 300ms ease (100ms * ($i - 1)),
-        opacity 300ms ease (10ms * ($i - 1));
+      transition: transform 600ms ease (100ms * ($i - 1)),
+        opacity 600ms ease (150ms * ($i - 1));
 
       .menuLink__number,
       .menuLink__title {
-        transition-delay: (100ms * ($i - 1));
+        transition-delay: (150ms * ($i - 1));
       }
 
-      .menuList--active & {
-        transition: transform 600ms ease (100ms * ($i - 1)),
-          opacity 600ms ease (150ms * ($i - 1));
+      .menuList[hidden] & {
+        transform: translateY(10px * $i);
+        transition: transform 300ms ease (100ms * ($i - 1)),
+          opacity 300ms ease (10ms * ($i - 1));
 
         .menuLink__number,
         .menuLink__title {
-          transition-delay: (150ms * ($i - 1));
+          transition-delay: (100ms * ($i - 1));
         }
       }
     }
-  }
-
-  .menuList--active & {
-    transform: translateY(0);
-    opacity: 0.7;
   }
 
   a {
@@ -292,7 +290,6 @@ $black: #000;
     text-decoration: none;
     align-items: baseline;
     color: inherit;
-    pointer-events: auto;
 
     .menuLink--current & {
       pointer-events: none;
@@ -308,23 +305,23 @@ $black: #000;
     top: 50%;
   }
 
-  &__number {
-    transform: translateX(-15px);
-  }
-
-  &__title {
-    transform: translateX(15px);
-  }
-
   &__number,
   &__title {
+    transform: translateX(0);
     transition-property: transform;
     transition-duration: 600ms;
     transition-timing-function: $transition-time-func;
+  }
 
-    .menuList--active & {
-      transform: translateX(0);
-      transition-duration: 900ms;
+  &__number {
+    .menuList[hidden] & {
+      transform: translateX(-15px);
+    }
+  }
+
+  &__title {
+    .menuList[hidden] & {
+      transform: translateX(15px);
     }
   }
 

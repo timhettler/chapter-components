@@ -11,7 +11,7 @@ class MenuList extends PureComponent {
   render() {
     const { isActive, chapters, currentChapter, cta } = this.props;
     return (
-      <ol className={cx('menuList', { 'menuList--active': isActive })}>
+      <ol className={cx('menuList')} hidden={!isActive}>
         {chapters.map((chapter, i) => {
           const isCurrent = currentChapter === chapter.id;
 

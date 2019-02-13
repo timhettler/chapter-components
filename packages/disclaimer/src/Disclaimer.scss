@@ -10,7 +10,8 @@
   top: 0;
   transition: opacity 1s, top 1s;
 
-  &.is-disabled {
+  &[hidden] {
+    display: inherit;
     opacity: 0;
     top: 70px;
   }

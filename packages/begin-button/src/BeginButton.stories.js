@@ -9,9 +9,10 @@ stories.addDecorator(withKnobs);
 
 stories.add('BeginButton', () => (
   <BeginButton
-    label={text('Label', '시작하기')}
+    label={text('Label', 'BEGIN')}
     theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
     disabled={boolean('Disabled', false)}
+    hidden={boolean('Hidden', false)}
     movement={boolean('Movement', true)}
   />
 ));

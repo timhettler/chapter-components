@@ -14,7 +14,7 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
   position: relative;
   transition: opacity 1s, transform 800ms;
 
-  &[disabled] {
+  &[hidden] {
     opacity: 0;
     transform: translateY(40%);
   }
@@ -51,8 +51,8 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
     color: black;
   }
 
-  .beginButton:hover &,
-  .beginButton:focus & {
+  .beginButton:not([disabled]):hover &,
+  .beginButton:not([disabled]):focus & {
     transform: translate3d(0, -5px, 0);
     opacity: 0;
   }
@@ -70,8 +70,8 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
     color: white;
   }
 
-  .beginButton:hover &,
-  .beginButton:focus & {
+  .beginButton:not([disabled]):hover &,
+  .beginButton:not([disabled]):focus & {
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
@@ -101,8 +101,8 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
     border-color: white;
   }
 
-  .beginButton:hover &,
-  .beginButton:focus & {
+  .beginButton:not([disabled]):hover &,
+  .beginButton:not([disabled]):focus & {
     opacity: 0;
     transform: $begin-button--scale-2;
   }
@@ -121,8 +121,8 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
     background-color: white;
   }
 
-  .beginButton:hover &,
-  .beginButton:focus & {
+  .beginButton:not([disabled]):hover &,
+  .beginButton:not([disabled]):focus & {
     opacity: 1;
     transform: $begin-button--scale-1;
   }

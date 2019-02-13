@@ -8,14 +8,13 @@ const cx = classNames.bind(styles);
 
 class ShareGroup extends PureComponent {
   render() {
-    const { title, theme, disabled, children } = this.props;
+    const { title, theme, children, ...rest } = this.props;
     return (
       <div
-        className={cx('share-group', `is-${theme}`, {
-          'is-disabled': disabled,
-        })}
+        className={cx('share-group', `is-${theme}`)}
         role="group"
         aria-labelledby="shareLabel"
+        {...rest}
       >
         <div id="shareLabel" className={cx('share-group__title')}>
           {title}
@@ -33,7 +32,6 @@ ShareGroup.defaultProps = {
 ShareGroup.propTypes = {
   title: PropTypes.string,
   theme: PropTypes.oneOf(['dark', 'light']),
-  disabled: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

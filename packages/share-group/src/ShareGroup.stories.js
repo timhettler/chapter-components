@@ -11,7 +11,7 @@ stories.addDecorator(withKnobs);
 stories.add('ShareGroup', () => (
   <ShareGroup
     title={text('ShareGroupTitle', 'Share On')}
-    disabled={boolean('Disabled', false)}
+    hidden={boolean('Hidden', false)}
     theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
   >
     <ShareLink

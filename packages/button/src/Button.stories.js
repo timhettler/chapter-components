@@ -12,9 +12,7 @@ stories.add('Button', () => (
   <Button
     theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
     disabled={boolean('Disabled', false)}
-    onClick={() => {
-      console.log('clicked');
-    }}
+    hidden={boolean('Hidden', false)}
   >
     <Mail />
   </Button>

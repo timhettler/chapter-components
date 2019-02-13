@@ -10,9 +10,7 @@ stories.addDecorator(withKnobs);
 
 stories.add('AudioButton', () => (
   <AudioButton
-    disabled={boolean('Disabled', false)}
     isMuted={boolean('Mute Audio', false)}
     theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
-    onClick={() => {}}
   />
 ));

@@ -71,14 +71,9 @@ class BackgroundTransition extends PureComponent {
   }
 
   render() {
-    const { duration, images, disabled } = this.props;
+    const { duration, images, disabled, ...rest } = this.props;
     return (
-      <div
-        ref={this.$parent}
-        className={cx('bgTransition', {
-          'bgTransition--disabled': disabled,
-        })}
-      >
+      <div className={cx('bgTransition')} {...rest}>
         {images.map((url, i) => (
           <Image
             key={i}

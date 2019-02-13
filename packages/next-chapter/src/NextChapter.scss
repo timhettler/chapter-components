@@ -68,7 +68,7 @@
     color: #fff;
   }
 
-  .nextChapter.show & {
+  .nextChapter:not([hidden]) & {
     opacity: 1;
     transform: translateX(0);
   }

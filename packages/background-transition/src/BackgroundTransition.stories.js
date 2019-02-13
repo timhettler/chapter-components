@@ -24,6 +24,7 @@ stories.add(`${Component.name}`, () => (
       images={imgUrls}
       duration={number('Duration', 3000)}
       disabled={boolean('Disabled', false)}
+      hidden={boolean('Hidden', false)}
     />
   </div>
 ));

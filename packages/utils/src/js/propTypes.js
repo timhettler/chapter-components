@@ -7,4 +7,6 @@ ssgwPropTypes.tracking = PropTypes.shape({
   'data-omni': PropTypes.string.isRequired,
 });
 
+ssgwPropTypes.theme = PropTypes.oneOf(['light', 'dark']);
+
 export default ssgwPropTypes;

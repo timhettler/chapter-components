@@ -38,7 +38,7 @@
     color: #323232;
   }
 
-  &.is-disabled {
+  &[hidden] {
     opacity: 0;
     transform: translateY(20px);
     visibility: hidden;
