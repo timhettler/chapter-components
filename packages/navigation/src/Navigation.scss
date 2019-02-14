@@ -63,10 +63,11 @@ $black: #000;
   }
 
   &__top {
+    display: flex;
+    flex-shrink: 0;
     position: relative;
 
     & > *:not(:first-child) {
-      float: right;
       margin-left: 20px;
     }
   }
@@ -90,7 +91,6 @@ $black: #000;
   border-radius: 22px;
   transition: background-color $transition-time-func 400ms;
   pointer-events: auto;
-  float: left;
 
   @include smallAndMedium {
     width: 44px;
