@@ -1,6 +1,7 @@
 @import '~@ssgw/utils/dist/scss/index';
 
 .nextChapter {
+  @include focus-outline;
   display: flex;
   align-items: center;
   text-decoration: none;

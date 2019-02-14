@@ -5,6 +5,7 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
 
 .beginButton {
   @include reset-button;
+  @include focus-outline;
   @include box-size;
 
   font-family: $font-family--one;

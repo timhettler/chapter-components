@@ -80,6 +80,7 @@ $black: #000;
 
 .menuButton {
   @include reset-button();
+  @include focus-outline;
   font-family: $font-family--sharp-sans;
   font-weight: bold;
   font-size: 11px;
@@ -286,6 +287,7 @@ $black: #000;
   }
 
   a {
+    @include focus-outline;
     position: relative;
     display: inline-flex;
     text-decoration: none;
