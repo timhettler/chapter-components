@@ -18,6 +18,7 @@ export default function Icon(props) {
     <svg
       width={trueWidth}
       height={trueHeight}
+      focusable="false"
       className={cx('icon_style')}
       {...rest}
     >
