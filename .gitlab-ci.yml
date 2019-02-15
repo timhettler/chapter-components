@@ -27,7 +27,7 @@ publish:
 
 storybook:
   only:
-    - develop
+    - master
   script:
     - yarn
     - yarn lerna-build
