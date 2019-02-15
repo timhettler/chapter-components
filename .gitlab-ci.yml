@@ -1,5 +1,9 @@
 image: node:latest
 
+variables:
+  DEV_SERVER: 'within.sg.rgadev.com'
+  DEV_URL: 'http://within.sg.rgadev.com'
+
 test:
   only:
     - master
@@ -20,3 +24,18 @@ publish:
     - export NODE_ENV=dev && echo $NODE_ENV
     - NPM_USER=$NPM_USER NPM_PASS=$NPM_PASS NPM_EMAIL=$NPM_EMAIL NPM_REGISTRY=$NPM_REGISTRY NPM_SCOPE=@ssgw npx npm-cli-adduser
     - npm run npm-publish
+
+storybook:
+  only:
+    - develop
+  script:
+    - yarn
+    - yarn lerna-build
+    - yarn storybook-build
+    - echo "Deploy build to s3"
+    - apt-get install -y awscli
+    - mkdir -p ~/.aws/
+    - printf "[default]\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY\n" > ~/.aws/credentials;
+    - printf "[default]\nregion=$AWS_REGION\n" > ~/.aws/config;
+    - find ./storybook-static -type f
+    - aws s3 sync ./storybook-static s3://${AWS_BUCKET_NAME}${AWS_BUCKET_FOLDER} --delete

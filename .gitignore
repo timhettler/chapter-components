@@ -24,3 +24,6 @@ yarn-error.log*
 lerna-debug.log*
 
 .vscode
+
+# storybook build
+storybook-static/
