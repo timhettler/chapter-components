@@ -28,6 +28,8 @@ publish:
 storybook:
   only:
     - master
+  except:
+    - /^v.*$/
   script:
     - yarn
     - yarn lerna-build

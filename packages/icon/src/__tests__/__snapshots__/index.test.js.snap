@@ -1,15 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chevron renders correctly 1`] = `
+exports[`Icon renders correctly 1`] = `
 <svg
   className="icon_style"
   focusable="false"
   height="100%"
-  viewBox="0 0 14 8"
+  width="100%"
+/>
+`;
+
+exports[`Icon renders correctly passes children 1`] = `
+<svg
+  className="icon_style"
+  focusable="false"
+  height="100%"
   width="100%"
 >
-  <polyline
-    points="0,1 6,7 7,8 8,7 14,1 13,0 7,6 1,0 "
-  />
+  FOO
 </svg>
+`;
+
+exports[`Icon renders correctly passes props 1`] = `
+<svg
+  className="icon_style"
+  focusable="false"
+  height="100%"
+  viewport="FOO"
+  width="100%"
+/>
+`;
+
+exports[`Icon renders correctly with height 1`] = `
+<svg
+  className="icon_style"
+  focusable="false"
+  height="100"
+  width={null}
+/>
+`;
+
+exports[`Icon renders correctly with width 1`] = `
+<svg
+  className="icon_style"
+  focusable="false"
+  height={null}
+  width="100"
+/>
 `;
