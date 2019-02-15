@@ -9,7 +9,7 @@
   "scripts": {
     "prestorybook": "yarn lerna-build",
     "storybook": "start-storybook -s ./.storybook/public -p 9001 -c .storybook",
-    "build-storybook": "build-storybook -c .storybook",
+    "build-storybook": "build-storybook -s ./.storybook/public -c .storybook",
     "clean": "rm -rf node_modules packages/*/node_modules yarn.lock",
     "create-package": "node ./scripts/create.js",
     "lerna-build": "lerna run build",
