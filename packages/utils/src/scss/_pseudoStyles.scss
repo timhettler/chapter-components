@@ -1,4 +1,4 @@
-@mixin focus-outline($color: #0000ffd6) {
+@mixin focus-outline($color: rgba(0, 0, 255, 0.84)) {
   &:focus {
     outline: 2px solid $color;
   }
