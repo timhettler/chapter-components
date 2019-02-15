@@ -46,6 +46,7 @@
 }
 
 .shareLink {
+  @include focus-outline;
   font-family: $font-family--sans;
   font-weight: 500;
   position: relative;
@@ -152,6 +153,7 @@
 
 .replayBtn {
   @include reset-button();
+  @include focus-outline;
   font-family: $font-family--sharp-sans;
   font-size: 9px;
   letter-spacing: 0.2em;
