@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/audio-button",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A component that controls audio sound",
   "main": "dist/index.js",
   "scripts": {
@@ -12,8 +12,8 @@
   "author": "R/GA",
   "license": "UNLICENSED",
   "dependencies": {
-    "@ssgw/button": "^0.1.4",
-    "@ssgw/utils": "^0.2.7",
+    "@ssgw/button": "^0.1.5",
+    "@ssgw/utils": "^0.2.8",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2"
   },

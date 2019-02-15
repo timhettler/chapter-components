@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/share-group",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "A component with social sharing and replay buttons.",
   "main": "dist/index.js",
   "scripts": {
@@ -12,8 +12,8 @@
   "author": "R/GA",
   "license": "UNLICENSED",
   "dependencies": {
-    "@ssgw/icon": "^0.1.13",
-    "@ssgw/utils": "^0.2.7",
+    "@ssgw/icon": "^0.1.14",
+    "@ssgw/utils": "^0.2.8",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2"
   },
