@@ -1,6 +1,6 @@
 {
   "name": "chapter-components",
-  "version": "0.0.49",
+  "version": "0.0.50",
   "description": "UI components common to all Samsung Within projects",
   "private": true,
   "workspaces": [
