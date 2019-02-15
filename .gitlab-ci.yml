@@ -26,6 +26,7 @@ publish:
     - npm run npm-publish
 
 storybook:
+  stage: deploy
   only:
     - master
   except:
