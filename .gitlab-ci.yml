@@ -33,7 +33,7 @@ storybook:
   script:
     - yarn
     - yarn lerna-build
-    - yarn storybook-build
+    - yarn build-storybook
     - echo "Deploy build to s3"
     - apt-get install -y awscli
     - mkdir -p ~/.aws/
