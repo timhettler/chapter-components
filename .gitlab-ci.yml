@@ -35,6 +35,7 @@ storybook:
     - yarn lerna-build
     - yarn build-storybook
     - echo "Deploy build to s3"
+    - apt-get update
     - apt-get install -y awscli
     - mkdir -p ~/.aws/
     - printf "[default]\naws_access_key_id=$AWS_ACCESS_KEY_ID\naws_secret_access_key=$AWS_SECRET_ACCESS_KEY\n" > ~/.aws/credentials;
