@@ -346,8 +346,8 @@ $black: #000;
     transition: transform 400ms ease;
 
     .menuLink--current &,
-    .menuLink:hover &,
-    .menuLink:focus & {
+    .menuLink a:hover &,
+    .menuLink a:focus & {
       transform-origin: 0% 50% 0;
       transform: scaleX(1);
       transition: transform 300ms ease;
