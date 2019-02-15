@@ -9,6 +9,7 @@ exports[`AudioButton renders correctly when muted 1`] = `
   >
     <svg
       className="icon_style"
+      focusable="false"
       height="100%"
       viewBox="0 0 20 20"
       width="100%"
@@ -30,6 +31,7 @@ exports[`AudioButton renders correctly when unmuted 1`] = `
   >
     <svg
       className="icon_style"
+      focusable="false"
       height="100%"
       viewBox="0 0 64 64"
       width="100%"

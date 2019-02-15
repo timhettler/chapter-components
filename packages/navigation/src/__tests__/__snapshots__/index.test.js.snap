@@ -21,7 +21,7 @@ exports[`Navigation renders correctly 1`] = `
       >
         <svg
           className="icon_style"
-          fill="#fff"
+          focusable="false"
           height="100%"
           viewBox="0 0 50 50"
           width="100%"
@@ -36,7 +36,7 @@ exports[`Navigation renders correctly 1`] = `
       >
         <svg
           className="icon_style"
-          fill="#fff"
+          focusable="false"
           height="100%"
           viewBox="0 0 64 64"
           width="100%"
