@@ -257,12 +257,16 @@ $black: #000;
   font-weight: bold;
   font-size: 13px;
   letter-spacing: 0.05em;
-  pointer-events: auto;
   transform: translateY(0);
   opacity: 0.7;
 
   .menuList[hidden] & {
     opacity: 0;
+  }
+
+  &--more {
+    display: flex;
+    align-items: center;
   }
 
   @for $i from 1 through $chaptersTotal {
@@ -296,8 +300,8 @@ $black: #000;
     align-items: baseline;
     color: inherit;
 
-    .menuLink--current & {
-      pointer-events: none;
+    &:not(.menuLink--current) {
+      pointer-events: auto;
     }
   }
 

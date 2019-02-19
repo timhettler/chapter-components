@@ -26,7 +26,9 @@ class MenuList extends PureComponent {
             </li>
           );
         })}
-        {cta ? <li className={cx('menuLink')}>{cta}</li> : null}
+        {cta ? (
+          <li className={cx('menuLink', 'menuLink--more')}>{cta}</li>
+        ) : null}
       </ol>
     );
   }

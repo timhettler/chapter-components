@@ -60,14 +60,453 @@ exports[`Navigation renders correctly 1`] = `
         <span
           className="menuButton__text menuButton__text--primary"
         >
-          All chapters
+          All Chapters
         </span>
         <span
           className="menuButton__text menuButton__text--secondary"
         >
-          All chapters
+          All Chapters
         </span>
       </div>
+    </button>
+  </div>
+  <div
+    className="navigation__bottom"
+  >
+    <ol
+      className="menuList"
+      hidden={true}
+    >
+      <li
+        className="menuLink menuLink--current"
+      >
+        <a
+          href="https://www.samsung.com/uk/explore/samsung-within-1"
+          tabIndex={-1}
+        >
+          <div
+            className="menuLink__number"
+          >
+            01
+          </div>
+          <div
+            className="menuLink__dash"
+          >
+            –
+          </div>
+          <div
+            className="menuLink__title"
+          >
+            Our Philosophy
+          </div>
+          <div
+            className="menuLink__line"
+          />
+        </a>
+      </li>
+      <li
+        className="menuLink"
+      >
+        <a
+          href="https://www.samsung.com/uk/explore/samsung-within-2"
+          tabIndex={null}
+        >
+          <div
+            className="menuLink__number"
+          >
+            02
+          </div>
+          <div
+            className="menuLink__dash"
+          >
+            –
+          </div>
+          <div
+            className="menuLink__title"
+          >
+            What's in a Name
+          </div>
+          <div
+            className="menuLink__line"
+          />
+        </a>
+      </li>
+    </ol>
+  </div>
+</nav>
+`;
+
+exports[`Navigation renders correctly when active 1`] = `
+<nav
+  className="navigation navigation--active"
+>
+  <div
+    className="navigation__bgLayer"
+  />
+  <div
+    className="navigation__top"
+  >
+    <button
+      aria-expanded={true}
+      aria-label="bar"
+      className="menuButton menuButton--is-light menuButton--active"
+      onClick={[Function]}
+    >
+      <span
+        className="menuButton__icon menuButton__icon--primary"
+      >
+        <svg
+          className="icon_style"
+          focusable="false"
+          height="100%"
+          viewBox="0 0 50 50"
+          width="100%"
+        >
+          <path
+            d="M11 1v6H1v42h38v-6h10V8.586L41.414 1H11zm31 3.414L45.586 8H42V4.414zM37 47H3V9h27v7h7v31zm-5-36.586L35.586 14H32v-3.586zM39 41V14.586L31.414 7H13V3h27v7h7v31h-8z"
+          />
+        </svg>
+      </span>
+      <span
+        className="menuButton__icon menuButton__icon--secondary"
+      >
+        <svg
+          className="icon_style"
+          focusable="false"
+          height="100%"
+          viewBox="0 0 64 64"
+          width="100%"
+        >
+          <g
+            id="Icon-Close"
+            transform="translate(381 231)"
+          >
+            <path
+              d="M-370.7-174.7l-2.3-2.3 46-46 2.3 2.3-46 46"
+            />
+            <path
+              d="M-327-174.7l-46-46 2.3-2.3 46 46-2.3 2.3"
+            />
+          </g>
+        </svg>
+      </span>
+      <div
+        className="menuButton__copy"
+      >
+        <span
+          className="menuButton__text menuButton__text--primary"
+        >
+          All Chapters
+        </span>
+        <span
+          className="menuButton__text menuButton__text--secondary"
+        >
+          All Chapters
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    className="navigation__bottom"
+  >
+    <ol
+      className="menuList"
+      hidden={false}
+    >
+      <li
+        className="menuLink menuLink--current"
+      >
+        <a
+          href="https://www.samsung.com/uk/explore/samsung-within-1"
+          tabIndex={-1}
+        >
+          <div
+            className="menuLink__number"
+          >
+            01
+          </div>
+          <div
+            className="menuLink__dash"
+          >
+            –
+          </div>
+          <div
+            className="menuLink__title"
+          >
+            Our Philosophy
+          </div>
+          <div
+            className="menuLink__line"
+          />
+        </a>
+      </li>
+      <li
+        className="menuLink"
+      >
+        <a
+          href="https://www.samsung.com/uk/explore/samsung-within-2"
+          tabIndex={null}
+        >
+          <div
+            className="menuLink__number"
+          >
+            02
+          </div>
+          <div
+            className="menuLink__dash"
+          >
+            –
+          </div>
+          <div
+            className="menuLink__title"
+          >
+            What's in a Name
+          </div>
+          <div
+            className="menuLink__line"
+          />
+        </a>
+      </li>
+    </ol>
+  </div>
+</nav>
+`;
+
+exports[`Navigation renders correctly with CTA 1`] = `
+<nav
+  className="navigation"
+>
+  <div
+    className="navigation__bgLayer"
+  />
+  <div
+    className="navigation__top"
+  >
+    <button
+      aria-expanded={false}
+      aria-label="foo"
+      className="menuButton menuButton--is-light"
+      onClick={[Function]}
+    >
+      <span
+        className="menuButton__icon menuButton__icon--primary"
+      >
+        <svg
+          className="icon_style"
+          focusable="false"
+          height="100%"
+          viewBox="0 0 50 50"
+          width="100%"
+        >
+          <path
+            d="M11 1v6H1v42h38v-6h10V8.586L41.414 1H11zm31 3.414L45.586 8H42V4.414zM37 47H3V9h27v7h7v31zm-5-36.586L35.586 14H32v-3.586zM39 41V14.586L31.414 7H13V3h27v7h7v31h-8z"
+          />
+        </svg>
+      </span>
+      <span
+        className="menuButton__icon menuButton__icon--secondary"
+      >
+        <svg
+          className="icon_style"
+          focusable="false"
+          height="100%"
+          viewBox="0 0 64 64"
+          width="100%"
+        >
+          <g
+            id="Icon-Close"
+            transform="translate(381 231)"
+          >
+            <path
+              d="M-370.7-174.7l-2.3-2.3 46-46 2.3 2.3-46 46"
+            />
+            <path
+              d="M-327-174.7l-46-46 2.3-2.3 46 46-2.3 2.3"
+            />
+          </g>
+        </svg>
+      </span>
+      <div
+        className="menuButton__copy"
+      >
+        <span
+          className="menuButton__text menuButton__text--primary"
+        >
+          All Chapters
+        </span>
+        <span
+          className="menuButton__text menuButton__text--secondary"
+        >
+          All Chapters
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    className="navigation__bottom"
+  >
+    <ol
+      className="menuList"
+      hidden={true}
+    >
+      <li
+        className="menuLink menuLink--current"
+      >
+        <a
+          href="https://www.samsung.com/uk/explore/samsung-within-1"
+          tabIndex={-1}
+        >
+          <div
+            className="menuLink__number"
+          >
+            01
+          </div>
+          <div
+            className="menuLink__dash"
+          >
+            –
+          </div>
+          <div
+            className="menuLink__title"
+          >
+            Our Philosophy
+          </div>
+          <div
+            className="menuLink__line"
+          />
+        </a>
+      </li>
+      <li
+        className="menuLink"
+      >
+        <a
+          href="https://www.samsung.com/uk/explore/samsung-within-2"
+          tabIndex={null}
+        >
+          <div
+            className="menuLink__number"
+          >
+            02
+          </div>
+          <div
+            className="menuLink__dash"
+          >
+            –
+          </div>
+          <div
+            className="menuLink__title"
+          >
+            What's in a Name
+          </div>
+          <div
+            className="menuLink__line"
+          />
+        </a>
+      </li>
+      <li
+        className="menuLink menuLink--more"
+      >
+        BAZZ
+      </li>
+    </ol>
+  </div>
+</nav>
+`;
+
+exports[`Navigation renders correctly with audio 1`] = `
+<nav
+  className="navigation"
+>
+  <div
+    className="navigation__bgLayer"
+  />
+  <div
+    className="navigation__top"
+  >
+    <button
+      aria-expanded={false}
+      aria-label="foo"
+      className="menuButton menuButton--is-light"
+      onClick={[Function]}
+    >
+      <span
+        className="menuButton__icon menuButton__icon--primary"
+      >
+        <svg
+          className="icon_style"
+          focusable="false"
+          height="100%"
+          viewBox="0 0 50 50"
+          width="100%"
+        >
+          <path
+            d="M11 1v6H1v42h38v-6h10V8.586L41.414 1H11zm31 3.414L45.586 8H42V4.414zM37 47H3V9h27v7h7v31zm-5-36.586L35.586 14H32v-3.586zM39 41V14.586L31.414 7H13V3h27v7h7v31h-8z"
+          />
+        </svg>
+      </span>
+      <span
+        className="menuButton__icon menuButton__icon--secondary"
+      >
+        <svg
+          className="icon_style"
+          focusable="false"
+          height="100%"
+          viewBox="0 0 64 64"
+          width="100%"
+        >
+          <g
+            id="Icon-Close"
+            transform="translate(381 231)"
+          >
+            <path
+              d="M-370.7-174.7l-2.3-2.3 46-46 2.3 2.3-46 46"
+            />
+            <path
+              d="M-327-174.7l-46-46 2.3-2.3 46 46-2.3 2.3"
+            />
+          </g>
+        </svg>
+      </span>
+      <div
+        className="menuButton__copy"
+      >
+        <span
+          className="menuButton__text menuButton__text--primary"
+        >
+          All Chapters
+        </span>
+        <span
+          className="menuButton__text menuButton__text--secondary"
+        >
+          All Chapters
+        </span>
+      </div>
+    </button>
+    <button
+      aria-label="Toggle Audio"
+      aria-pressed={true}
+      className="btn btn--is-dark"
+      data-omni="brand hub topic landing:more than a stylus_audio_off"
+      data-omni-type="microsite_contentinter"
+    >
+      <span
+        className="btn__inner"
+      >
+        <svg
+          className="icon_style"
+          focusable="false"
+          height="100%"
+          viewBox="0 0 64 64"
+          width="100%"
+        >
+          <path
+            d="M33.1 43.82c10.18-11.38 1.06-22.43 0-23.66l6.1-5.42c5.33 6 12.2 20.87 0 34.52zm12.51 12.25c21.28-23.8.88-47.16 0-48.14l6.44-5.75c.27.3 26.36 30.16 0 59.64z"
+          />
+          <path
+            d="M0 32V21.54h7.86L23.83 5.56v52.88L7.86 42.46H0V32"
+          />
+        </svg>
+      </span>
     </button>
   </div>
   <div
