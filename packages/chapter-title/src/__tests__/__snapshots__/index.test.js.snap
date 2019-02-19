@@ -13,6 +13,7 @@ exports[`ChapterTitle renders correctly 1`] = `
   </div>
   <div>
     <h2
+      aria-label="BAR"
       className="subtitle"
     >
       <div
@@ -87,6 +88,7 @@ exports[`ChapterTitle renders correctly without title 1`] = `
 >
   <div>
     <h2
+      aria-label="BAR"
       className="subtitle"
     >
       <div
