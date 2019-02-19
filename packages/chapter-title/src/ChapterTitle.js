@@ -7,6 +7,13 @@ import styles from './ChapterTitle.scss';
 
 const cx = classNames.bind(styles);
 
+function stripHtml(htmlString) {
+  var stripedHtml = htmlString.replace(/<[^>]+>/g, ' ');
+  return stripedHtml.replace(/&#(\d+);/g, function(match, dec) {
+    return String.fromCharCode(dec);
+  });
+}
+
 class ChapterTitle extends PureComponent {
   getBoundedNumber(numA, numB) {
     const randomNumber = Math.round(Math.random() * numA) + numB;
@@ -92,7 +99,7 @@ class ChapterTitle extends PureComponent {
           </MovementContainer>
         )}
         <MovementContainer movement={movement}>
-          <h2 className={cx('subtitle')}>
+          <h2 className={cx('subtitle')} aria-label={stripHtml(subtitle)}>
             {this.renderSubtitle(subtitle, state)}
           </h2>
         </MovementContainer>
