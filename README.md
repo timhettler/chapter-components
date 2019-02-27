@@ -27,7 +27,7 @@ Chapter-components are React components designed for Samsung Within projects. Th
 - **Dev:** Storybook
 - **Build:** Webpack 4 & Babel 7
 - **Linting:** [ESLint](https://eslint.org/docs/user-guide/integrations), [Prettier](https://prettier.io/docs/en/editors.html), Stylelint and [EditorConfig](https://editorconfig.org/#download).\*
-- **Testing:** TBD
+- **Testing:** [Snapshot testing](https://jestjs.io/docs/en/snapshot-testing.html) via [Jest](https://jestjs.io/)
 
 > \*It is strongly recommended that you integrate these tools into your editor or IDE.
 
@@ -122,3 +122,8 @@ yarn create-package
 ```
 
 Enter the required info and a set of boilerplate files will be created.
+
+## Documentation & Rationale
+
+- [Samsung Within Framework 2.0: Why & How](https://docs.google.com/document/d/1VUZpoOUhsInV-qlciuClpzsW6S8hiJgfxZpnLZqHgmg/)
+- 
