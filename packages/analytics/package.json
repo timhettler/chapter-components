@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/analytics",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "This package contains a helper function for explicit tracking",
   "main": "dist/index.js",
   "scripts": {
