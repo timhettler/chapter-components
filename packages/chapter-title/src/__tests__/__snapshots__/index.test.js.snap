@@ -5,13 +5,6 @@ exports[`ChapterTitle renders correctly 1`] = `
   className="header is-dark is-default"
 >
   <div>
-    <h1
-      className="title"
-    >
-      FOO
-    </h1>
-  </div>
-  <div>
     <h2
       aria-label="BAR"
       className="subtitle"
