@@ -85,16 +85,6 @@ exports[`Navigation renders correctly 1`] = `
           tabIndex={-1}
         >
           <div
-            className="menuLink__number"
-          >
-            01
-          </div>
-          <div
-            className="menuLink__dash"
-          >
-            –
-          </div>
-          <div
             className="menuLink__title"
           >
             Our Philosophy
@@ -111,16 +101,6 @@ exports[`Navigation renders correctly 1`] = `
           href="https://www.samsung.com/uk/explore/samsung-within-2"
           tabIndex={null}
         >
-          <div
-            className="menuLink__number"
-          >
-            02
-          </div>
-          <div
-            className="menuLink__dash"
-          >
-            –
-          </div>
           <div
             className="menuLink__title"
           >
@@ -221,16 +201,6 @@ exports[`Navigation renders correctly when active 1`] = `
           tabIndex={-1}
         >
           <div
-            className="menuLink__number"
-          >
-            01
-          </div>
-          <div
-            className="menuLink__dash"
-          >
-            –
-          </div>
-          <div
             className="menuLink__title"
           >
             Our Philosophy
@@ -247,16 +217,6 @@ exports[`Navigation renders correctly when active 1`] = `
           href="https://www.samsung.com/uk/explore/samsung-within-2"
           tabIndex={null}
         >
-          <div
-            className="menuLink__number"
-          >
-            02
-          </div>
-          <div
-            className="menuLink__dash"
-          >
-            –
-          </div>
           <div
             className="menuLink__title"
           >
@@ -357,16 +317,6 @@ exports[`Navigation renders correctly with CTA 1`] = `
           tabIndex={-1}
         >
           <div
-            className="menuLink__number"
-          >
-            01
-          </div>
-          <div
-            className="menuLink__dash"
-          >
-            –
-          </div>
-          <div
             className="menuLink__title"
           >
             Our Philosophy
@@ -383,16 +333,6 @@ exports[`Navigation renders correctly with CTA 1`] = `
           href="https://www.samsung.com/uk/explore/samsung-within-2"
           tabIndex={null}
         >
-          <div
-            className="menuLink__number"
-          >
-            02
-          </div>
-          <div
-            className="menuLink__dash"
-          >
-            –
-          </div>
           <div
             className="menuLink__title"
           >
@@ -524,16 +464,6 @@ exports[`Navigation renders correctly with audio 1`] = `
           tabIndex={-1}
         >
           <div
-            className="menuLink__number"
-          >
-            01
-          </div>
-          <div
-            className="menuLink__dash"
-          >
-            –
-          </div>
-          <div
             className="menuLink__title"
           >
             Our Philosophy
@@ -550,16 +480,6 @@ exports[`Navigation renders correctly with audio 1`] = `
           href="https://www.samsung.com/uk/explore/samsung-within-2"
           tabIndex={null}
         >
-          <div
-            className="menuLink__number"
-          >
-            02
-          </div>
-          <div
-            className="menuLink__dash"
-          >
-            –
-          </div>
           <div
             className="menuLink__title"
           >
