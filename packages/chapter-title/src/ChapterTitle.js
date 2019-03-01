@@ -93,11 +93,11 @@ class ChapterTitle extends PureComponent {
 
     return (
       <header className={cx('header', `is-${theme}`, `is-${state}`)} {...rest}>
-        {/* {title && (
+        {title && (
           <MovementContainer lag={0.006} movement={movement}>
             <h1 className={cx('title')}>{title}</h1>
           </MovementContainer>
-        )} */}
+        )}
         <MovementContainer movement={movement}>
           <h2 className={cx('subtitle')} aria-label={stripHtml(subtitle)}>
             {this.renderSubtitle(subtitle, state)}

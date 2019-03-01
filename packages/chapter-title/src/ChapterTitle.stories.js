@@ -11,7 +11,7 @@ stories.add(
   'ChapterTitle',
   () => (
     <ChapterTitle
-      // title={text('Title', 'Chapter X')}
+      title={text('Title', 'Chapter X')}
       subtitle={text('Subtitle', 'Limits Are<br>Meant to be<br>Crossed')}
       theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
       state={radios(
