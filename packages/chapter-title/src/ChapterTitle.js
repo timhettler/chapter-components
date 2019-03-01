@@ -115,7 +115,7 @@ ChapterTitle.defaultProps = {
 };
 
 ChapterTitle.propTypes = {
-  // title: PropTypes.string,
+  title: PropTypes.string,
   subtitle: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
   state: PropTypes.oneOf(['pre', 'default', 'expanded', 'faded']),
