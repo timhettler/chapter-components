@@ -7,14 +7,14 @@ import {
   radios,
   select,
 } from '@storybook/addon-knobs';
-import BeginButton from './';
+import PrimaryCta from './';
 
 const stories = storiesOf('Bookend', module);
 
 stories.addDecorator(withKnobs);
 
-stories.add('BeginButton', () => (
-  <BeginButton
+stories.add('PrimaryCta', () => (
+  <PrimaryCta
     baseElement={select(
       'Base Element',
       { Button: 'button', Link: 'a' },
@@ -25,5 +25,6 @@ stories.add('BeginButton', () => (
     disabled={boolean('Disabled', false)}
     hidden={boolean('Hidden', false)}
     movement={boolean('Movement', true)}
+    href="http://www.rga.com/"
   />
 ));

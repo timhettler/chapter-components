@@ -1,7 +1,7 @@
 {
-  "name": "@ssgw/begin-button",
-  "version": "1.0.0",
-  "description": "The button used to start a Samsung Within experience",
+  "name": "@ssgw/primary-cta",
+  "version": "0.0.0",
+  "description": "The main interactive element within the experience.",
   "main": "dist/index.js",
   "scripts": {
     "build": "node ../../scripts/build.js",

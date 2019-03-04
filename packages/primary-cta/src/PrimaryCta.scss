@@ -1,9 +1,9 @@
 @import '~@ssgw/utils/dist/scss/index';
 
-$begin-button--scale-1: scaleX(1) scaleY(1);
-$begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
+$primary-cta--scale-1: scaleX(1) scaleY(1);
+$primary-cta--scale-2: scaleX(0.9375) scaleY(0.8);
 
-.beginButton {
+.primaryCta {
   @include reset-button;
   @include focus-outline;
   @include box-size;
@@ -52,8 +52,8 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
     color: black;
   }
 
-  .beginButton:not([disabled]):hover &,
-  .beginButton:not([disabled]):focus & {
+  .primaryCta:not([disabled]):hover &,
+  .primaryCta:not([disabled]):focus & {
     transform: translate3d(0, -5px, 0);
     opacity: 0;
   }
@@ -71,8 +71,8 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
     color: white;
   }
 
-  .beginButton:not([disabled]):hover &,
-  .beginButton:not([disabled]):focus & {
+  .primaryCta:not([disabled]):hover &,
+  .primaryCta:not([disabled]):focus & {
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
@@ -92,7 +92,7 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
 .outline-a {
   border: 2px solid;
   background-size: 180px 46px;
-  transform: $begin-button--scale-1;
+  transform: $primary-cta--scale-1;
 
   .is-dark & {
     border-color: black;
@@ -102,17 +102,17 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
     border-color: white;
   }
 
-  .beginButton:not([disabled]):hover &,
-  .beginButton:not([disabled]):focus & {
+  .primaryCta:not([disabled]):hover &,
+  .primaryCta:not([disabled]):focus & {
     opacity: 0;
-    transform: $begin-button--scale-2;
+    transform: $primary-cta--scale-2;
   }
 }
 
 .outline-b {
   background-size: 180px 50px;
   opacity: 0;
-  transform: $begin-button--scale-2;
+  transform: $primary-cta--scale-2;
 
   .is-dark & {
     background-color: black;
@@ -122,9 +122,9 @@ $begin-button--scale-2: scaleX(0.9375) scaleY(0.8);
     background-color: white;
   }
 
-  .beginButton:not([disabled]):hover &,
-  .beginButton:not([disabled]):focus & {
+  .primaryCta:not([disabled]):hover &,
+  .primaryCta:not([disabled]):focus & {
     opacity: 1;
-    transform: $begin-button--scale-1;
+    transform: $primary-cta--scale-1;
   }
 }
