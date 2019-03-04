@@ -274,7 +274,6 @@ $black: #000;
       transition: transform 600ms ease (100ms * ($i - 1)),
         opacity 600ms ease (150ms * ($i - 1));
 
-      .menuLink__number,
       .menuLink__title {
         transition-delay: (150ms * ($i - 1));
       }
@@ -284,7 +283,6 @@ $black: #000;
         transition: transform 300ms ease (100ms * ($i - 1)),
           opacity 300ms ease (10ms * ($i - 1));
 
-        .menuLink__number,
         .menuLink__title {
           transition-delay: (100ms * ($i - 1));
         }
@@ -306,36 +304,11 @@ $black: #000;
   }
 
   &__number,
-  &__title,
-  &__dash {
+  &__title {
     position: relative;
     line-height: 13px;
     margin-top: -6px;
     top: 50%;
-  }
-
-  // &__number,
-  // &__title {
-  //   transform: translateX(0);
-  //   transition-property: transform;
-  //   transition-duration: 600ms;
-  //   transition-timing-function: $transition-time-func;
-  // }
-
-  // &__number {
-  //   .menuList[hidden] & {
-  //     transform: translateX(-15px);
-  //   }
-  // }
-
-  // &__title {
-  //   .menuList[hidden] & {
-  //     transform: translateX(15px);
-  //   }
-  // }
-
-  &__dash {
-    padding: 0 6px;
   }
 
   &__line {

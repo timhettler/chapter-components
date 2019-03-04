@@ -17,8 +17,6 @@ class MenuLink extends PureComponent {
         {...data.tracking}
         {...rest}
       >
-        {/* <div className={cx('menuLink__number')}>{data.id}</div>
-        <div className={cx('menuLink__dash')}>&ndash;</div> */}
         <div className={cx('menuLink__title')}>{data.title}</div>
         <div className={cx('menuLink__line')} />
       </a>
@@ -31,7 +29,6 @@ MenuLink.defaultProps = {};
 export const MenuLinkPropTypes = {
   isCurrent: PropTypes.bool,
   data: PropTypes.shape({
-    // id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     tracking: ssgwPropTypes.tracking,
