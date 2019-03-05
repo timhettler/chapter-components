@@ -7,9 +7,9 @@ $primary-cta--scale-2: scaleX(0.9375) scaleY(0.8);
   @include reset-button;
   @include focus-outline;
   @include box-size;
-
   font-family: $font-family--one;
-  width: 180px;
+  min-width: 180px;
+  padding: 0 30px;
   height: 50px;
   z-index: 12;
   position: relative;
@@ -29,11 +29,8 @@ $primary-cta--scale-2: scaleX(0.9375) scaleY(0.8);
 }
 
 .text {
-  position: absolute;
   letter-spacing: 0.2em;
   font-size: 13px;
-  top: 50%;
-  margin-top: -7px;
   width: 100%;
   text-transform: uppercase;
   text-align: center;
@@ -41,7 +38,7 @@ $primary-cta--scale-2: scaleX(0.9375) scaleY(0.8);
 }
 
 .text-a {
-  transform: translate3d(0, 0, 0);
+  transform: translateY(50%);
   opacity: 1;
 
   .is-light & {
@@ -54,13 +51,13 @@ $primary-cta--scale-2: scaleX(0.9375) scaleY(0.8);
 
   .primaryCta:not([disabled]):hover &,
   .primaryCta:not([disabled]):focus & {
-    transform: translate3d(0, -5px, 0);
+    transform: translateY(0%);
     opacity: 0;
   }
 }
 
 .text-b {
-  transform: translate3d(0, 5px, 0);
+  transform: translateY(75%);
   opacity: 0;
 
   .is-light & {
@@ -73,7 +70,7 @@ $primary-cta--scale-2: scaleX(0.9375) scaleY(0.8);
 
   .primaryCta:not([disabled]):hover &,
   .primaryCta:not([disabled]):focus & {
-    transform: translate3d(0, 0, 0);
+    transform: translateY(-50%);
     opacity: 1;
   }
 }
@@ -91,7 +88,6 @@ $primary-cta--scale-2: scaleX(0.9375) scaleY(0.8);
 
 .outline-a {
   border: 2px solid;
-  background-size: 180px 46px;
   transform: $primary-cta--scale-1;
 
   .is-dark & {
@@ -110,7 +106,6 @@ $primary-cta--scale-2: scaleX(0.9375) scaleY(0.8);
 }
 
 .outline-b {
-  background-size: 180px 50px;
   opacity: 0;
   transform: $primary-cta--scale-2;
 
