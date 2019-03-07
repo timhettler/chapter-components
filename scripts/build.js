@@ -48,8 +48,7 @@ async function transformScripts() {
 // Perform Babel transformation and write to destination
 async function transformScript(file) {
   const contents = await babel.transformFileAsync(file, {
-    //rootMode: 'upward',
-    configFile: path.resolve(__dirname, './babel.config.js'),
+    rootMode: 'upward',
     sourceMaps: true,
     ignore: ['./src/**/*.stories.js', './src/__tests__/'],
   });
