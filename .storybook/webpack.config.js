@@ -9,8 +9,8 @@ module.exports = {
           {
             loader: 'style-loader',
             options: {
-              singleton: true
-            }
+              singleton: true,
+            },
           },
           {
             loader: 'css-loader',
@@ -18,11 +18,11 @@ module.exports = {
               modules: true,
               sourceMap: true,
               importLoaders: 2,
-              localIdentName: '[name]__[local]___[hash:base64:5]'
-            }
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+            },
           },
           'postcss-loader',
-          'sass-loader'
+          'sass-loader',
         ],
         include: path.resolve(__dirname, '../'),
       },

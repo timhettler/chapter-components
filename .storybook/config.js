@@ -1,18 +1,25 @@
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addParameters, addDecorator } from '@storybook/react';
+import { create } from '@storybook/theming';
 import { withInfo } from '@storybook/addon-info';
-import { withOptions } from '@storybook/addon-options';
 import centered from '@storybook/addon-centered';
 
 const req = require.context('../packages', true, /\.stories\.js$/);
 
 addDecorator(withInfo);
 
-addDecorator(
-  withOptions({
-    name: 'Chapter Components',
-    url: 'https://gitlab.ny.rga.com/samsung-within/chapter-components',
-  })
-);
+addParameters({
+  options: {
+    theme: create({
+      base: 'light',
+      brandTitle: 'Chapter Components',
+      brandUrl: 'https://gitlab.ny.rga.com/samsung-within/chapter-components',
+    }),
+  },
+  backgrounds: [
+    { name: 'light', value: '#ffffff', default: true },
+    { name: 'dark', value: '#000000' },
+  ],
+});
 
 addDecorator(centered);
 
