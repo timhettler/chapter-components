@@ -3,7 +3,7 @@ const config = {
 };
 
 if (process.env['NODE_ENV'] === 'production') {
-  config.presets[0] = [
+  config.presets[config.presets.indexOf('@babel/preset-env')] = [
     '@babel/preset-env',
     {
       modules: false,
