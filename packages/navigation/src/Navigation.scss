@@ -157,11 +157,11 @@ $black: #000;
       color: #222222;
       left: 25px;
       opacity: 0;
-      transform: translate(-25px, 10px);
+      transform: translate(-35px, 10px);
 
       .menuButton--active & {
         opacity: 1;
-        transform: translate(-25px, -5px);
+        transform: translate(-35px, -5px);
       }
 
       @include smallAndMedium {
