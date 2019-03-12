@@ -1,6 +1,6 @@
-$size--small-viewport: 320px; // iPhone X width
+$size--small-viewport: 500px; // All current handheld devices
 $size--medium-viewport: 768px; // iPad width (portrait)
-// $size--large-viewport: 1024px; // iPad width (landscape)
+$size--small-height: 780px; // Footer CTA overlaps with UI components at this height & smaller
 
 @mixin _mq($media-queries) {
   $query-list: ();
@@ -82,11 +82,10 @@ $size--medium-viewport: 768px; // iPad width (portrait)
 }
 
 // Other
-@mixin laptopScreen() {
+@mixin isSmallHeight() {
   @include _mq(
     (
-      min-width: $size--medium-viewport,
-      max-height: $size--medium-viewport + 12,
+      max-height: $size--small-height,
     )
   ) {
     @content;

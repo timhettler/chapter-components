@@ -1,20 +1,19 @@
 import { createMatchMediaConnect } from 'react-matchmedia-connect';
 
 const breakpoint = {
-  small: 320,
+  small: 500,
   medium: 768,
+  smallHeight: 780,
 };
 
 const connect = createMatchMediaConnect({
-  isSmall: `(min-width: ${
-    breakpoint.small
-  }px) and (max-width: ${breakpoint.small + 160}px)`,
+  isSmall: `(max-width: ${breakpoint.small}px)`,
   isSmallAndMedium: `(max-width: ${breakpoint.medium}px)`,
-  isMedium: `(min-width: ${breakpoint.small + 161}px) and (max-width: ${
+  isMedium: `(min-width: ${breakpoint.small + 1}px) and (max-width: ${
     breakpoint.medium
   }px)`,
   isMediumAndLarge: `(min-width: ${breakpoint.medium + 1}px)`,
-  isSmallHeight: `(max-height: ${breakpoint.medium + 12}px)`,
+  isSmallHeight: `(max-height: ${smallHeight}px)`,
 });
 
 export default connect;
