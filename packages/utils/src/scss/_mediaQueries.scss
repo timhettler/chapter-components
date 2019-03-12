@@ -1,3 +1,4 @@
+$size--extraSmall-viewport: 320px; // iPhone 5, SE width (smaller devices)
 $size--small-viewport: 375px; // iPhone X width
 $size--medium-viewport: 768px; // iPad width (portrait)
 // $size--large-viewport: 1024px; // iPad width (landscape)
@@ -20,6 +21,18 @@ $size--medium-viewport: 768px; // iPad width (portrait)
 }
 
 // Viewport Sizes
+
+@mixin extraSmall() {
+  @include _mq(
+    (
+      max-width: (
+        $size--extraSmall-viewport,
+      ),
+    )
+  ) {
+    @content;
+  }
+}
 
 @mixin small() {
   @include _mq(
@@ -79,6 +92,16 @@ $size--medium-viewport: 768px; // iPad width (portrait)
 }
 
 // Other
+@mixin laptopScreen() {
+  @include _mq(
+    (
+      min-width: $size--medium-viewport,
+      max-height: $size--medium-viewport + 12,
+    )
+  ) {
+    @content;
+  }
+}
 
 @mixin prefers-reduced-motion() {
   @include _mq(
