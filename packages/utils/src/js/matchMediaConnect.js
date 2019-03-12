@@ -13,7 +13,7 @@ const connect = createMatchMediaConnect({
     breakpoint.medium
   }px)`,
   isMediumAndLarge: `(min-width: ${breakpoint.medium + 1}px)`,
-  isSmallHeight: `(max-height: ${smallHeight}px)`,
+  isSmallHeight: `(max-height: ${breakpoint.smallHeight}px)`,
 });
 
 export default connect;
