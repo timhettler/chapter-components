@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/disclaimer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Text that warns user about performance requirements",
   "main": "dist/index.js",
   "scripts": {
