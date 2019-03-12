@@ -1,5 +1,4 @@
-$size--extraSmall-viewport: 320px; // iPhone 5, SE width (smaller devices)
-$size--small-viewport: 375px; // iPhone X width
+$size--small-viewport: 320px; // iPhone X width
 $size--medium-viewport: 768px; // iPad width (portrait)
 // $size--large-viewport: 1024px; // iPad width (landscape)
 
@@ -22,23 +21,14 @@ $size--medium-viewport: 768px; // iPad width (portrait)
 
 // Viewport Sizes
 
-@mixin extraSmall() {
-  @include _mq(
-    (
-      max-width: (
-        $size--extraSmall-viewport,
-      ),
-    )
-  ) {
-    @content;
-  }
-}
-
 @mixin small() {
   @include _mq(
     (
-      max-width: (
+      min-width: (
         $size--small-viewport,
+      ),
+      max-width: (
+        $size--small-viewport + 160,
       ),
     )
   ) {
