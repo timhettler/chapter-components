@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/chapter-title",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Animated text used in chapter bookends",
   "main": "dist/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "author": "Tim Hettler",
   "license": "UNLICENSED",
   "dependencies": {
-    "@ssgw/utils": "^1.1.0",
+    "@ssgw/utils": "^1.1.1",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2"
   },
