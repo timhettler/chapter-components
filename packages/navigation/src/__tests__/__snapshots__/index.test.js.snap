@@ -25,11 +25,9 @@ exports[`Navigation renders correctly 1`] = `
           height="100%"
           viewBox="0 0 10 14"
           width="100%"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M1 1v9H0V0h6v1H1zm2 2v9H2V2h6v1H3zm1 1h6v10H4V4z"
-            fill-rule="evenodd"
           />
         </svg>
       </span>
@@ -143,11 +141,9 @@ exports[`Navigation renders correctly when active 1`] = `
           height="100%"
           viewBox="0 0 10 14"
           width="100%"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M1 1v9H0V0h6v1H1zm2 2v9H2V2h6v1H3zm1 1h6v10H4V4z"
-            fill-rule="evenodd"
           />
         </svg>
       </span>
@@ -261,11 +257,9 @@ exports[`Navigation renders correctly with CTA 1`] = `
           height="100%"
           viewBox="0 0 10 14"
           width="100%"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M1 1v9H0V0h6v1H1zm2 2v9H2V2h6v1H3zm1 1h6v10H4V4z"
-            fill-rule="evenodd"
           />
         </svg>
       </span>
@@ -384,11 +378,9 @@ exports[`Navigation renders correctly with audio 1`] = `
           height="100%"
           viewBox="0 0 10 14"
           width="100%"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M1 1v9H0V0h6v1H1zm2 2v9H2V2h6v1H3zm1 1h6v10H4V4z"
-            fill-rule="evenodd"
           />
         </svg>
       </span>
