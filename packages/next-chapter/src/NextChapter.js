@@ -8,8 +8,8 @@ const cx = classNames.bind(styles);
 
 class NextChapter extends PureComponent {
   render() {
-    const { imgSrc, title, subtitle, theme, ...rest } = this.props;
-    return (
+    const { imgSrc, title, subtitle, theme, enabled, ...rest } = this.props;
+    return enabled ? (
       <a className={cx('nextChapter', `is-${theme}`)} {...rest}>
         <div className={cx('copy')}>
           <div className={cx('title', 'ui_next')}>{title}</div>
@@ -22,12 +22,13 @@ class NextChapter extends PureComponent {
           }}
         />
       </a>
-    );
+    ) : null;
   }
 }
 
 NextChapter.defaultProps = {
   theme: 'light',
+  enabled: true,
 };
 
 NextChapter.propTypes = {
@@ -35,6 +36,7 @@ NextChapter.propTypes = {
   subtitle: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
+  enabled: PropTypes.bool,
 };
 
 export default NextChapter;
