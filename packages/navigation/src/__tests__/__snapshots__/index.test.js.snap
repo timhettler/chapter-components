@@ -11,13 +11,13 @@ exports[`Navigation renders correctly 1`] = `
     className="navigation__top"
   >
     <button
-      className="menuButton menuButton--is-light"
-      data={
+      accessibility={
         Object {
           "close": "bar",
           "open": "foo",
         }
       }
+      className="menuButton menuButton--is-light"
       onClick={[Function]}
     >
       <span
@@ -131,13 +131,13 @@ exports[`Navigation renders correctly when active 1`] = `
     className="navigation__top"
   >
     <button
-      className="menuButton menuButton--is-light menuButton--active"
-      data={
+      accessibility={
         Object {
           "close": "bar",
           "open": "foo",
         }
       }
+      className="menuButton menuButton--is-light menuButton--active"
       onClick={[Function]}
     >
       <span
@@ -251,13 +251,13 @@ exports[`Navigation renders correctly with CTA 1`] = `
     className="navigation__top"
   >
     <button
-      className="menuButton menuButton--is-light"
-      data={
+      accessibility={
         Object {
           "close": "bar",
           "open": "foo",
         }
       }
+      className="menuButton menuButton--is-light"
       onClick={[Function]}
     >
       <span
@@ -376,13 +376,13 @@ exports[`Navigation renders correctly with audio 1`] = `
     className="navigation__top"
   >
     <button
-      className="menuButton menuButton--is-light"
-      data={
+      accessibility={
         Object {
           "close": "bar",
           "open": "foo",
         }
       }
+      className="menuButton menuButton--is-light"
       onClick={[Function]}
     >
       <span
