@@ -45,10 +45,6 @@ MenuButton.defaultProps = {
 };
 
 export const MenuButtonPropTypes = {
-  data: PropTypes.shape({
-    open: PropTypes.string,
-    close: PropTypes.string,
-  }).isRequired,
   label: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
 };

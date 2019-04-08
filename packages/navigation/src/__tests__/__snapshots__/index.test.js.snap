@@ -11,9 +11,13 @@ exports[`Navigation renders correctly 1`] = `
     className="navigation__top"
   >
     <button
-      aria-expanded={false}
-      aria-label="foo"
       className="menuButton menuButton--is-light"
+      data={
+        Object {
+          "close": "bar",
+          "open": "foo",
+        }
+      }
       onClick={[Function]}
     >
       <span
@@ -127,9 +131,13 @@ exports[`Navigation renders correctly when active 1`] = `
     className="navigation__top"
   >
     <button
-      aria-expanded={true}
-      aria-label="bar"
       className="menuButton menuButton--is-light menuButton--active"
+      data={
+        Object {
+          "close": "bar",
+          "open": "foo",
+        }
+      }
       onClick={[Function]}
     >
       <span
@@ -243,9 +251,13 @@ exports[`Navigation renders correctly with CTA 1`] = `
     className="navigation__top"
   >
     <button
-      aria-expanded={false}
-      aria-label="foo"
       className="menuButton menuButton--is-light"
+      data={
+        Object {
+          "close": "bar",
+          "open": "foo",
+        }
+      }
       onClick={[Function]}
     >
       <span
@@ -364,9 +376,13 @@ exports[`Navigation renders correctly with audio 1`] = `
     className="navigation__top"
   >
     <button
-      aria-expanded={false}
-      aria-label="foo"
       className="menuButton menuButton--is-light"
+      data={
+        Object {
+          "close": "bar",
+          "open": "foo",
+        }
+      }
       onClick={[Function]}
     >
       <span
