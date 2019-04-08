@@ -90,10 +90,6 @@ stories.add('Navigation', () => (
       label={text('Button Text', 'All Chapters')}
       theme={radios('Theme', { Dark: 'dark', Light: 'light' }, 'dark')}
       currentChapter={text('Current Chapter', '02')}
-      accessibility={{
-        open: 'Open chapters menu',
-        close: 'Close chapters menu',
-      }}
       chapters={chapters}
       cta={text('CTA Text', 'More Coming Soon')}
       audio={{

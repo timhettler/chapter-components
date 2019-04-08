@@ -21,7 +21,6 @@ class Navigation extends PureComponent {
       chapters,
       audio,
       currentChapter,
-      accessibility,
       label,
       theme,
       isActive,
@@ -39,7 +38,6 @@ class Navigation extends PureComponent {
             theme={theme}
             onClick={onClick}
             isActive={isActive}
-            data={accessibility}
             {...rest}
           />
           {audio && <AudioButton {...audio} />}
@@ -66,7 +64,6 @@ Navigation.propTypes = {
   chapters: PropTypes.arrayOf(MenuLinkPropTypes.data).isRequired,
   audio: PropTypes.object,
   currentChapter: PropTypes.string.isRequired,
-  accessibility: MenuButtonPropTypes.data,
   label: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
   isActive: PropTypes.bool,
