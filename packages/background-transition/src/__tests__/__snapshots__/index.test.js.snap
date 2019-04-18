@@ -8,7 +8,7 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img bgTransition__img--active"
     style={
       Object {
-        "backgroundImage": "url(https://images.pexels.com/photos/1842623/pexels-photo-1842623.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)",
+        "backgroundImage": "url(undefined)",
         "transitionDuration": "3000ms",
       }
     }
@@ -17,7 +17,7 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img"
     style={
       Object {
-        "backgroundImage": "url(https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)",
+        "backgroundImage": "url(undefined)",
         "transitionDuration": "3000ms",
       }
     }
@@ -26,7 +26,7 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img"
     style={
       Object {
-        "backgroundImage": "url(https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)",
+        "backgroundImage": "url(undefined)",
         "transitionDuration": "3000ms",
       }
     }

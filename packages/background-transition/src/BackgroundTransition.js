@@ -8,17 +8,19 @@ const cx = classNames.bind(styles);
 
 class Image extends PureComponent {
   render() {
-    const { url, duration, active } = this.props;
+    const { data, duration, active } = this.props;
     return (
       <div
         className={cx('bgTransition__img', {
           'bgTransition__img--active': active,
         })}
         style={{
-          backgroundImage: `url(${url})`,
+          backgroundImage: `url(${data.url})`,
           transitionDuration: `${duration}ms`,
         }}
-      />
+      >
+        {data.altText && <span role="img" aria-label={data.altText} />}
+      </div>
     );
   }
 }
@@ -74,10 +76,10 @@ class BackgroundTransition extends PureComponent {
     const { duration, images, disabled, ...rest } = this.props;
     return (
       <div className={cx('bgTransition')} {...rest}>
-        {images.map((url, i) => (
+        {images.map((data, i) => (
           <Image
             key={i}
-            url={url}
+            data={data}
             duration={duration}
             active={this.state.activeIndex === i}
           />

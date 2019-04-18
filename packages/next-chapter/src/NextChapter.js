@@ -28,7 +28,6 @@ class NextChapter extends PureComponent {
 
 NextChapter.defaultProps = {
   theme: 'light',
-  enabled: true,
 };
 
 NextChapter.propTypes = {

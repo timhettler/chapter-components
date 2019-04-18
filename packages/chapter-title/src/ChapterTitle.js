@@ -81,9 +81,9 @@ class ChapterTitle extends PureComponent {
       });
 
       return (
-        <div key={`${line}+${i}`} className={cx('line')}>
+        <span key={`${line}+${i}`} className={cx('line')}>
           {letters}
-        </div>
+        </span>
       );
     });
   }
@@ -99,9 +99,9 @@ class ChapterTitle extends PureComponent {
           </MovementContainer>
         )}
         <MovementContainer movement={movement}>
-          <h2 className={cx('subtitle')} aria-label={stripHtml(subtitle)}>
+          <h3 className={cx('subtitle')} aria-label={stripHtml(subtitle)}>
             {this.renderSubtitle(subtitle, state)}
-          </h2>
+          </h3>
         </MovementContainer>
       </header>
     );

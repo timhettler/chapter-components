@@ -12,10 +12,6 @@ import MenuButton, { MenuButtonPropTypes } from './MenuButton';
 const cx = classNames.bind(styles);
 
 class Navigation extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {
       chapters,
@@ -25,6 +21,9 @@ class Navigation extends PureComponent {
       theme,
       isActive,
       cta,
+      buttonClasses,
+      menuLinkAttrs,
+      enableLockFocus,
       onClick,
       ...rest
     } = this.props;
@@ -38,9 +37,10 @@ class Navigation extends PureComponent {
             theme={theme}
             onClick={onClick}
             isActive={isActive}
+            classList={buttonClasses}
             {...rest}
           />
-          {audio && <AudioButton {...audio} />}
+          {audio && <AudioButton classList={buttonClasses} {...audio} />}
         </div>
         <div className={cx('navigation__bottom')}>
           <MenuList
@@ -48,6 +48,8 @@ class Navigation extends PureComponent {
             isActive={isActive}
             currentChapter={currentChapter}
             cta={cta}
+            menuLinkAttrs={menuLinkAttrs}
+            enableLockFocus={enableLockFocus}
           />
         </div>
       </nav>
@@ -57,6 +59,7 @@ class Navigation extends PureComponent {
 
 Navigation.defaultProps = {
   theme: 'light',
+  buttonClasses: [],
   onClick: () => {},
 };
 
@@ -68,6 +71,9 @@ Navigation.propTypes = {
   theme: PropTypes.oneOf(['light', 'dark']),
   isActive: PropTypes.bool,
   cta: MenuListProps.cta,
+  buttonClasses: MenuButtonPropTypes.classList,
+  menuLinkAttrs: MenuListProps.menuLinkAttrs,
+  enableLockFocus: MenuListProps.enableLockFocus,
   onClick: PropTypes.func,
 };
 

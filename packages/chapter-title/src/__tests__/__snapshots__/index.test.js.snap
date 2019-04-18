@@ -12,11 +12,11 @@ exports[`ChapterTitle renders correctly 1`] = `
     </h1>
   </div>
   <div>
-    <h2
+    <h3
       aria-label="BAR"
       className="subtitle"
     >
-      <div
+      <span
         className="line"
       >
         <span
@@ -76,8 +76,8 @@ exports[`ChapterTitle renders correctly 1`] = `
             R
           </span>
         </span>
-      </div>
-    </h2>
+      </span>
+    </h3>
   </div>
 </header>
 `;
@@ -87,11 +87,11 @@ exports[`ChapterTitle renders correctly without title 1`] = `
   className="header is-dark is-default"
 >
   <div>
-    <h2
+    <h3
       aria-label="BAR"
       className="subtitle"
     >
-      <div
+      <span
         className="line"
       >
         <span
@@ -151,8 +151,8 @@ exports[`ChapterTitle renders correctly without title 1`] = `
             R
           </span>
         </span>
-      </div>
-    </h2>
+      </span>
+    </h3>
   </div>
 </header>
 `;

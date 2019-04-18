@@ -9,12 +9,17 @@ const cx = classNames.bind(styles);
 
 class MenuButton extends PureComponent {
   render() {
-    const { label, theme, isActive, ...rest } = this.props;
+    const { label, theme, isActive, classList, ...rest } = this.props;
     return (
       <button
-        className={cx('menuButton', `menuButton--is-${theme}`, {
-          'menuButton--active': isActive,
-        })}
+        className={cx(
+          'menuButton',
+          `menuButton--is-${theme}`,
+          {
+            'menuButton--active': isActive,
+          },
+          ...classList
+        )}
         {...rest}
       >
         <span className={cx('menuButton__icon', 'menuButton__icon--primary')}>
@@ -47,6 +52,7 @@ MenuButton.defaultProps = {
 export const MenuButtonPropTypes = {
   label: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
+  classList: PropTypes.arrayOf(PropTypes.string),
 };
 
 MenuButton.propTypes = MenuButtonPropTypes;

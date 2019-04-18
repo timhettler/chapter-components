@@ -3,7 +3,6 @@
 exports[`NextChapter renders correctly 1`] = `
 <a
   className="nextChapter is-light"
-  enabled={true}
 >
   <div
     className="copy"
