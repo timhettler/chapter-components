@@ -8,7 +8,7 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img bgTransition__img--active"
     style={
       Object {
-        "backgroundImage": "url(undefined)",
+        "backgroundImage": "",
         "transitionDuration": "3000ms",
       }
     }
@@ -17,7 +17,7 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img"
     style={
       Object {
-        "backgroundImage": "url(undefined)",
+        "backgroundImage": "",
         "transitionDuration": "3000ms",
       }
     }
@@ -26,7 +26,7 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img"
     style={
       Object {
-        "backgroundImage": "url(undefined)",
+        "backgroundImage": "",
         "transitionDuration": "3000ms",
       }
     }

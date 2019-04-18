@@ -17,7 +17,7 @@ exports[`Navigation renders correctly 1`] = `
           "open": "foo",
         }
       }
-      className="menuButton menuButton--is-light "
+      className="menuButton menuButton--is-light"
       onClick={[Function]}
     >
       <span
@@ -78,6 +78,7 @@ exports[`Navigation renders correctly 1`] = `
     className="navigation__bottom"
   >
     <ol
+      aria-hidden={true}
       className="menuList"
       hidden={true}
     >
@@ -137,7 +138,7 @@ exports[`Navigation renders correctly when active 1`] = `
           "open": "foo",
         }
       }
-      className="menuButton menuButton--is-light menuButton--active "
+      className="menuButton menuButton--is-light menuButton--active"
       onClick={[Function]}
     >
       <span
@@ -198,6 +199,7 @@ exports[`Navigation renders correctly when active 1`] = `
     className="navigation__bottom"
   >
     <ol
+      aria-hidden={false}
       className="menuList"
       hidden={false}
     >
@@ -257,7 +259,7 @@ exports[`Navigation renders correctly with CTA 1`] = `
           "open": "foo",
         }
       }
-      className="menuButton menuButton--is-light "
+      className="menuButton menuButton--is-light"
       onClick={[Function]}
     >
       <span
@@ -318,6 +320,7 @@ exports[`Navigation renders correctly with CTA 1`] = `
     className="navigation__bottom"
   >
     <ol
+      aria-hidden={true}
       className="menuList"
       hidden={true}
     >
@@ -382,7 +385,7 @@ exports[`Navigation renders correctly with audio 1`] = `
           "open": "foo",
         }
       }
-      className="menuButton menuButton--is-light "
+      className="menuButton menuButton--is-light"
       onClick={[Function]}
     >
       <span
@@ -469,6 +472,7 @@ exports[`Navigation renders correctly with audio 1`] = `
     className="navigation__bottom"
   >
     <ol
+      aria-hidden={true}
       className="menuList"
       hidden={true}
     >

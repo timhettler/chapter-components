@@ -18,7 +18,7 @@ class MenuButton extends PureComponent {
           {
             'menuButton--active': isActive,
           },
-          className.split(' ')
+          className
         )}
         {...rest}
       >

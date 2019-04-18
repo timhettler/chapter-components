@@ -10,10 +10,7 @@ class Button extends PureComponent {
   render() {
     const { children, theme, className, ...rest } = this.props;
     return (
-      <button
-        className={cx('btn', `btn--is-${theme}`, className.split(' '))}
-        {...rest}
-      >
+      <button className={cx('btn', `btn--is-${theme}`, className)} {...rest}>
         <span className={cx('btn__inner')}>{children}</span>
       </button>
     );

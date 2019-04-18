@@ -22,7 +22,6 @@ class Navigation extends PureComponent {
       isActive,
       cta,
       className,
-      menuLinkAttrs,
       enableLockFocus,
       onClick,
       ...rest
@@ -48,7 +47,6 @@ class Navigation extends PureComponent {
             isActive={isActive}
             currentChapter={currentChapter}
             cta={cta}
-            menuLinkAttrs={menuLinkAttrs}
             enableLockFocus={enableLockFocus}
           />
         </div>
@@ -73,7 +71,6 @@ Navigation.propTypes = {
   isActive: PropTypes.bool,
   cta: MenuListProps.cta,
   className: MenuButtonPropTypes.className,
-  menuLinkAttrs: MenuListProps.menuLinkAttrs,
   enableLockFocus: MenuListProps.enableLockFocus,
   onClick: PropTypes.func,
 };

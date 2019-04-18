@@ -83,20 +83,13 @@ class MenuList extends PureComponent {
   }
 
   render() {
-    const {
-      isActive,
-      chapters,
-      currentChapter,
-      cta,
-      menuLinkAttrs,
-    } = this.props;
-    const listAttrs = !isActive ? { ...menuLinkAttrs } : null;
+    const { isActive, chapters, currentChapter, cta } = this.props;
     return (
       <ol
         ref={this.ref}
         className={cx('menuList')}
         hidden={!isActive}
-        {...listAttrs}
+        aria-hidden={!isActive}
       >
         {chapters.map((chapter, i) => {
           const isCurrent = currentChapter === chapter.id;
@@ -127,7 +120,6 @@ export const MenuListProps = {
   currentChapter: PropTypes.string.isRequired,
   chapters: PropTypes.arrayOf(MenuLinkPropTypes.data).isRequired,
   cta: PropTypes.string,
-  menuLinkAttrs: PropTypes.object,
   enableLockFocus: PropTypes.bool,
 };
 
