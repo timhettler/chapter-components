@@ -17,7 +17,7 @@ exports[`Navigation renders correctly 1`] = `
           "open": "foo",
         }
       }
-      className="menuButton menuButton--is-light"
+      className="menuButton menuButton--is-light "
       onClick={[Function]}
     >
       <span
@@ -137,7 +137,7 @@ exports[`Navigation renders correctly when active 1`] = `
           "open": "foo",
         }
       }
-      className="menuButton menuButton--is-light menuButton--active"
+      className="menuButton menuButton--is-light menuButton--active "
       onClick={[Function]}
     >
       <span
@@ -257,7 +257,7 @@ exports[`Navigation renders correctly with CTA 1`] = `
           "open": "foo",
         }
       }
-      className="menuButton menuButton--is-light"
+      className="menuButton menuButton--is-light "
       onClick={[Function]}
     >
       <span
@@ -382,7 +382,7 @@ exports[`Navigation renders correctly with audio 1`] = `
           "open": "foo",
         }
       }
-      className="menuButton menuButton--is-light"
+      className="menuButton menuButton--is-light "
       onClick={[Function]}
     >
       <span
@@ -441,7 +441,7 @@ exports[`Navigation renders correctly with audio 1`] = `
     <button
       aria-label="Toggle Audio"
       aria-pressed={true}
-      className="btn btn--is-dark"
+      className="btn btn--is-dark "
       data-omni="brand hub topic landing:more than a stylus_audio_off"
       data-omni-type="microsite_contentinter"
     >

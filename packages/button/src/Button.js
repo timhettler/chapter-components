@@ -8,9 +8,12 @@ const cx = classNames.bind(styles);
 
 class Button extends PureComponent {
   render() {
-    const { children, theme, classList, ...rest } = this.props;
+    const { children, theme, className, ...rest } = this.props;
     return (
-      <button className={cx('btn', `btn--is-${theme}`, ...classList)} {...rest}>
+      <button
+        className={cx('btn', `btn--is-${theme}`, className.split(' '))}
+        {...rest}
+      >
         <span className={cx('btn__inner')}>{children}</span>
       </button>
     );
@@ -19,7 +22,7 @@ class Button extends PureComponent {
 
 Button.defaultProps = {
   theme: 'dark',
-  classList: [],
+  className: '',
 };
 
 export const ButtonPropTypes = {
@@ -28,7 +31,7 @@ export const ButtonPropTypes = {
 
 Button.propTypes = {
   ...ButtonPropTypes,
-  classList: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
 };
 
 export default Button;

@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 class MenuButton extends PureComponent {
   render() {
-    const { label, theme, isActive, classList, ...rest } = this.props;
+    const { label, theme, isActive, className, ...rest } = this.props;
     return (
       <button
         className={cx(
@@ -18,7 +18,7 @@ class MenuButton extends PureComponent {
           {
             'menuButton--active': isActive,
           },
-          ...classList
+          className.split(' ')
         )}
         {...rest}
       >
@@ -52,7 +52,7 @@ MenuButton.defaultProps = {
 export const MenuButtonPropTypes = {
   label: PropTypes.string.isRequired,
   theme: PropTypes.oneOf(['light', 'dark']),
-  classList: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
 };
 
 MenuButton.propTypes = MenuButtonPropTypes;

@@ -41,6 +41,10 @@ class MenuList extends PureComponent {
       this.lastTabbedElement = [];
       !this.props.isActive && document.activeElement.blur();
     }
+
+    if (prevProp.enableLockFocus != this.props.enableLockFocus) {
+      this.props.enableLockFocus && this.enableLockFocus();
+    }
   }
 
   enableLockFocus() {
@@ -86,8 +90,14 @@ class MenuList extends PureComponent {
       cta,
       menuLinkAttrs,
     } = this.props;
+    const listAttrs = !isActive ? { ...menuLinkAttrs } : null;
     return (
-      <ol ref={this.ref} className={cx('menuList')} hidden={!isActive}>
+      <ol
+        ref={this.ref}
+        className={cx('menuList')}
+        hidden={!isActive}
+        {...listAttrs}
+      >
         {chapters.map((chapter, i) => {
           const isCurrent = currentChapter === chapter.id;
 
@@ -98,11 +108,7 @@ class MenuList extends PureComponent {
                 'menuLink--current': isCurrent,
               })}
             >
-              <MenuLink
-                isCurrent={isCurrent}
-                data={chapter}
-                {...menuLinkAttrs}
-              />
+              <MenuLink isCurrent={isCurrent} data={chapter} />
             </li>
           );
         })}
@@ -114,9 +120,7 @@ class MenuList extends PureComponent {
   }
 }
 
-MenuList.defaultProps = {
-  enableLockFocus: true,
-};
+MenuList.defaultProps = {};
 
 export const MenuListProps = {
   isActive: PropTypes.bool,

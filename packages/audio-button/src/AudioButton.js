@@ -9,9 +9,9 @@ const cx = classNames.bind(styles);
 
 class AudioButton extends PureComponent {
   render() {
-    const { isMuted, classList, ...rest } = this.props;
+    const { isMuted, className, ...rest } = this.props;
     return (
-      <Button classList={classList} {...rest}>
+      <Button className={className} {...rest}>
         <Audio isMuted={isMuted} />
       </Button>
     );
