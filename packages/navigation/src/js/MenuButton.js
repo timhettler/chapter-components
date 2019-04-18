@@ -30,7 +30,7 @@ class MenuButton extends PureComponent {
         <span className={cx('menuButton__icon', 'menuButton__icon--secondary')}>
           <Close />
         </span>
-        <div className={cx('menuButton__copy')}>
+        <span className={cx('menuButton__copy')}>
           <span className={cx('menuButton__text', 'menuButton__text--primary')}>
             {label}
           </span>
@@ -39,7 +39,7 @@ class MenuButton extends PureComponent {
           >
             {label}
           </span>
-        </div>
+        </span>
       </button>
     );
   }

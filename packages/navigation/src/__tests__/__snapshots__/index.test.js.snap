@@ -58,7 +58,7 @@ exports[`Navigation renders correctly 1`] = `
           </g>
         </svg>
       </span>
-      <div
+      <span
         className="menuButton__copy"
       >
         <span
@@ -71,7 +71,7 @@ exports[`Navigation renders correctly 1`] = `
         >
           All Chapters
         </span>
-      </div>
+      </span>
     </button>
   </div>
   <div
@@ -178,7 +178,7 @@ exports[`Navigation renders correctly when active 1`] = `
           </g>
         </svg>
       </span>
-      <div
+      <span
         className="menuButton__copy"
       >
         <span
@@ -191,7 +191,7 @@ exports[`Navigation renders correctly when active 1`] = `
         >
           All Chapters
         </span>
-      </div>
+      </span>
     </button>
   </div>
   <div
@@ -298,7 +298,7 @@ exports[`Navigation renders correctly with CTA 1`] = `
           </g>
         </svg>
       </span>
-      <div
+      <span
         className="menuButton__copy"
       >
         <span
@@ -311,7 +311,7 @@ exports[`Navigation renders correctly with CTA 1`] = `
         >
           All Chapters
         </span>
-      </div>
+      </span>
     </button>
   </div>
   <div
@@ -423,7 +423,7 @@ exports[`Navigation renders correctly with audio 1`] = `
           </g>
         </svg>
       </span>
-      <div
+      <span
         className="menuButton__copy"
       >
         <span
@@ -436,7 +436,7 @@ exports[`Navigation renders correctly with audio 1`] = `
         >
           All Chapters
         </span>
-      </div>
+      </span>
     </button>
     <button
       aria-label="Toggle Audio"
