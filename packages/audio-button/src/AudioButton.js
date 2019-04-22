@@ -20,11 +20,12 @@ class AudioButton extends PureComponent {
 
 AudioButton.defaultProps = {
   theme: 'dark',
+  className: '',
 };
 
 AudioButton.propTypes = {
   isMuted: PropTypes.bool,
-  classList: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
 };
 
 export default AudioButton;
