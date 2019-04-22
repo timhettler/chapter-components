@@ -9,15 +9,16 @@ const cx = classNames.bind(styles);
 class Image extends PureComponent {
   render() {
     const { config, duration, active } = this.props;
+    const backgroundStyle = {
+      backgroundImage: config.url ? `url(${config.url})` : null,
+      transitionDuration: `${duration}ms`,
+    };
     return (
       <div
         className={cx('bgTransition__img', {
           'bgTransition__img--active': active,
         })}
-        style={{
-          backgroundImage: config.url ? `url(${config.url})` : null,
-          transitionDuration: `${duration}ms`,
-        }}
+        style={config.url ? backgroundStyle : ''}
       >
         {config.altText && <span role="img" aria-label={config.altText} />}
       </div>

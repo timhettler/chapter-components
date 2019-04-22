@@ -8,29 +8,44 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img bgTransition__img--active"
     style={
       Object {
-        "backgroundImage": null,
+        "backgroundImage": "url(https://images.pexels.com/photos/1842623/pexels-photo-1842623.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)",
         "transitionDuration": "3000ms",
       }
     }
-  />
+  >
+    <span
+      aria-label="Image 1"
+      role="img"
+    />
+  </div>
   <div
     className="bgTransition__img"
     style={
       Object {
-        "backgroundImage": null,
+        "backgroundImage": "url(https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)",
         "transitionDuration": "3000ms",
       }
     }
-  />
+  >
+    <span
+      aria-label="Image 2"
+      role="img"
+    />
+  </div>
   <div
     className="bgTransition__img"
     style={
       Object {
-        "backgroundImage": null,
+        "backgroundImage": "url(https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)",
         "transitionDuration": "3000ms",
       }
     }
-  />
+  >
+    <span
+      aria-label="Image 3"
+      role="img"
+    />
+  </div>
 </div>
 `;
 
