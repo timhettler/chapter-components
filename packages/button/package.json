@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/button",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A reusable button component that accepts icon and callback properties",
   "main": "dist/index.js",
   "scripts": {
