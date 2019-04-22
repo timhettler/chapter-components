@@ -15,7 +15,7 @@ class Image extends PureComponent {
           'bgTransition__img--active': active,
         })}
         style={{
-          backgroundImage: config.url ? `url(${config.url})` : '',
+          backgroundImage: config.url ? `url(${config.url})` : null,
           transitionDuration: `${duration}ms`,
         }}
       >

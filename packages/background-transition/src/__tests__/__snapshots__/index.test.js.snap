@@ -8,7 +8,7 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img bgTransition__img--active"
     style={
       Object {
-        "backgroundImage": "",
+        "backgroundImage": null,
         "transitionDuration": "3000ms",
       }
     }
@@ -17,7 +17,7 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img"
     style={
       Object {
-        "backgroundImage": "",
+        "backgroundImage": null,
         "transitionDuration": "3000ms",
       }
     }
@@ -26,10 +26,16 @@ exports[`BackgroundTransition renders correctly 1`] = `
     className="bgTransition__img"
     style={
       Object {
-        "backgroundImage": "",
+        "backgroundImage": null,
         "transitionDuration": "3000ms",
       }
     }
   />
 </div>
+`;
+
+exports[`BackgroundTransition renders correctly with no images 1`] = `
+<div
+  className="bgTransition"
+/>
 `;
