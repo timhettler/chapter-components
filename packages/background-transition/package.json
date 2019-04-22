@@ -1,6 +1,6 @@
 {
   "name": "@ssgw/background-transition",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A component that crossfades background images",
   "main": "dist/index.js",
   "scripts": {
