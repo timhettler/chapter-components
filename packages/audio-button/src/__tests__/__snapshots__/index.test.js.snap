@@ -2,7 +2,7 @@
 
 exports[`AudioButton renders correctly when muted 1`] = `
 <button
-  className="btn btn--is-dark "
+  className="btn btn--is-dark"
 >
   <span
     className="btn__inner"
@@ -24,7 +24,7 @@ exports[`AudioButton renders correctly when muted 1`] = `
 
 exports[`AudioButton renders correctly when unmuted 1`] = `
 <button
-  className="btn btn--is-dark "
+  className="btn btn--is-dark"
 >
   <span
     className="btn__inner"

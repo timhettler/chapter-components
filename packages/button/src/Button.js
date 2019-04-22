@@ -19,16 +19,15 @@ class Button extends PureComponent {
 
 Button.defaultProps = {
   theme: 'dark',
-  className: '',
 };
 
 export const ButtonPropTypes = {
   theme: PropTypes.oneOf(['light', 'dark']),
+  className: PropTypes.string,
 };
 
 Button.propTypes = {
   ...ButtonPropTypes,
-  className: PropTypes.string,
 };
 
 export default Button;

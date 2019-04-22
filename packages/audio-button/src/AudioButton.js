@@ -9,9 +9,9 @@ const cx = classNames.bind(styles);
 
 class AudioButton extends PureComponent {
   render() {
-    const { isMuted, className, ...rest } = this.props;
+    const { isMuted, ...rest } = this.props;
     return (
-      <Button className={className} {...rest}>
+      <Button {...rest}>
         <Audio isMuted={isMuted} />
       </Button>
     );
@@ -19,14 +19,11 @@ class AudioButton extends PureComponent {
 }
 
 AudioButton.defaultProps = {
-  theme: 'dark',
-  className: '',
   isMuted: false,
 };
 
 AudioButton.propTypes = {
   isMuted: PropTypes.bool,
-  className: PropTypes.string,
 };
 
 export default AudioButton;

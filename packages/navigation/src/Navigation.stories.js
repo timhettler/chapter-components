@@ -92,8 +92,7 @@ stories.add('Navigation', () => (
       currentChapter={text('Current Chapter', '02')}
       chapters={chapters}
       cta={text('CTA Text', 'More Coming Soon')}
-      className={'custom-class1 custom-class2'}
-      menuLinkAttrs={{ ['aria-hidden']: true }}
+      buttonClassName={'custom-class1 custom-class2'}
       enableLockFocus={boolean('Enable Lock Focus', false)}
       audio={{
         ['aria-label']: 'Toggle Audio',

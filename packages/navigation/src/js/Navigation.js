@@ -21,7 +21,7 @@ class Navigation extends PureComponent {
       theme,
       isActive,
       cta,
-      className,
+      buttonClassName,
       enableLockFocus,
       onClick,
       ...rest
@@ -36,10 +36,10 @@ class Navigation extends PureComponent {
             theme={theme}
             onClick={onClick}
             isActive={isActive}
-            className={className}
+            className={buttonClassName}
             {...rest}
           />
-          {audio && <AudioButton className={className} {...audio} />}
+          {audio && <AudioButton className={buttonClassName} {...audio} />}
         </div>
         <div className={cx('navigation__bottom')}>
           <MenuList
@@ -57,7 +57,6 @@ class Navigation extends PureComponent {
 
 Navigation.defaultProps = {
   theme: 'light',
-  className: '',
   enableLockFocus: true,
   onClick: () => {},
 };
@@ -70,7 +69,7 @@ Navigation.propTypes = {
   theme: PropTypes.oneOf(['light', 'dark']),
   isActive: PropTypes.bool,
   cta: MenuListProps.cta,
-  className: MenuButtonPropTypes.className,
+  buttonClassName: MenuButtonPropTypes.className,
   enableLockFocus: MenuListProps.enableLockFocus,
   onClick: PropTypes.func,
 };

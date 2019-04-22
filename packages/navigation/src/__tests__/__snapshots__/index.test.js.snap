@@ -444,7 +444,7 @@ exports[`Navigation renders correctly with audio 1`] = `
     <button
       aria-label="Toggle Audio"
       aria-pressed={true}
-      className="btn btn--is-dark "
+      className="btn btn--is-dark"
       data-omni="brand hub topic landing:more than a stylus_audio_off"
       data-omni-type="microsite_contentinter"
     >
